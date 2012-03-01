@@ -1,0 +1,279 @@
+/*
+ *  Refresh | Munich 
+ *  ---------------------
+ *  Type Test with font based logo
+ * 
+ *  Version: 0.1
+ *  Date: 17 Feb 2012
+ *  Last Update: 29 Feb 2012;
+ *  Author: Julie Ng (@jng5)
+ *  Website: www.refreshmunich.com
+ */
+
+@bayernBlue: #0098d4;
+@smokeyGrey: #f8f8f8;
+@mediumGrey: #999;
+@lightGrey: #ccc;
+
+/* 
+ * palette: Fresh Cut Day 
+ * http://www.colourlovers.com/palette/46688/fresh_cut_day
+ */
+
+ @lightGreen: #AEE239;
+ @green: #8FBE00;
+ @teal: #00A8C6;
+ @lagoon: #40C0CB;
+
+ @serif: 'adelle','crete-rounded-web', Georgia, serif;
+ @sans-serif: 'ff-meta-web-pro','droid-sans', Helvetica, sans-serif;
+
+
+/* ============================
+
+    TYPOGRAPHY
+
+=============================== */
+
+body {
+    font: 400 16px/1.5em @sans-serif;
+    color: #333;
+    -webkit-text-size-adjust: 100%;}
+
+        
+a:link,
+a:visited {
+    color: @green;}
+
+a:hover,
+a:active {
+    color: @teal;}
+
+
+h1, h2 {
+    font: 600 2em/1.5em @serif;
+    color: @bayernBlue;}
+
+h2 {
+    font-weight: 400;
+    font-size: 1.2em;}
+
+h3 {
+    font: 600 16px/1.5em @sans-serif;}
+
+
+#manifesto h1 {
+    color: #fff;}
+
+#manifesto p {
+    font: 200 1.5em/1.5em @serif;}
+
+
+/* ============================
+
+    LAYOUT
+
+=============================== */    
+
+
+.wrap {
+    width: 960px;
+    margin: 0 auto;}
+
+#content {
+    margin: 5em auto 0;}
+
+#content p,
+#content .wrap > section {
+    margin: 1em 0;}
+
+
+/* ============================
+
+    HEADER
+
+=============================== */
+
+#hdr {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: .5em 0;
+    background-color: #000;
+    background-color: rgba(0,0,0,0.95);
+    overflow: auto;
+    z-index: 999;} 
+
+#hdr h1 {
+    width: auto;
+    float:left;
+    font-weight: 600;
+    font-size: 2.5em;
+    line-height: 1.5em;}
+
+
+#hdr nav {
+    float: right;
+    line-height: 4em;}
+
+#hdr nav li {
+    display: inline;
+    padding: 0 .5em;}
+
+#hdr nav a:link,
+#hdr nav a:visited {
+    color: #fff;
+    text-decoration: none;}
+
+#hdr nav a:hover,
+#hdr nav a:active {
+    color: @bayernBlue;
+    text-decoration: none;}    
+
+/* ============================
+
+    MANIFESTO
+
+=============================== */
+
+#manifesto {
+    padding: 4em 0;
+    background-color: @bayernBlue;
+    color: #fff;}
+
+#manifesto p {
+    margin: 0;}
+
+#manifesto p em {
+    color: #A7DBD8;
+    font-style: normal;}
+
+
+/* ============================
+
+    FAQ
+
+=============================== */
+
+#faq ul {
+    border-top: 1px solid @lightGrey;
+    margin: 1em 0;}
+    
+#faq ul li {
+    border-bottom: 1px solid @lightGrey;
+    padding: 1em 0;}
+
+#faq ul li:hover h3 {
+    color: @teal;
+    cursor: pointer;}
+
+#faq ul li .answer {
+    display: none;}
+
+#faq li h3:target + p {
+    height: 100%;
+    overflow: auto;}
+
+/*
+#faq ul li p  {
+  height:0;
+  padding:0 15px;
+  overflow:hidden;
+  -webkit-transition:height .4s ease-out, padding .4s ease-out;
+  -moz-transition:height .4s ease-out, padding .4s ease-out;
+  -o-transition:height .4s ease-out, padding .4s ease-out;
+  -ms-transition:height .4s ease-out, padding .4s ease-out;
+  transition:height .4s ease-out, padding .4s ease-out;
+}
+*/
+
+
+/* ============================
+
+    MEMBERS LIST
+
+=============================== */
+
+
+#members h1,
+#members > p {
+    text-align: center;}
+
+/* members list */  
+#mlist {
+    font-size: 0.8125em; /* 13px */
+    line-height: 1.5em;} 
+
+#mlist li {
+    background: @smokeyGrey;
+    padding: 1em;
+    float: left;
+    width: 20%; 
+    margin: .5em 2% 1em 0;}
+
+#mlist a {
+    text-decoration: none;}
+
+#mlist li > a { 
+    margin-left: 1em;} /* pad profile pictures */
+    
+
+#mlist h3 {
+    line-height: 1.5em;
+    padding-top: .5em} /* push towards bottom egde of profile pics */
+
+/* style twitter handle links */
+#mlist h3 a {
+    font-weight: 400;}
+#mlist h3 a:link,
+#mlist h3 a:visited {
+    color: @mediumGrey;}
+#mlist h3 a:hover,
+#mlist h3 a:active {
+    color: rgb(0,168,198);} 
+
+#mlist p {
+    margin: .5em 0 1em 0;
+    height: 4em;
+    overflow: hidden;
+    position: relative;}
+
+#mlist p:before,
+#mlist p::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+    background-image: -webkit-linear-gradient(top, rgba(255,255,255,0) 70%, @smokeyGrey);}
+
+
+
+
+/* ============================
+
+    FOOTER
+
+=============================== */
+
+
+        
+#ftr {
+    font-size: .8125em;
+    line-height: 1.5em;
+    text-align: center;
+    background-color: @bayernBlue;
+    color: #fff;
+    margin-top: 1em;}
+    
+#ftr:before {
+    content: '';
+    display: block;
+    height: 180px;
+    background: #fff url('../i/munich-skyline.svg') no-repeat bottom center;}
+
+#ftr .wrap {
+    padding: 1em 0 2em;}
