@@ -1,0 +1,69 @@
+#members h1,
+#members > p {
+  text-align: center;
+}
+
+/* members list */
+#mlist {
+  font-size: 0.8125em; /* 13px */
+  line-height: 1.5em;
+}
+
+#mlist li {
+  float: left;
+  width: 20%;
+  margin: .5em 2% 1em 0;
+  padding: 1em;
+
+  background: @smokeyGrey;
+}
+
+#mlist a {
+  text-decoration: none;
+}
+
+#mlist li > a {
+  margin-left: 1em; /* pad profile pictures */
+}
+
+
+#mlist h3 {
+  /* push towards bottom egde of profile pics */
+  padding-top: .5em;
+
+  line-height: 1.5em;
+}
+
+/* style twitter handle links */
+#mlist h3 a {
+  font-weight: 400;
+}
+
+#mlist h3 a:link,
+#mlist h3 a:visited {
+  color: @mediumGrey;
+}
+
+#mlist h3 a:hover,
+#mlist h3 a:active {
+  color: rgb(0,168,198);
+}
+
+#mlist p {
+  margin: .5em 0 1em 0;
+  height: 4em;
+  overflow: hidden;
+  position: relative;
+}
+
+#mlist p:before,
+#mlist p::before {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  right: 0;
+  background-image: -webkit-linear-gradient(top, rgba(255,255,255,0) 70%, @smokeyGrey);
+  content: '';
+}

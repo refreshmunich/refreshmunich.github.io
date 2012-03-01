@@ -1,0 +1,47 @@
+@import '../config';
+
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  padding: .5em 0;
+
+  background-color: #000;
+  background-color: rgba(0,0,0,0.95);
+
+  overflow: auto;
+}
+
+.fixed-header h1 {
+  float:left;
+  width: auto;
+
+  font-weight: 600;
+  font-size: 2.5em;
+  line-height: 1.5em;
+}
+
+
+.fixed-header nav {
+  float: right;
+  line-height: 4em;
+}
+
+.fixed-header nav li {
+  display: inline;
+  padding: 0 .5em;
+}
+
+.fixed-header nav a:link,
+.fixed-header nav a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+.fixed-header nav a:hover,
+.fixed-header nav a:active {
+  color: @bayernBlue;
+  text-decoration: none;
+}

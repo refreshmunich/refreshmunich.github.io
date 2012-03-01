@@ -1,0 +1,40 @@
+#faq ul {
+  margin: 1em 0;
+
+  border-top: 1px solid @lightGrey;
+}
+
+#faq ul li {
+  padding: 1em 0;
+
+  border-bottom: 1px solid @lightGrey;
+}
+
+#faq ul li:hover h3 {
+  color: @teal;
+
+  cursor: pointer;
+}
+
+#faq ul li .answer {
+  display: none;
+}
+
+#faq li h3:target + p {
+  height: 100%;
+  overflow: auto;
+}
+
+/*
+#faq ul li p  {
+  height:0;
+  padding:0 15px;
+  overflow:hidden;
+
+  -webkit-transition:height .4s ease-out, padding .4s ease-out;
+  -moz-transition:height .4s ease-out, padding .4s ease-out;
+  -o-transition:height .4s ease-out, padding .4s ease-out;
+  -ms-transition:height .4s ease-out, padding .4s ease-out;
+  transition:height .4s ease-out, padding .4s ease-out;
+}
+*/

@@ -1,210 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Refresh Type Test</title>
-  <meta name="description" content="">
+<html>
+  <head>
+    <title>Refresh Munich</title>
+    <meta charset="utf-8">
 
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet/less" href="css/styles.less">
-  <script src="js/less-1.2.2.min.js" type="text/javascript"></script>
+    <link href="css/main.less" rel="stylesheet/less" type="text/css" media="all">
 
-  <script type="text/javascript" src="http://use.typekit.com/uce6lnm.js"></script>
-  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script src="js/vendor/modernizr.js"></script>
+    <script src="js/vendor/jquery-1.7.1.min.js"></script>
+    <script src="js/vendor/jquery.scrollTo.min.js"></script>
+    <script src="js/vendor/jquery.lazyload.min.js"></script>
 
-</head>
-<body>
+    <script src="http://use.typekit.com/uce6lnm.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
 
-<header id="hdr">
-  <div class="wrap cf">
-    <h1>Refresh</h1>
-    <nav>
-      <ul>
-        <li><a href="#manifesto">Manifesto</a></li>
-        <li><a href="#next-event">Next Event</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#members">Members</a></li>
-      </ul>
-    </nav>
-  </div><!--/.wrap-->
-</header><!--/#hdr-->
+    <script src="js/vendor/less-1.2.2.min.js" type="text/javascript"></script>
 
-
-
-<section id="content">
-  <section id="manifesto">
-    <div class="wrap">
-      <img src="i/refresh-loop.png" align="right" style="width:27%; margin:-2em 8% 0 0;">
-      <!--<h1>Manifesto</h1>-->
-      <p>We <em>are</em> designers and coders.</p>
-      <p>We <em>love</em> to craft, we love to paint.</p>
-      <p>We <em>want</em> to solve aesthetic and logic problems.</p>
-      <p>We <em>meet</em> to learn the best of both worlds.</p>
-      <p>We <em>refresh</em> our thinking.</p>
-      <p>You <em>should</em> join us.</p>
-    </div><!--/.wrap-->
-  </section><!--/#manifesto-->
-
-  <div class="wrap">
-
-    <section id="next-event">
-      <h1>Next Event</h1>
-      <h2>Stammtisch</h2>
-      <p>Thursday, 17 Feb 2012, 7pm</p>
-      <p>Cafe Puck<br/>
-        Türkenstrasse 33<br/>
-        80799 München<br/>
-        089 / 280 22 80<br/>
-        U3/6 Universität</p>
-    </section><!--/#next-event-->
+    <script src="js/app.js"></script>
+  </head>
+  <body>
+    <header class="fixed-header">
+      <div class="wrap">
+        <h1>Refresh</h1>
+        <nav>
+          <ul>
+            <li><a href="#manifesto">Manifesto</a></li>
+            <li><a href="#next-event">Next Event</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#members">Members</a></li>
+          </ul>
+        </nav>
+      </div><!--/.wrap-->
+    </header><!--/#hdr-->
 
 
 
-    <section id="faq">
+    <section id="content">
+      <section id="manifesto">
+        <div class="wrap">
+          <img src="i/refresh-loop.png" align="right" style="width:27%; margin:-2em 8% 0 0;">
+          <!--<h1>Manifesto</h1>-->
+          <p>We <em>are</em> designers and coders.</p>
+          <p>We <em>love</em> to craft, we love to paint.</p>
+          <p>We <em>want</em> to solve aesthetic and logic problems.</p>
+          <p>We <em>meet</em> to learn the best of both worlds.</p>
+          <p>We <em>refresh</em> our thinking.</p>
+          <p>You <em>should</em> join us.</p>
+        </div><!--/.wrap-->
+      </section><!--/#manifesto-->
 
-      <h1>About Refresh</h1>
+      <div class="wrap">
 
-        <p>We're designers and developers, passionate about pixels and code. We embrace the rapid development of the web and are open to new ideas, opporunities for us to try new things before they become standard. We make things and break things because we can. We are inspired by passion, not profit. </p>
-        <p>We also understand that designers and developers are codependent in today's web. Refresh brings together these web workers to bridge the gap between our fields, so that we can share and learn from each other to bring the web forward.</p>
-
-      <h2>Frequently asked questions</h2>
-
-      <ul>
-        <li>
-          <h3>Who is behind Refresh?</h3>
-          <div class="answer">
-            <p>We are not a company, just people. We volunteer our time and energy to bring you Refresh, because we are looking for the same thing:</p>
-            <p>In Fall 2011, a small group of designers and developers met at conferences and user groups in Switzerland and Germany. We were looking for other people like us. Colleagues and friends said we needed to look in Berlin. We disagreed. And so Refresh was born.  </p>
-          </div>
-        </li>
-        <li>
-          <h3>Why "Refesh"?</h3>
-          <div class="answer">
-            <p>We brainstormed several ideas over many weeks, but Refresh stuck the most. When designing and building pages, we hit the refresh button all day. More importantly, we want to refresh the Munich web scene, distrupt it and give it new energy.</p>
-          </div>
-        </li>
-        <li>
-          <h3>What do Refresh members do together?</h3>
-          <div class="answer">
-            <p>Right now, we have a regular <em>Stammtisch</em> that's a <em>Gaudi</em>. Over dinner and beers, we discuss upcoming conferences, the newest libraries, app ideas, dribbble favorites, etc. But we also just enjoy each other's company and are just as likely to be discussing the quality of the snow in the Alps, climbing techniques and the best Burgers in Munich.</p>
-            <p>We're also in the process of organizing our own events, member lectures, etc. for Munich. Follow us on Twitter for the latest updates.</p>
-          </div>
-        </li>
-        <li>
-          <h3>Who can join Refresh?</h3>
-          <div class="answer">
-            <p>To ensure the quality of our meetups, Refresh is a closed user group and invite only. But it's pretty easy to join.</p>
-            <p>If you share our beliefs and <a href="#manifesto">manifesto</a>, and are a designer or developer, just drop by our next <a href="#next-event">Stammtisch</a> and join in the discussions. We're friendly and that's how most members have joined.</p>
-            <p>If you have any questions, <a href="http://www.twitter.com/refreshmunich">get in touch on Twitter.</a></p>
-          </div>
-        </li>
-        <li>
-          <h3>What does Refresh cost?</h3>
-          <div class="answer">
-            <p>Membership is absolutely free.</p>
-            <p>Meetups and events are organized for fun and exchange, not profit. Even if there are no event fees, we hope you will support local restaurants, bars and cafes that let us reserve tables and offer us W-LAN by ordering food and drinks from them.</p>
-            <p>No sponsors also means no ads, pitches, or recruiters - yay!</p>
-          </div>
-        </li>
-      </ul>
-    </section><!--/#faq-->
+        <section id="next-event">
+          <h1>Next Event</h1>
+          <h2>Stammtisch</h2>
+          <p>Thursday, 17 Feb 2012, 7pm</p>
+          <p>Cafe Puck<br/>
+            Türkenstrasse 33<br/>
+            80799 München<br/>
+            089 / 280 22 80<br/>
+            U3/6 Universität</p>
+        </section><!--/#next-event-->
 
 
 
-    <section id="members">
-      <h1>Members</h1>
-      <p>Interested in joining us? <a href="http://wwww.twitter.com/refreshmunich">Get in touch</a></p>
-      <ul id="mlist" class="cf">
-        <li>Loading...</li>
-      </ul>
-    </section><!--/#members-->
+        <section id="faq">
 
-  </div><!--/.wrap-->
-</section><!--/#content-->
+          <h1>About Refresh</h1>
+
+            <p>We're designers and developers, passionate about pixels and code. We embrace the rapid development of the web and are open to new ideas, opporunities for us to try new things before they become standard. We make things and break things because we can. We are inspired by passion, not profit. </p>
+            <p>We also understand that designers and developers are codependent in today's web. Refresh brings together these web workers to bridge the gap between our fields, so that we can share and learn from each other to bring the web forward.</p>
+
+          <h2>Frequently asked questions</h2>
+
+          <ul>
+            <li>
+              <h3>Who is behind Refresh?</h3>
+              <div class="answer">
+                <p>We are not a company, just people. We volunteer our time and energy to bring you Refresh, because we are looking for the same thing:</p>
+                <p>In Fall 2011, a small group of designers and developers met at conferences and user groups in Switzerland and Germany. We were looking for other people like us. Colleagues and friends said we needed to look in Berlin. We disagreed. And so Refresh was born.  </p>
+              </div>
+            </li>
+            <li>
+              <h3>Why "Refesh"?</h3>
+              <div class="answer">
+                <p>We brainstormed several ideas over many weeks, but Refresh stuck the most. When designing and building pages, we hit the refresh button all day. More importantly, we want to refresh the Munich web scene, distrupt it and give it new energy.</p>
+              </div>
+            </li>
+            <li>
+              <h3>What do Refresh members do together?</h3>
+              <div class="answer">
+                <p>Right now, we have a regular <em>Stammtisch</em> that's a <em>Gaudi</em>. Over dinner and beers, we discuss upcoming conferences, the newest libraries, app ideas, dribbble favorites, etc. But we also just enjoy each other's company and are just as likely to be discussing the quality of the snow in the Alps, climbing techniques and the best Burgers in Munich.</p>
+                <p>We're also in the process of organizing our own events, member lectures, etc. for Munich. Follow us on Twitter for the latest updates.</p>
+              </div>
+            </li>
+            <li>
+              <h3>Who can join Refresh?</h3>
+              <div class="answer">
+                <p>To ensure the quality of our meetups, Refresh is a closed user group and invite only. But it's pretty easy to join.</p>
+                <p>If you share our beliefs and <a href="#manifesto">manifesto</a>, and are a designer or developer, just drop by our next <a href="#next-event">Stammtisch</a> and join in the discussions. We're friendly and that's how most members have joined.</p>
+                <p>If you have any questions, <a href="http://www.twitter.com/refreshmunich">get in touch on Twitter.</a></p>
+              </div>
+            </li>
+            <li>
+              <h3>What does Refresh cost?</h3>
+              <div class="answer">
+                <p>Membership is absolutely free.</p>
+                <p>Meetups and events are organized for fun and exchange, not profit. Even if there are no event fees, we hope you will support local restaurants, bars and cafes that let us reserve tables and offer us W-LAN by ordering food and drinks from them.</p>
+                <p>No sponsors also means no ads, pitches, or recruiters - yay!</p>
+              </div>
+            </li>
+          </ul>
+        </section><!--/#faq-->
 
 
-<footer id="ftr">
-  <div class="wrap">
-    <p>Copyright &copy; 2012 Refresh Munich.</p>
-    <p>Made with &hearts; in Minga.</p>
-  </div><!--/.wrap-->
-</footer><!--/#ftr-->
 
+        <section id="members">
+          <h1>Members</h1>
+          <p>Interested in joining us? <a href="http://wwww.twitter.com/refreshmunich">Get in touch</a></p>
+          <ul id="mlist" class="cf">
+            <li>Loading...</li>
+          </ul>
+        </section><!--/#members-->
 
-<script type="text/javascript">
-var members = document.getElementById('mlist'),
-  html = '';
+      </div><!--/.wrap-->
+    </section><!--/#content-->
 
-function build_list(users) {
-  var html = '';
-  for(var i=0, ii=users.length; i<ii; i++) {
-    var handle   = users[i].screen_name,
-      name  = users[i].name,
-      desc   = users[i].description,
-      pic   = users[i].profile_image_url;
-      //url    = users[i].url;
+    <div class="clearfix"></div>
 
-    html +=  '<li>'
-       +  '<a href="http://www.twitter.com/' + handle + '" title="Follow ' + name + ' on Twitter">'
-       +  '<img src="' + pic + '" alt="' + name + '" align="right"></a>'
-       +  '<h3>' + name +  '<br/><a href="http://www.twitter.com/' + handle+ '">@' + handle + '</a>' + '</h3>'
-       +  '<p>' + desc + '</p>';
-    html += '</li>';
-  }
-  return html;
-}
-
-function members_list(data) {
-  members.innerHTML = build_list(data.users);
-}
-</script>
-<!-- <script type="text/javascript" src="js/members_call.js"></script> -->
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-  var $faq = $("#faq");
-  $faq.find("h3").click(function(e){
-    $(e.target).siblings(".answer").slideToggle();
-  });
-
-  var members = [];
-
-  // --- Fire the Twitter API request
-  $.ajax({
-      url:"https://api.twitter.com/1/lists/members.json" +
-          "?slug=members" +
-          "&owner_screen_name=refreshmunich" +
-          "&callback=membersLoaded",
-      dataType:"jsonp"
-  });
-
-  membersLoaded = function(data) {
-    members = data.users;
-      // --- We want the members sorted alphabetically
-      members = members.sort(sortMembers);
-
-      // --- Render everything
-      $("#mlist").html(build_list(data.users));
-  }
-
-  // --- Custom sort function for sorting the members
-  function sortMembers(a, b, key) {
-      // --- Members are sorted by Name. They can be also sorted by
-      // --- twitter @handle by changing a.name to a.screen_name
-      var nameA = a.name.toLowerCase();
-      var nameB = b.name.toLowerCase();
-
-      if (nameA < nameB)
-          return -1;
-      else if (nameA > nameB)
-          return 1;
-
-      return 0;
-  }
-});
-</script>
-</body>
+    <footer>
+      <div class="wrap">
+        <p>Copyright &copy; 2012 Refresh Munich.</p>
+        <p>Made with &hearts; in Minga.</p>
+      </div><!--/.wrap-->
+    </footer><!--/#ftr-->
+  </body>
 </html>
 
 
