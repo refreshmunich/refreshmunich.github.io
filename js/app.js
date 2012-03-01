@@ -34,23 +34,17 @@ $(document).ready(function () {
   var members = [];
 
   // --- Fire the Twitter API request
-  $.ajax({
-    url:'https://api.twitter.com/1/lists/members.json' +
-        '?slug=members' +
-        '&owner_screen_name=refreshmunich' +
-        '&callback=membersLoaded',
-    dataType:'jsonp'
-  });
-
-  // FIXME: Why does this function have to be global? Fix it!
-  membersLoaded = function (data) {
+  $.getJSON('https://api.twitter.com/1/lists/members.json?callback=?', {
+    slug:'members',
+    owner_screen_name:'refreshmunich',
+  }, function (data) {
     members = data.users;
     // --- We want the members sorted alphabetically
     members = members.sort(sortMembers);
 
     // --- Render everything
     $('#mlist').html(build_list(data.users));
-  };
+  });
 
   // --- Custom sort function for sorting the members
   var sortMembers = function (a, b, key) {
