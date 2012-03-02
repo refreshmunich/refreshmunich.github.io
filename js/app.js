@@ -117,6 +117,7 @@ $(document).ready(function () {
     });
   }
 
+
   // --- "Scroll Magic" with the refresh logo
   $(window).scroll(function(event) {
     var scrollValue = $(this).scrollTop();
@@ -128,7 +129,9 @@ $(document).ready(function () {
     $('#headerLogo').css({
       top:top
     });
-  })
+  });
 
-
+  // --- Insert current year in copyright
+  var year = new Date().getFullYear();
+  $('#year').html(year);
 });
