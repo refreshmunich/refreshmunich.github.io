@@ -14,7 +14,7 @@ $(document).ready(function () {
       html += '<li class="l-grid-column-4-1">'
          + '<a href="http://www.twitter.com/' + handle + '" title="Follow ' + name + ' on Twitter">'
          + '<img src="' + pic + '" alt="' + name + '" align="right"></a>'
-         + '<h3>' + name + '<br/><a href="http://www.twitter.com/' + handle+ '">@' + handle + '</a>' + '</h3>'
+         + '<h3>' + name + '<br/><a href="http://www.twitter.com/"' + handle+ '">@' + handle + '</a>' + '</h3>'
          + '<p>' + desc + '</p>';
       html += '</li>';
     }
@@ -59,7 +59,7 @@ $(document).ready(function () {
 
     // --- We dont want a single zero
     if (eventMinutes === 0)
-      eventMinutes = "00";
+      eventMinutes = '00';
 
     // --- Build the time string
     var eventTime        = eventWeekDay + ', ' + eventDay + '. ' + eventMonth + ' ' + eventYear + ', ' + eventHours + ':' + eventMinutes;
@@ -68,7 +68,7 @@ $(document).ready(function () {
     var eventDescription = nextEvent.content['$t'];
 
     // --- Make breaks in the description
-    eventDescription = eventDescription.replace(/\n/gm, "<br>");
+    eventDescription = eventDescription.replace(/\n/gm, '<br>');
 
     // --- Apply the values in the UI
     $('#eventTitle').html(eventTitle);
@@ -78,7 +78,7 @@ $(document).ready(function () {
 
     // --- Finally show the next event box
     $('#next-event').css({
-      height:"auto"
+      height:'auto'
     });
   }
 
@@ -105,18 +105,18 @@ $(document).ready(function () {
     for (var i = photos.length - 1; i >= 0; i--) {
       var photo = photos[i];
 
-      var image = $("<img>");
+      var image = $('<img>');
 
-      var baseUrl = "http://farm" + photo.farm + 
-                     ".staticflickr.com/" + photo.server + 
-                     "/" + photo.id + "_" + photo.secret;
+      var baseUrl = 'http://farm' + photo.farm + 
+                     '.staticflickr.com/' + photo.server + 
+                     '/' + photo.id + '_' + photo.secret;
 
-      var thumbUrl = baseUrl + "_t.jpg";
-      var bigUrl   = baseUrl + ".jpg";
+      var thumbUrl = baseUrl + '_t.jpg';
+      var bigUrl   = baseUrl + '.jpg';
 
-      image.attr("src", thumbUrl);
+      image.attr('src', thumbUrl);
 
-      var link = $("<a></a>");
+      var link = $('<a></a>');
       link.attr({
         href:bigUrl,
         target:'_blank',
@@ -129,7 +129,7 @@ $(document).ready(function () {
     };
 
     // --- Activate lightbox (fancybox)
-    $(".fancybox").fancybox();
+    $('.fancybox').fancybox();
   }
 
 
@@ -222,7 +222,7 @@ $(document).ready(function () {
   }
 
 
-  // --- "Scroll Magic" with the refresh logo
+  // --- 'Scroll Magic' with the refresh logo
   $(window).scroll(function(event) {
     var scrollValue = $(this).scrollTop();
     var top         = 200 - scrollValue;
