@@ -92,7 +92,7 @@ $(document).ready(function () {
 
   $.getJSON('http://api.flickr.com/services/rest/?jsoncallback=?', {
     method:'flickr.groups.pools.getPhotos',
-    api_key:'79da8f470e43272e85af0c8ca3e51408',
+    api_key:'b9ea2bbfbae76e8986f7f480705b3d04',
     format:'json',
     group_id:groupId
   }, function (data) {
