@@ -73,7 +73,7 @@ $(document).ready(function () {
     // --- Apply the values in the UI
     $('#eventTitle').html(eventTitle);
     $('#eventTime').html(eventTime);
-    $('#eventLoaction').html(eventLocation);
+    $('#eventLocation').html(eventLocation);
     $('#eventDescription').html(eventDescription);
 
     // --- Finally show the next event box
