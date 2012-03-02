@@ -39,8 +39,7 @@ $(document).ready(function () {
     'sortorder':'ascending',
     'futureevents':'true'
   }, function (data) {
-    var nextEvent = data.feed.entry[0];
-    
+    var nextEvent = data.feed.entry ? data.feed.entry[0] : null;
     nextEvent && renderNextEvent(nextEvent);
   });
 
