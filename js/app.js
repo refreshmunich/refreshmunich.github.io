@@ -80,9 +80,8 @@ $(document).ready(function () {
       // --- Create the layover cell and style it
       layoverCell = $('<div id="layoverCell"></div>').html(originCell.html());
       layoverCell.css({
-        top:position.top - 5,
+        top:position.top-10,
         left:position.left,
-        width:originCell.width()
       });
 
       // --- Hide the original cell
@@ -94,7 +93,7 @@ $(document).ready(function () {
       // --- (The timeout is actually a dirty hack)
       setTimeout(function() {
           layoverCell.css({
-          top:position.top - 10,
+          top:position.top - 15
         });
       }, 0);
 
