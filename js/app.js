@@ -84,9 +84,10 @@ $(document).ready(function () {
 
 
   // --- Load the photos from Flickr
-
   var groupId = '1939517@N21'
-  var groupId = '71291881@N00';
+
+  // --- Group for testing
+  //var groupId = '71291881@N00';
 
 
   $.getJSON('http://api.flickr.com/services/rest/?jsoncallback=?', {
@@ -106,14 +107,28 @@ $(document).ready(function () {
 
       var image = $("<img>");
 
-      var thumbUrl = "http://farm" + photo.farm + 
+      var baseUrl = "http://farm" + photo.farm + 
                      ".staticflickr.com/" + photo.server + 
-                     "/" + photo.id + "_" + photo.secret + "_t.jpg";
+                     "/" + photo.id + "_" + photo.secret;
+
+      var thumbUrl = baseUrl + "_t.jpg";
+      var bigUrl   = baseUrl + ".jpg";
 
       image.attr("src", thumbUrl);
 
-      $('#photoContainer').append(image);
+      var link = $("<a></a>");
+      link.attr({
+        href:bigUrl,
+        class:'fancybox',
+        rel:'gallery'
+      });
+      link.append(image);
+
+      $('#photoContainer').append(link);
     };
+
+    // --- Activate lightbox (fancybox)
+    $(".fancybox").fancybox();
   }
 
 
