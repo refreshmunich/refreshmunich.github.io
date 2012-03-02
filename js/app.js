@@ -11,7 +11,7 @@ $(document).ready(function () {
       var pic = users[i].profile_image_url;
       //url    = users[i].url;
 
-      html += '<li>'
+      html += '<li class="l-grid-column-4-1">'
          + '<a href="http://www.twitter.com/' + handle + '" title="Follow ' + name + ' on Twitter">'
          + '<img src="' + pic + '" alt="' + name + '" align="right"></a>'
          + '<h3>' + name + '<br/><a href="http://www.twitter.com/' + handle+ '">@' + handle + '</a>' + '</h3>'

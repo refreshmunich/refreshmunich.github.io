@@ -1,7 +1,43 @@
-.wrap {
-  width: 960px;
+.l-container {
+  width: 100%;
+  float: left;
+}
+
+.l-grid {
+  width: 1020px;
   margin: 0 auto;
 }
+
+.l-grid-column-3-1,
+.l-grid-column-3-2,
+.l-grid-column-2-1,
+.l-grid-column-4-1,
+.l-grid-row {
+  float: left;
+  margin-right: 10px;
+  margin-left: 10px
+}
+
+.l-grid-column-3-1 {
+  width: 320px;
+}
+
+.l-grid-column-3-2 {
+  width: 660px;
+}
+
+.l-grid-column-2-1 {
+  width: 490px;
+}
+
+.l-grid-column-4-1 {
+  width: 235px;
+}
+
+.l-grid-row {
+  width: 1000px;
+}
+
 
 #content {
   margin: 5em auto 0;
@@ -10,4 +46,8 @@
 #content p,
 #content .wrap > section {
   margin: 1em 0;
+}
+
+#content section {
+  .clearfix;
 }
