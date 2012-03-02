@@ -44,6 +44,8 @@ $(document).ready(function () {
 
     // --- Render everything
     $('#mlist').html(build_list(data.users));
+
+    initLayover();
   });
 
   // --- Custom sort function for sorting the members
@@ -60,4 +62,59 @@ $(document).ready(function () {
 
     return 0;
   };
+
+  // --- We want to display the full twitter bio when mouseovering the cells
+  var layoverCell, originCell;
+
+  function initLayover() {
+    // --- ALL the member cells
+    var cells = $('#mlist').find('li');
+
+    cells.mouseenter(function () {
+      // --- If there is already a layover cell, remove it
+      layoverCell && removeLayover();
+
+      originCell   = $(this);
+      var position = originCell.offset();
+      
+      // --- Create the layover cell and style it
+      layoverCell = $('<div id="layoverCell"></div>').html(originCell.html());
+      layoverCell.css({
+        top:position.top - 5,
+        left:position.left,
+        width:originCell.width()
+      });
+
+      // --- Hide the original cell
+      originCell.css({
+        opacity:0,
+      });
+
+      // --- Animate the shit out of it
+      // --- (The timeout is actually a dirty hack)
+      setTimeout(function() {
+          layoverCell.css({
+          top:position.top - 10,
+        });
+      }, 0);
+
+      // --- If we move the mouse out of it, it should hide
+      layoverCell.mouseleave(removeLayover);
+
+      $(document.body).append(layoverCell);
+    });
+  }
+
+  var removeLayover = function () {
+    if (!layoverCell)
+      return;
+
+    layoverCell.remove();
+    layoverCell = null;
+
+    // --- Show the original cell again
+    originCell.css({
+      opacity:1
+    });
+  }
 });

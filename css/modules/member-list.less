@@ -4,12 +4,12 @@
 }
 
 /* members list */
-#mlist {
+#mlist, #layoverCell {
   font-size: 0.8125em; /* 13px */
   line-height: 1.5em;
 }
 
-#mlist li {
+#mlist li, #layoverCell {
   float: left;
   width: 20%;
   margin: .5em 2% 1em 0;
@@ -18,16 +18,29 @@
   background: @smokeyGrey;
 }
 
-#mlist a {
+#layoverCell {
+  position:absolute;
+  -webkit-box-shadow:0 4px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow:0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow:0 4px 10px rgba(0, 0, 0, 0.2);
+  min-height:130px;
+  -webkit-transition:top 0.3s;
+  -moz-transition:top 0.3s;
+  -o-transition:top 0.3s;
+  -ms-transition:top 0.3s;
+  transition:top 0.3s;
+}
+
+#mlist a, #layoverCell a {
   text-decoration: none;
 }
 
-#mlist li > a {
+#mlist li > a, #layoverCell > a {
   margin-left: 1em; /* pad profile pictures */
 }
 
 
-#mlist h3 {
+#mlist h3, #layoverCell h3 {
   /* push towards bottom egde of profile pics */
   padding-top: .5em;
 
@@ -35,17 +48,21 @@
 }
 
 /* style twitter handle links */
-#mlist h3 a {
+#mlist h3 a, #layoverCell h3 a {
   font-weight: 400;
 }
 
 #mlist h3 a:link,
-#mlist h3 a:visited {
+#mlist h3 a:visited,
+#layoverCell h3 a:link,
+#layoverCell h3 a:visited {
   color: @mediumGrey;
 }
 
 #mlist h3 a:hover,
-#mlist h3 a:active {
+#mlist h3 a:active,
+#layoverCell h3 a:hover,
+#layoverCell h3 a:active {
   color: rgb(0,168,198);
 }
 
@@ -56,8 +73,12 @@
   position: relative;
 }
 
+#layoverCell p {
+  margin: .5em 0 1em 0;
+}
+
 #mlist p:before,
-#mlist p::before {
+#mlist p::before, {
   display: block;
   position: absolute;
   width: 100%;
