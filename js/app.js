@@ -80,7 +80,7 @@ $(document).ready(function () {
       // --- Create the layover cell and style it
       layoverCell = $('<div id="layoverCell"></div>').html(originCell.html());
       layoverCell.css({
-        top:position.top-10,
+        top:position.top - 10,
         left:position.left,
       });
 
