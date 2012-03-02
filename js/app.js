@@ -119,6 +119,7 @@ $(document).ready(function () {
       var link = $("<a></a>");
       link.attr({
         href:bigUrl,
+        target:'_blank',
         class:'fancybox',
         rel:'gallery'
       });
