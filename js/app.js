@@ -82,6 +82,43 @@ $(document).ready(function () {
     });
   }
 
+
+  // --- Load the photos from Flickr
+
+  var groupId = '1939517@N21'
+  var groupId = '71291881@N00';
+
+
+  $.getJSON('http://api.flickr.com/services/rest/?jsoncallback=?', {
+    method:'flickr.groups.pools.getPhotos',
+    api_key:'79da8f470e43272e85af0c8ca3e51408',
+    format:'json',
+    group_id:groupId
+  }, function (data) {
+    var photos = data.photos.photo;
+
+    photos.length && renderPhotos(photos);
+  });
+
+  function renderPhotos(photos) {
+    for (var i = photos.length - 1; i >= 0; i--) {
+      var photo = photos[i];
+
+      var image = $("<img>");
+
+      var thumbUrl = "http://farm" + photo.farm + 
+                     ".staticflickr.com/" + photo.server + 
+                     "/" + photo.id + "_" + photo.secret + "_t.jpg";
+
+      image.attr("src", thumbUrl);
+
+      $('#photoContainer').append(image);
+    };
+  }
+
+
+
+
   var members = [];
 
   // --- Fire the Twitter API request
