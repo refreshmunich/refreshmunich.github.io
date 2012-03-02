@@ -92,7 +92,7 @@ $(document).ready(function () {
       // --- Animate the shit out of it
       // --- (The timeout is actually a dirty hack)
       setTimeout(function() {
-          layoverCell.css({
+        layoverCell.css({
           top:position.top - 15
         });
       }, 0);
