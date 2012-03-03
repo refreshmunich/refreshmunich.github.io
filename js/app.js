@@ -35,7 +35,7 @@ $(document).ready(function () {
     members.innerHTML = build_list(data.users);
   };
 
-  var $faq = $('#faq');
+  var $faq = $('#about');
   $faq.find('h3').click(function(e) {
     $(e.target).siblings('.answer').slideToggle();
   });
