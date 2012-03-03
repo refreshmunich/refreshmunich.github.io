@@ -297,10 +297,10 @@ $(document).ready(function () {
     var translateValue = "rotate(" + rotate + "deg) translateZ(0)";
 
     $('#bigLogo').css({
-      "-webkit-transform":translateValue,
-      "-moz-transform":   translateValue,
-      "-ms-transform":    translateValue,
-      "-o-transform":     translateValue
+      '-webkit-transform':translateValue,
+      '-moz-transform':   translateValue,
+      '-ms-transform':    translateValue,
+      '-o-transform':     translateValue
     });
   });
 
