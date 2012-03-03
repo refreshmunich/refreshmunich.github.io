@@ -77,6 +77,18 @@ $(document).ready(function () {
     var eventLocation    = nextEvent['gd$where'][0].valueString;
     var eventDescription = nextEvent.content['$t'];
 
+    // --- If there is an address we want a Maps Link
+    if (eventDescription) {
+      var mapsLink = $('<a>Open in Maps</a>');
+      var mapsUrl = 'http://maps.google.com/maps?q=' + encodeURIComponent(eventDescription);
+      mapsLink.attr({
+        target:"_blank",
+        href:mapsUrl
+      });
+
+      $('#eventMapsLink').append(mapsLink);
+    }
+
     // --- Make breaks in the description
     eventDescription = eventDescription.replace(/\n/gm, '<br>');
 
