@@ -226,7 +226,7 @@ $(document).ready(function () {
   $(window).scroll(function(event) {
     var scrollValue = $(this).scrollTop();
     var top         = 200 - scrollValue;
-    var rotate      = scrollValue < 400 ? Math.floor(scrollValue / 4) : 0;
+    //var rotate      = scrollValue < 400 ? Math.floor(scrollValue / 4) : 0;
 
     // --- If the logo is in perfect position, stop it
     top = Math.max(top, 0);
@@ -235,12 +235,12 @@ $(document).ready(function () {
       top:top
     });
 
-    $('#bigLogo').css({
-      "-webkit-transform":"rotate(" + rotate + "deg)",
-      "-moz-transform":"rotate(" + rotate + "deg)",
-      "-ms-transform":"rotate(" + rotate + "deg)",
-      "-o-transform":"rotate(" + rotate + "deg)"
-    });
+    // $('#bigLogo').css({
+    //   "-webkit-transform":"rotate(" + rotate + "deg)",
+    //   "-moz-transform":"rotate(" + rotate + "deg)",
+    //   "-ms-transform":"rotate(" + rotate + "deg)",
+    //   "-o-transform":"rotate(" + rotate + "deg)"
+    // });
   });
 
   // --- Insert current year in copyright
