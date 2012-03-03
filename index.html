@@ -3,10 +3,12 @@
   <head>
     <title>Refresh Munich</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=1224" />
+    <meta name="viewport" content="width=580" />
+    <!-- <meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; width=device-width;"> -->
 
     <link href="css/main.less" rel="stylesheet/less" type="text/css" media="all">
     <link href="css/vendor/jquery.fancybox.css" rel="stylesheet" type="text/css" media="all">
+    <link media="handheld, only screen and (max-width: 480px), only screen and (max-device-width: 480px)" href="css/mobile.less" type="text/css" rel="stylesheet/less" />
 
     <script src="js/vendor/modernizr.js"></script>
     <script src="js/vendor/jquery-1.7.1.min.js"></script>
@@ -55,7 +57,7 @@
       </div>
   
       <section id="next-event" class="l-grid">
-        <div class="l-grid-column-3-1">
+        <div class="l-grid-row">
           <h1>Next Event</h1>
           <h2 id="eventTitle"></h2>
           <p id="eventTime"></p>
