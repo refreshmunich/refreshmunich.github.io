@@ -37,7 +37,21 @@ $(document).ready(function () {
 
   var $faq = $('#about');
   $faq.find('h3').click(function(e) {
-    $(e.target).siblings('.answer').slideToggle();
+    var answer  = $(e.target).siblings('.answer');
+    var visible = answer.css('display') === 'block';
+    var rotate  = visible ? -45 : 0;
+    var delay   = visible ? 0 : 200;
+
+    answer.slideToggle();
+
+    var perspectiveValue = 'perspective(1000) rotateX(' + rotate + 'deg)';
+
+    setTimeout(function() {
+      answer.css({
+        '-webkit-transform':perspectiveValue,
+        '-moz-transform'   :perspectiveValue
+      });
+    }, delay);
   });
 
   // --- Load the next event from google calendar

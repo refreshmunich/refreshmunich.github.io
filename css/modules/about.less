@@ -18,6 +18,11 @@
 
 #about ul li .answer {
   display: none;
+
+  -webkit-transition:-webkit-transform 0.3s;
+  -moz-transition:-moz-transform 0.3s;
+  -webkit-transform:perspective(1000) rotateX(-45deg);
+  -moz-transform:perspective(1000) rotateX(-45deg);
 }
 
 #about li h3:target + p {
