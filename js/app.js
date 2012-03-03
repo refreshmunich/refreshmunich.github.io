@@ -44,12 +44,9 @@ $(document).ready(function () {
 
     answer.slideToggle();
 
-    var perspectiveValue = 'perspective(1000) rotateX(' + rotate + 'deg)';
-
     setTimeout(function() {
       answer.css({
-        '-webkit-transform':perspectiveValue,
-        '-moz-transform'   :perspectiveValue
+        '-webkit-transform':'perspective(1000) rotateX(' + rotate + 'deg)'
       });
     }, delay);
   });
