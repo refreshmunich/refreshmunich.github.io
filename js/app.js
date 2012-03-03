@@ -107,7 +107,6 @@ $(document).ready(function () {
     group_id:groupId
   }, function (data) {
     var photos = data.photos.photo;
-
     photos.length && renderPhotos(photos);
   });
 
@@ -138,6 +137,9 @@ $(document).ready(function () {
       $('#photoContainer').append(link);
     };
 
+    // --- Remove loading indicator
+    $('#photos .loading').remove();
+
     // --- Activate lightbox (fancybox)
     $('.fancybox').fancybox();
   }
@@ -155,6 +157,9 @@ $(document).ready(function () {
     members = data.users;
     // --- We want the members sorted alphabetically
     members = members.sort(sortMembers);
+
+    // --- Remove loading indicator
+    $('#members .loading').remove();
 
     // --- Render everything
     $('#mlist').html(build_list(data.users));
