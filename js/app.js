@@ -273,6 +273,27 @@ $(document).ready(function () {
       top:top
     });
 
+    // --- Keep a blue border when scrolling down
+    if (scrollValue > 430) {
+      $('#manifestoContainer').css({
+        position:'fixed',
+        top:'-350px'
+      });
+      $('#manifestoDummy').css({
+        display:'block'
+      });
+    }
+    else {
+      $('#manifestoContainer').css({
+        position:'static',
+        top:'0'
+      });
+      $('#manifestoDummy').css({
+        display:'none'
+      });
+    }
+
+    // --- Rotate the logo
     var translateValue = "rotate(" + rotate + "deg) translateZ(0)";
 
     $('#bigLogo').css({
