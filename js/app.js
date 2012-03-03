@@ -23,7 +23,7 @@ $(document).ready(function () {
 
       html += '<li class="l-grid-column-4-1">'
          + '<a href="http://www.twitter.com/' + handle + '" title="Follow ' + name + ' on Twitter">'
-         + '<img src="' + pic + '" alt="' + name + '" align="right"></a>'
+         + '<img src="' + "/images/avatarMask.png" + '" alt="' + name + '" align="right" width="52" height="52" style="background:url(' + pic + ') 2px 1px;"></a>'
          + '<h3>' + name + '<br/><a href="http://www.twitter.com/"' + handle+ '">@' + handle + '</a>' + '</h3>'
          + '<p>' + desc + '</p>';
       html += '</li>';
