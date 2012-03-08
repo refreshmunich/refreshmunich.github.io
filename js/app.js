@@ -132,6 +132,7 @@ $(document).ready(function () {
     group_id:groupId
   }, function (data) {
     var photos = data.photos.photo;
+    photos.reverse();
     photos.length && renderPhotos(photos);
   });
 
