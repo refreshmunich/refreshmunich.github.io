@@ -2,10 +2,16 @@ $(document).ready(function () {
 
   // --- Custom navigation (on hash change)
   $(window).bind('hashchange', function() {
-    var identifier   = window.location.hash.replace("/", "");
-    var target       = $(identifier);
-    var headerHeight = $('.fixed-header').height();
-    var scrollTop    = target.offset().top - headerHeight - 30;
+    var scrollTop;
+    var identifier = window.location.hash.replace('/', '');
+
+    if (identifier === '#top')
+      scrollTop = 0;
+    else {
+      var target       = $(identifier);
+      var headerHeight = $('.fixed-header').height();
+      scrollTop        = target.offset().top - headerHeight - 30;
+    }
     $('html,body').animate({ scrollTop:scrollTop }, 'fast');
   });
 
