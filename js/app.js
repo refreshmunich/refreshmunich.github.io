@@ -262,6 +262,7 @@ $(document).ready(function () {
     });
   }
 
+  var header = $('.fixed-header');
 
   // --- 'Scroll Magic' with the refresh logo
   $(window).scroll(function(event) {
@@ -272,29 +273,29 @@ $(document).ready(function () {
     // --- If the logo is in perfect position, stop it
     top = Math.max(top, 0);
 
-    $('#headerLogo').css({
-      top:top
-    });
+    // $('#headerLogo').css({
+    //   top:top
+    // });
 
-    // --- Keep a blue border when scrolling down
-    if (scrollValue > 430) {
-      $('#manifestoContainer').css({
-        position:'fixed',
-        top:'-350px'
-      });
-      $('#manifestoDummy').css({
-        display:'block'
-      });
-    }
-    else {
-      $('#manifestoContainer').css({
-        position:'static',
-        top:'0'
-      });
-      $('#manifestoDummy').css({
-        display:'none'
-      });
-    }
+    // // --- Keep a blue border when scrolling down
+    // if (scrollValue > 430) {
+    //   $('#manifestoContainer').css({
+    //     position:'fixed',
+    //     top:'-350px'
+    //   });
+    //   $('#manifestoDummy').css({
+    //     display:'block'
+    //   });
+    // }
+    // else {
+    //   $('#manifestoContainer').css({
+    //     position:'static',
+    //     top:'0'
+    //   });
+    //   $('#manifestoDummy').css({
+    //     display:'none'
+    //   });
+    // }
 
     // --- Rotate the logo
     var translateValue = "rotate(" + rotate + "deg) translateZ(0)";
