@@ -125,10 +125,6 @@ $(document).ready(function () {
   // --- Load the photos from Flickr
   var groupId = '1939517@N21'
 
-  // --- Group for testing
-  //var groupId = '71291881@N00';
-
-
   $.getJSON('http://api.flickr.com/services/rest/?jsoncallback=?', {
     method:'flickr.groups.pools.getPhotos',
     api_key:'b9ea2bbfbae76e8986f7f480705b3d04',
