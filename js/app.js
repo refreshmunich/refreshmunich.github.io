@@ -16,7 +16,7 @@ $(document).ready(function () {
   });
 
   var members = document.getElementById('mlist');
-  var html = '';
+  var html    = '';
 
   function build_list (users) {
     var html = '';
