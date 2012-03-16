@@ -149,14 +149,17 @@ $(document).ready(function () {
       var thumbUrl = baseUrl + '_t.jpg';
       var bigUrl   = baseUrl + '.jpg';
 
-      image.attr('src', thumbUrl);
+      image.attr({
+        src:thumbUrl,
+      });
 
       var link = $('<a></a>');
       link.attr({
         href:bigUrl,
         target:'_blank',
         class:'fancybox',
-        rel:'gallery'
+        rel:'gallery',
+        title:photo.title
       });
       link.append(image);
 
