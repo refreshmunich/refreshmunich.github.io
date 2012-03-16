@@ -126,7 +126,6 @@ $(document).ready(function () {
   var setId = '72157629231564646'
 
   $.getJSON('http://api.flickr.com/services/rest/?jsoncallback=?', {
-    method:'flickr.groups.pools.getPhotos',
     method:'flickr.photosets.getPhotos',
     api_key:'b9ea2bbfbae76e8986f7f480705b3d04',
     format:'json',
