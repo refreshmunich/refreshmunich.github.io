@@ -123,16 +123,16 @@ $(document).ready(function () {
 
 
   // --- Load the photos from Flickr
-  var groupId = '1939517@N21'
+  var setId = '72157629231564646'
 
   $.getJSON('http://api.flickr.com/services/rest/?jsoncallback=?', {
     method:'flickr.groups.pools.getPhotos',
+    method:'flickr.photosets.getPhotos',
     api_key:'b9ea2bbfbae76e8986f7f480705b3d04',
     format:'json',
-    group_id:groupId
+    photoset_id:setId,
   }, function (data) {
-    var photos = data.photos.photo;
-    photos.reverse();
+    var photos = data.photoset.photo;
     photos.length && renderPhotos(photos);
   });
 
