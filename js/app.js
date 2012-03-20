@@ -199,7 +199,7 @@ $(document).ready(function () {
     // --- Render everything
     $('#mlist').html(build_list(data.users));
 
-    initLayover();
+    !isIE && initLayover();
   });
 
   // --- Custom sort function for sorting the members
