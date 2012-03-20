@@ -274,39 +274,9 @@ $(document).ready(function () {
   var header = $('.fixed-header');
 
   // --- 'Scroll Magic' with the refresh logo
-  $(window).scroll(function(event) {
-    var scrollValue = $(this).scrollTop();
-    var top         = 200 - scrollValue;
-    var rotate      = scrollValue < 400 ? scrollValue / 4 : 0;
-
-    // --- If the logo is in perfect position, stop it
-    top = Math.max(top, 0);
-
-    // $('#headerLogo').css({
-    //   top:top
-    // });
-
-    // // --- Keep a blue border when scrolling down
-    // if (scrollValue > 430) {
-    //   $('#manifestoContainer').css({
-    //     position:'fixed',
-    //     top:'-350px'
-    //   });
-    //   $('#manifestoDummy').css({
-    //     display:'block'
-    //   });
-    // }
-    // else {
-    //   $('#manifestoContainer').css({
-    //     position:'static',
-    //     top:'0'
-    //   });
-    //   $('#manifestoDummy').css({
-    //     display:'none'
-    //   });
-    // }
-
-    // --- Rotate the logo
+  !isIE && $(window).scroll(function(event) {
+    var scrollValue    = $(this).scrollTop();
+    var rotate         = scrollValue < 400 ? scrollValue / 4 : 0;    
     var translateValue = "rotate(" + rotate + "deg) translateZ(0)";
 
     $('#bigLogo').css({
@@ -321,3 +291,8 @@ $(document).ready(function () {
   var year = new Date().getFullYear();
   $('#year').html(year);
 });
+
+// --- Lets IE understand Google's date format
+function parseISO8601(dateString) {
+  return dateString.replace(/(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})/, '$1/$2/$3 $4:$5:$6').split('.')[0]
+}
