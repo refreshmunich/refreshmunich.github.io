@@ -1,4 +1,11 @@
+var isIE;
+
 $(document).ready(function () {
+
+  // --- Check if browser is IE
+  var check = /MSIE/i;
+  var agent = navigator.userAgent;
+  isIE = !!check.test(agent);
 
   // --- Custom navigation (on hash change)
   $(window).bind('hashchange', function() {
