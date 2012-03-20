@@ -83,7 +83,8 @@ $(document).ready(function () {
     var months           = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
     var eventTitle       = nextEvent.title['$t'];
-    var eventDate        = new Date(nextEvent['gd$when'][0].startTime);
+    var startTime        = nextEvent['gd$when'][0].startTime;
+    var eventDate        = new Date(parseISO8601(startTime));
     var eventWeekDay     = weekdays[eventDate.getDay()];
     var eventDay         = eventDate.getDate();
     var eventMonth       = months[eventDate.getMonth()];
