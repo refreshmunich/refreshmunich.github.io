@@ -161,11 +161,11 @@ $(document).ready(function () {
 
       var link = $('<a></a>');
       link.attr({
-        href:bigUrl,
-        target:'_blank',
-        class:'fancybox',
-        rel:'gallery',
-        title:photo.title
+        'href':   bigUrl,
+        'target': '_blank',
+        'class':  'fancybox',
+        'rel':    'gallery',
+        'title':  photo.title
       });
       link.append(image);
 
