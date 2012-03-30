@@ -41,8 +41,6 @@ $(document).ready(function () {
          + '<p>' + desc + '</p>';
       html += '</li>';
     }
-    console.log(html);
-    
     return html;
   }
 
