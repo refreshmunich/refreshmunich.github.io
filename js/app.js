@@ -177,7 +177,10 @@ $(document).ready(function () {
     $('#photos .loading').remove();
 
     // --- Activate lightbox (fancybox)
-    $('.fancybox').fancybox();
+    $('.fancybox').fancybox({
+      prevEffect:'none',
+      nextEffect:'none'
+    });
   }
 
 
