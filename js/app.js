@@ -34,7 +34,7 @@ $(document).ready(function () {
       var pic = users[i].profile_image_url;
       //url    = users[i].url;
 
-      html += '<li class="l-grid-column-4-1">'
+      html += '<li>'
          + '<a href="http://www.twitter.com/' + handle + '" title="Follow ' + name + ' on Twitter">'
          + '<img src="' + "images/avatarMask.png" + '" alt="' + name + '" align="right" width="52" height="52" style="background:url(' + pic + ') 2px 1px;"></a>'
          + '<h3>' + name + '<br/><a href="http://www.twitter.com/' + handle+ '">@' + handle + '</a>' + '</h3>'

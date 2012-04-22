@@ -27,52 +27,44 @@
     <script src="js/app.js"></script>
   </head>
   <body>
-    <header class="fixed-header l-container">
-      <div class="l-grid">
-        <div class="l-grid-row">
-          <h1 id="headerLogo">Refresh</h1>
-          <nav>
-            <ul>
-              <li><a href="#/next-event">Next Event</a></li>
-              <li><a href="#/about">About</a></li>
-              <li><a href="#/faq">FAQ</a></li>
-              <li><a href="#/photos">Photos</a></li>
-              <li><a href="#/members">Members</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div><!--/.wrap-->
+    <header class="fixed-header">
+      <div class="container">
+        <h1 id="headerLogo">Refresh</h1>
+        <nav>
+          <ul>
+            <li><a href="#/next-event">Next Event</a></li>
+            <li><a href="#/about">About</a></li>
+            <li><a href="#/faq">FAQ</a></li>
+            <li><a href="#/photos">Photos</a></li>
+            <li><a href="#/members">Members</a></li>
+          </ul>
+        </nav>
+      </div>
     </header><!--/#hdr-->
 
-    <section id="content" class="l-container">
-      <div id="manifestoContainer">
-        <section id="manifesto" class="l-grid">
-          <div class="l-grid-column-3-1">
-            <img src="images/circle-3d-centered.png" class="logo" id="bigLogo" alt="Refresh Munich Logo">
-          </div>
-          <div class="l-grid-column-3-2">
-            <!--<h1>Manifesto</h1>-->
-            <p>
-              We are a young <em>community</em> of <em>designers</em> and <em>developers</em> coming together to learn the best of <em>both   worlds</em>. Interested in solving <em>aesthetic</em> and <em>logic</em> problems we bundle ideas and <em>refresh</em> our thinking . You should join us!
-            </p>
-          </div>
-        </section><!--/#manifesto-->
+    <section id="manifesto">
+      <div class="container">
+        <img src="images/circle-3d-centered.png" class="logo" id="bigLogo" alt="Refresh Munich Logo">
+        <p>
+          We are a young <em>community</em> of <em>designers</em> and <em>developers</em> coming together to learn the best of <em>both worlds</em>. Interested in solving <em>aesthetic</em> and <em>logic</em> problems we bundle ideas and <em>refresh</em> our thinking . You should join us!
+        </p>
       </div>
+    </section><!--/#manifesto-->
+
+    <section id="content">
       <div id="manifestoDummy"></div>
-  
-      <section id="next-event" class="l-grid">
-        <div class="l-grid-row">
+
+      <div class="container">  
+        <section id="next-event">
           <h1>Next Event</h1>
           <h2 id="eventTitle"></h2>
           <p id="eventTime"></p>
           <p id="eventLocation"></p>
           <p id="eventDescription"></p>
           <p id="eventMapsLink"></p>
-        </div>
-      </section><!--/#next-event-->
-
-      <section id="about" class="l-grid">
-        <div class="l-grid-row">
+        </section><!--/#next-event-->
+  
+        <section id="about">
           <h1>About Refresh</h1>
           <p>
             We're designers and developers, passionate about pixels and code. We embrace
@@ -161,11 +153,11 @@
               </div>
             </li>
           </ul>
-        </div>
-      </section><!--/#about-->
+        </section><!--/#about-->
+      </div><!-- /.container -->
 
-      <section id="photos" class="l-grid">
-        <div class="l-grid-row">
+      <section id="photos">
+        <div class="container">
           <h1>Photo Stream</h1>
           <div class="loading"><div></div>Loading</div>
           <div id="photoContainer">
@@ -174,25 +166,25 @@
         </div>
       </section><!--/#next-event-->
 
-      <section id="members" class="l-grid">
-        <div class="l-grid-row">
+      <section id="members">
+        <div class="container">
           <h1>Members</h1>
           <p>
             Interested in joining us? <a href="http://www.twitter.com/refreshmunich">Get in touch</a>
           </p>
+          <div class="loading"><div></div>Loading</div>
+          <ul id="mlist">
+            
+          </ul>
         </div>
-        <div class="loading l-grid-row"><div></div>Loading</div>
-        <ul id="mlist">
-          
-        </ul>
       </section><!--/#members-->
     </section><!--/#content-->
 
-    <footer class="l-container">
-      <div class="l-grid">
+    <footer>
+      <div class="container">
         <p>Copyright &copy; <span id="year"></span> Refresh Munich.</p>
         <p>Made with &hearts; in Minga.</p>
-      </div><!--/.l-grid-->
+      </div><!-- /.container -->
     </footer><!--/footer-->
   <script type="text/javascript">
     var _gaq = _gaq || [];
