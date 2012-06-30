@@ -278,18 +278,18 @@ $(document).ready(function () {
   var header = $('.fixed-header');
 
   // --- 'Scroll Magic' with the refresh logo
-  !isIE && $(window).scroll(function(event) {
-    var scrollValue    = $(this).scrollTop();
-    var rotate         = scrollValue < 400 ? scrollValue / 4 : 0;    
-    var translateValue = "rotate(" + rotate + "deg) translateZ(0)";
+  // !isIE && $(window).scroll(function(event) {
+  //   var scrollValue    = $(this).scrollTop();
+  //   var rotate         = scrollValue < 400 ? scrollValue / 4 : 0;    
+  //   var translateValue = "rotate(" + rotate + "deg) translateZ(0)";
 
-    $('#bigLogo').css({
-      '-webkit-transform':translateValue,
-      '-moz-transform':   translateValue,
-      '-ms-transform':    translateValue,
-      '-o-transform':     translateValue
-    });
-  });
+  //   $('#bigLogo').css({
+  //     '-webkit-transform':translateValue,
+  //     '-moz-transform':   translateValue,
+  //     '-ms-transform':    translateValue,
+  //     '-o-transform':     translateValue
+  //   });
+  // });
 
   // --- Insert current year in copyright
   // var year = new Date().getFullYear();
