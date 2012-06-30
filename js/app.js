@@ -292,8 +292,8 @@ $(document).ready(function () {
   });
 
   // --- Insert current year in copyright
-  var year = new Date().getFullYear();
-  $('#year').html(year);
+  // var year = new Date().getFullYear();
+  // $('#year').html(year);
 });
 
 // --- Lets IE understand Google's date format
