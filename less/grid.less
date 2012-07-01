@@ -5,108 +5,94 @@
 */
 
 .grid-row {
-  width: 100%;
-  *zoom: 1;
-}
-
-.grid-row:before,
-.grid-row:after {
-  display: table;
-  content: "";
-}
-
-.grid-row:after {
-  clear: both;
+    width: 100%;
+    .clearfix;
 }
 
 .grid-row [class*="span"] {
-  display: block;
-  float: left;
-  //width: 100%;
-  min-height: 28px;
-  margin-left: 2.127659574%;
-  *margin-left: 2.0744680846382977%;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-      -ms-box-sizing: border-box;
-          box-sizing: border-box;
+    display: block;
+    float: left;
+    //width: 100%;
+    min-height: 28px;
+    margin-left: 2.127659574%;
+    *margin-left: 2.0744680846382977%;
+    .box-sizing(border-box);
 }
 
 .grid-row [class*="span"]:first-child {
-  margin-left: 0;
+    margin-left: 0;
 }
 
-
 .grid-span12 {
-  width: 99.99999998999999%;
-  *width: 99.94680850063828%;
+    width: 99.99999998999999%;
+    *width: 99.94680850063828%;
 }
 
 .grid-span11 {
-  width: 91.489361693%;
-  *width: 91.4361702036383%;
+    width: 91.489361693%;
+    *width: 91.4361702036383%;
 }
 
 .grid-span10 {
-  width: 82.97872339599999%;
-  *width: 82.92553190663828%;
+    width: 82.97872339599999%;
+    *width: 82.92553190663828%;
 }
 
 .grid-span9 {
-  width: 74.468085099%;
-  *width: 74.4148936096383%;
+    width: 74.468085099%;
+    *width: 74.4148936096383%;
 }
 
 .grid-span8 {
-  width: 65.95744680199999%;
-  *width: 65.90425531263828%;
+    width: 65.95744680199999%;
+    *width: 65.90425531263828%;
 }
 
 .grid-span7 {
-  width: 57.446808505%;
-  *width: 57.3936170156383%;
+    width: 57.446808505%;
+    *width: 57.3936170156383%;
 }
 
 .grid-span6 {
-  width: 48.93617020799999%;
-  *width: 48.88297871863829%;
+    width: 48.93617020799999%;
+    *width: 48.88297871863829%;
 }
 
 .grid-span5 {
-  width: 40.425531911%;
-  *width: 40.3723404216383%;
+    width: 40.425531911%;
+    *width: 40.3723404216383%;
 }
 
 .grid-span4 {
-  width: 31.914893614%;
-  *width: 31.8617021246383%;
+    width: 31.914893614%;
+    *width: 31.8617021246383%;
 }
 
 .grid-span3 {
-  width: 23.404255317%;
-  *width: 23.3510638276383%;
+    width: 23.404255317%;
+    *width: 23.3510638276383%;
 }
 
 .grid-span2 {
-  width: 14.89361702%;
-  *width: 14.8404255306383%;
+    width: 14.89361702%;
+    *width: 14.8404255306383%;
 }
 
 .grid-span1 {
-  width: 6.382978723%;
-  *width: 6.329787233638298%;
+    width: 6.382978723%;
+    *width: 6.329787233638298%;
 }
 
 .grid-container {
-  margin-right: auto;
-  margin-left: auto;
-  *zoom: 1;
+    margin-right: auto;
+    margin-left: auto;
+    *zoom: 1;
 }
 
 .grid-container:before,
 .grid-container:after {
-  display: table;
-  content: "";
+    display: table;
+    content: "";
 }
 
 .grid-container:after {
@@ -127,4 +113,14 @@
 
 .grid-container-fluid:after {
   clear: both;
+}
+
+.grid-container,
+.grid-container-fluid {
+    .clearfix;
+    width: 90%;
+    max-width: 1180px;
+    margin: 0 auto;
+    
+    border: 1px solid green;
 }

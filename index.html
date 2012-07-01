@@ -19,9 +19,9 @@
       <link href="css/ie.css" rel="stylesheet" type="text/css" media="screen">
     <![endif]-->
 
-    <!--
+    
     <script src="js/vendor/modernizr.js"></script>
-    -->
+    
 
   </head>
   <body>
@@ -165,25 +165,34 @@
         </div>
       </section><!--/#next-event-->
 
-      <section id="members">
-        <div class="site-container">
-          <h1>Members</h1>
-          <p>
-            Interested in joining us? <a href="http://www.twitter.com/refreshmunich">Get in touch</a>
-          </p>
-          <div class="loading"><div></div>Loading</div>
-            <ul class="member__container"><div class="member__grid-offset" id="js-members"></div></ul>
+
+<section id="members" class="grid-container-fluid">       
+    <div class="grid-row">
+        <div class="grid-span12">
+            <h1>Members</h1>
+            <p>Interested in joining us? <a href="http://www.twitter.com/refreshmunich">Get in touch</a>.</p>
+            <div class="loading"><div></div>Loading</div>
+        </div>
+    </div>
+    <div class="grid-row">
+        <div class="grid-span12">
+            <ul id="js-members" class="member__container"></ul>
             <script id="js-members-template" type="js/template">
                 <li class="member__card">
+                <div class="member__inner">
                     <a href="http://www.twitter.com/{{handle}}" title="Follow {{name}} on Twitter" class="member__avatar-link">
                         <img src="{{pic}}" alt="{{name}}" class="member__avatar" border="0">
                     </a>
                     <h3 class="member__name">{{name}} <br/><a class="member__handle-link" href="http://www.twitter.com/{{handle}}">@{{handle}}</a></h3>
                     <p class="member__description">{{desc}}</p>
+                </div>
                 </li>
             </script>    
         </div>
-      </section><!--/#members-->
+    </div>
+</section><!--/#members-->
+
+
     </section><!--/#content-->
 
     <footer class="site-footer">
@@ -258,13 +267,19 @@
 
 
 
-$(function(){
-  $('#js-members').masonry({
-    // options
-    itemSelector : '.member__card',
-    columnWidth : 25
-  });
-});
+    // namespace 'members' in self-invokin anonymous function
+    $(function(){
+        var members = $('#js-members');
+        members.imagesLoaded(function(){
+            members.masonry({
+                itemSelector : '.member__card',
+                isFitWidth: true,
+                columnWidth : function( containerWidth ) { return containerWidth / 4; },
+                isAnimated: !Modernizr.csstransitions
+            });
+        });
+    })();
+
     </script>
 
 <script type="text/javascript" src="js/members_call.js"></script>

@@ -1,114 +1,44 @@
-#members {
-  margin-top:20px;
-}
 
-#members h1,
-#members > p {
-  // text-align: center;
-}
+@rtMargin: 2.127659574%;
+@cardMargin: 12px;
 
-/* members list */
-// #mlist, #layoverCell {
-//   font-size: 0.8125em; /* 13px */
-//   line-height: 1.5em;
-// }
+
 .member__container {
     .clearfix;
-    position: relative;
-    padding: 0;
-}
-.member__grid-offset {
-    margin-left: -20px;
-}
-.member__card {
-    list-style-type: none;
     
-    padding: 1em;
-    margin-top: 1em;
-    margin-bottom: 1em;
+    padding: 0;
+    
+    // border: 1px solid black;
+    overflow: visible;
 }
 
 .member__description {
     font-size: .875em;
     line-height: 1.4em;
-    margin-bottom: 0;
+    margin: .5em 0;
 }
+  
+.member__inner {
+    height: 100%;
+    overflow: hidden;
 
-.unset-masonry() {
-    position: relative !important;
-    top: 0 !important;
-    left: 0 !important;
-}
-
-@media screen and (max-width: 400px) {
-    .member__card {
-        .unset-masonry();
-        border-bottom: 1px dashed #ccc;
-    }
-}
-
-@media screen and (min-width: 401px) and (max-width: 768px) {
-    .member__card {
-        .unset-masonry();
-        .box-sizing(border-box);
-        
-        width: 50%;
-        height: 160px;
-
-        float: left;
-        
-
-        border-bottom: 1px dashed #ccc;
-        margin: 0;
-        padding-top: 1em;
-    }
-
-    .member__card:nth-child(2n) {
-        border-left: 1px dashed #ccc;
-    }
+    // &:before {
+    //     display: block;
+    //     position: absolute;
+    //     width: 100%;
+    //     height: 100%;
+    //     bottom: 0;
+    //     right: 0;
+    //     background-image: -webkit-linear-gradient(top, rgba(255,255,255,0) 70%, #fff);
+    //     content: '';
+    // }
 }
 
 
-@media screen and (min-width: 1000px) {
-    .member__card {
-        .box-sizing(border-box);
-        //width: 25%;
-        width: 22%;
-        margin: 12px 0 12px 5px;
-        
-        // width: 20%;
-
-        // height: 160px;
-
-        float: left;
-        overflow: auto; 
-
-        background-color: #fff;
-        // margin: 1em;
-        // box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
-        //border: 1px dotted #ccc;
-    }
-}
+// Avatar/Photo
+// ---------------------
 
 
-
-// #layoverCell {
-//   position:absolute;
-//   -webkit-box-shadow:0 4px 10px rgba(0, 0, 0, 0.2);
-//   -moz-box-shadow:0 4px 10px rgba(0, 0, 0, 0.2);
-//   box-shadow:0 4px 10px rgba(0, 0, 0, 0.2);
-//   min-height:160px;
-//   width:235px;
-//   -webkit-transition:top 0.3s;
-//   -moz-transition:top 0.3s;
-//   -o-transition:top 0.3s;
-//   -ms-transition:top 0.3s;
-//   transition:top 0.3s;
-//   height:auto;
-// }
-
-
-// Avatar Effect
 .member__avatar {
     // border-radius: 100%;
     // box-shadow: inset 3px 3px 1px rgba(0, 0, 0, 0.5);
@@ -122,19 +52,15 @@
     // box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
-
-
-
 .member__avatar-link,
 .member__handle-link {
-  font-weight: 400;
-  text-decoration: none;
+    font-weight: 400;
+    text-decoration: none;
 }
 
 .member__avatar-link {
-  margin-left: 1em; // pad profile pictures 
+    margin-left: 1em; // pad profile pictures 
 }
-
 
 .member__name { 
     // padding-top: .5em; // push towards bottom egde of profile pics 
@@ -152,32 +78,139 @@
   color: rgb(0,168,198);
 }
 
-#mlist p {
-  margin: .5em 0 1em 0;
-  height: 4em;
-  overflow: hidden;
-  position: relative;
+
+.unset-masonry() {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
 }
 
-#layoverCell p {
-  margin: .5em 0 1em 0;
+
+.member__card {
+
+    list-style-type: none;
+    .box-sizing(border-box);
+
+    float: left;
+    margin: 0 @rtMargin 1em 0;
+    padding: 1em;
+    overflow: hidden;
+
+    background-color: #fff;
+    border-top: 1px solid #F0F0F0;
+    border-left: 1px solid #F0F0F0;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.12);
 }
 
-#mlist p:before,
-#mlist p::before, {
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  bottom: 0;
-  right: 0;
-  background-image: -webkit-linear-gradient(top, rgba(255,255,255,0) 70%, @smokeyGrey);
-  content: '';
+.member__inner {
+    // background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 70%, #000);
+    // height: 100%;
+    
 }
 
-#mlist li {
-  float: left;
-  width: 235px;
-  margin-right: 14px;
-  margin-left: 0px;
+
+// Responsive: Mobile  
+// ---------------------
+
+@media screen and (max-width: 400px) {
+    // .member__container {
+    //     border-color: red;
+    // }
+    .member__card {
+        //.unset-masonry();
+        //border-bottom: 1px dashed #ccc;
+        // box-shadow: 1px 1px 5px rgba(0,0,0,0.2);        
+
+        width: 100%;
+        margin: 0 0 1em 0;
+
+    }
+}
+
+
+// Responsive: Tablets 
+// ---------------------
+
+@media screen and (min-width: 401px) and (max-width: 768px) {
+    // .member__container {
+    //     border-color: yellow;
+    // }
+
+    .member__card {
+        //.unset-masonry();
+        
+        .grid-span6; // one-half of 12 col grid
+        height: 160px;
+
+        margin-bottom: .5em;
+    }
+
+    .member__card:nth-child(2n) {
+        margin-right: 0;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+    // .member__container {
+    //     border-color: green;
+    // }
+
+    .member__card {
+        .unset-masonry();
+        
+
+        .grid-span4; // one-third of 12 col grid
+        height: 160px;
+        //margin-right:5px;
+
+    }
+
+    .member__card:nth-child(3n) {
+        margin-right: 0;
+    }
+}
+
+// Responsive: Large 
+// ---------------------
+
+@media screen and (min-width: 1025px) {
+    .member__card {
+        // width: 22%;
+        // height: 160px;
+
+        .grid-span3; // one-fourth of 12 col grid
+        
+        // overflow: auto; 
+    }
+}
+
+
+// Masonry Animations 
+// for modern browsers
+// ---------------------
+
+.masonry,
+.masonry .masonry-brick {
+  -webkit-transition-duration: 0.7s;
+     -moz-transition-duration: 0.7s;
+      -ms-transition-duration: 0.7s;
+       -o-transition-duration: 0.7s;
+          transition-duration: 0.7s;
+}
+
+.masonry {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.masonry .masonry-brick {
+  -webkit-transition-property: left, right, top;
+     -moz-transition-property: left, right, top;
+      -ms-transition-property: left, right, top;
+       -o-transition-property: left, right, top;
+          transition-property: left, right, top;
 }
