@@ -26,7 +26,7 @@
   </head>
   <body>
 
-    <header class="fixed-header">
+    <header class="site-header">
       <div class="container">
         <h1 id="headerLogo">Refresh</h1>
         <nav>
@@ -166,27 +166,27 @@
       </section><!--/#next-event-->
 
       <section id="members">
-        <div class="container">
+        <div class="site-container">
           <h1>Members</h1>
           <p>
             Interested in joining us? <a href="http://www.twitter.com/refreshmunich">Get in touch</a>
           </p>
           <div class="loading"><div></div>Loading</div>
-            <ul id="js-members"></ul>
+            <ul class="member__container"><div class="member__grid-offset" id="js-members"></div></ul>
             <script id="js-members-template" type="js/template">
-                <li>
-                    <a href="http://www.twitter.com/{{handle}}" title="Follow {{name}} on Twitter">
-                        <img src="{{pic}}" alt="{{name}}" align="right">
+                <li class="member__card">
+                    <a href="http://www.twitter.com/{{handle}}" title="Follow {{name}} on Twitter" class="member__avatar-link">
+                        <img src="{{pic}}" alt="{{name}}" class="member__avatar" border="0">
                     </a>
-                    <h3>{{name}} <br/><a href="http://www.twitter.com/{{handle}}">@{{handle}}</a></h3>
-                    <p>{{desc}}</p>
+                    <h3 class="member__name">{{name}} <br/><a class="member__handle-link" href="http://www.twitter.com/{{handle}}">@{{handle}}</a></h3>
+                    <p class="member__description">{{desc}}</p>
                 </li>
             </script>    
         </div>
       </section><!--/#members-->
     </section><!--/#content-->
 
-    <footer>
+    <footer class="site-footer">
       <div class="container">
         <p>Copyright &copy; 2012 Refresh Munich.</p>
         <p>Made with &hearts; in Minga.</p>
@@ -220,22 +220,32 @@
         }
 
       // --- Fire the Twitter API request
-      $.getJSON('https://api.twitter.com/1/lists/members.json?callback=?', {
-        slug:'members',
-        owner_screen_name:'refreshmunich',
-      }, function (data) {
+      // $.getJSON('https://api.twitter.com/1/lists/members.json?callback=?', {
+      //   slug:'members',
+      //   owner_screen_name:'refreshmunich',
+      // }, function (data) {
 
+      //   members = data.users;
+      //   members = members.sort(sortMembers);
+
+      //   $('#js-members').html( buildMembersList(members) );
+
+      //   // --- Remove loading indicator
+      //   $('#members .loading').remove();
+        
+      // });
+
+    function members_list(data) {
+        
         members = data.users;
         members = members.sort(sortMembers);
 
         $('#js-members').html( buildMembersList(members) );
 
         // --- Remove loading indicator
-        //$('#members .loading').remove();
-        
-      });
+        $('#members .loading').remove();
+    }
 
-      
       var sortMembers = function (a, b, key) {
         var nameA = a.name.toLowerCase();
         var nameB = b.name.toLowerCase();
@@ -246,9 +256,19 @@
         return 0;
       };
 
+
+
+$(function(){
+  $('#js-members').masonry({
+    // options
+    itemSelector : '.member__card',
+    columnWidth : 25
+  });
+});
     </script>
 
-
+<script type="text/javascript" src="js/members_call.js"></script>
+<script type="text/javascript" src="js/vendor/jquery.masonry.min.js"></script>
     <!--
     <script src="js/vendor/jquery-1.7.1.min.js"></script>
     <script src="js/vendor/jquery.scrollTo.min.js"></script>
