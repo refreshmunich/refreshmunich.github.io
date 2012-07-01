@@ -262,8 +262,7 @@
         return 0;
     };
 
-    $(document).ready(function(){
-        console.log("Ready!");
+    $(document).ready(function(){           // make sure masonry plugin is loaded
         var $members = $('#js-members');
         $members.imagesLoaded(function(){
             $members.masonry({
