@@ -1,1 +1,23 @@
 @import 'normalize';
+@import 'vars';
+@import 'mixins';
+
+@import 'base';
+@import 'grid';
+@import 'layout';
+
+@import 'modules/member-list.less';
+
+.site-header,
+#about,
+#manifesto,
+#next-event,
+#photos,
+.site-footer {
+	display: none;
+}
+
+.site-container {
+	max-width: 960px;
+	margin: 0 auto;
+}

@@ -1,13 +1,27 @@
-.container {
-  width:1020px;
-  margin:0 auto;
+
+
+/* Footer */
+
+.site-footer {
+  margin-top: 1em;
+
+  background-color: @bayernBlue;
+
+  font-size: .8125em;
+  line-height: 1.5em;
+  text-align: center;
+  color: #fff;
 }
 
-#content p,
-#content .wrap > section {
-  margin: 1em 0;
+.site-footer:before {
+  display: block;
+  height: 180px;
+
+  background: #fff url('../images/munich-skyline.svg') no-repeat bottom center;
+
+  content: '';
 }
 
-#content section {
-  .clearfix;
+.site-footer .wrap {
+  padding: 1em 0 2em;
 }

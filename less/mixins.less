@@ -1,0 +1,25 @@
+// Micro clearfix by @necolas
+// nicolasgallagher.com/micro-clearfix-hack/
+
+.clearfix:before,
+.clearfix:after { 	// For modern browsers 
+    content:"";
+    display:table;
+}
+
+.clearfix:after {
+    clear:both;
+}
+
+.clearfix {			// For IE 6/7 (trigger hasLayout) 
+    *zoom:1;
+}
+
+
+// Box sizing
+.box-sizing(@boxmodel) {
+  -webkit-box-sizing: @boxmodel;
+     -moz-box-sizing: @boxmodel;
+      -ms-box-sizing: @boxmodel;
+          box-sizing: @boxmodel;
+}
