@@ -9,6 +9,7 @@
 @import 'modules/member-list.less';
 
 .site-header,
+.site-footer,
 #about,
 #manifesto,
 #next-event,
@@ -20,4 +21,23 @@
 	width: 90%;
 	max-width: 960px;
 	margin: 0 auto;
+}
+
+#photos img {
+    height:75px;
+    margin:0 10px 0 0;
+    border:4px solid #fff;
+    box-shadow:0 0 4px rgba(0, 0, 0, 0.3);
+}
+@media screen and (max-width: 320px) {
+	body {
+		background: #ccc;
+	}
+	.grid-container,
+	.grid-container-fluid {
+		width: 95%;
+		max-width: 300px;
+	}
+
+
 }
