@@ -1,21 +1,17 @@
 // Micro clearfix by @necolas
 // nicolasgallagher.com/micro-clearfix-hack/
 
-.clearfix:before,
-.clearfix:after { 	// For modern browsers 
-    content:"";
-    display:table;
+.clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
 }
-
-.clearfix:after {
-    clear:both;
-}
-
-.clearfix {			// For IE 6/7 (trigger hasLayout) 
-    *zoom:1;
-}
-
-
 
 
 // Border Radius
