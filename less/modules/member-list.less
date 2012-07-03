@@ -12,8 +12,10 @@
 @rtMargin:      2.127659574%;    // from grid.less
 @memberPadding: 1em;
 @cardHeight:    130px;
-@gradientEnd:   #efefef;
-@roundedCorner: 4px;
+@gradientEnd:   #ffffff;
+@roundedCorner: 0;              // temporarily disabling border-radius 
+                                // because of rounded corner leakage
+                                // from long text gradient cover
 
 
 // ----- BASIC STYLES  ------
@@ -130,9 +132,9 @@
 // -----------------------------
 
 .card-style {
-    border: 1px solid #F0F0F0;
+    border: 1px solid #e5e5e5;
     border-left-color: #ebebeb;
-    border-top-color: #ececec;
+    border-top-color: #ebebeb;
     .linear-gradient(#ffffff, #f2f2f2);
 }
 
@@ -171,7 +173,7 @@
         height: 100%;
 
         .card-style;
-        .box-shadow(1px 1px 2px rgba(0, 0, 0, 0.12));        
+        // .box-shadow(0 0 2px rgba(0, 0, 0, 0.12));        
 
         overflow: hidden;           // hide extra description text (in child __inner) by default
         &:hover {                   // but show it on hover
