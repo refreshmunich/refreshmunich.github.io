@@ -4,6 +4,25 @@
     Added '.grid-' prefix
 */
 
+
+@media screen and (min-width: 400px) {
+    .grid-container-fluid {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}
+
+.grid-container,
+.grid-container-fluid {
+    .clearfix;
+    width: 90%;
+    max-width: 1180px;
+    margin-right: auto;
+    margin-left: auto;
+    *zoom: 1;
+}
+
+
 .grid-row {
     width: 100%;
     .clearfix;
@@ -81,44 +100,4 @@
 .grid-span1 {
     width: 6.382978723%;
     *width: 6.329787233638298%;
-}
-
-.grid-container {
-    margin-right: auto;
-    margin-left: auto;
-    *zoom: 1;
-}
-
-.grid-container:before,
-.grid-container:after {
-    display: table;
-    content: "";
-}
-
-.grid-container:after {
-  clear: both;
-}
-
-.grid-container-fluid {
-  padding-right: 20px;
-  padding-left: 20px;
-  *zoom: 1;
-}
-
-.grid-container-fluid:before,
-.grid-container-fluid:after {
-  display: table;
-  content: "";
-}
-
-.grid-container-fluid:after {
-  clear: both;
-}
-
-.grid-container,
-.grid-container-fluid {
-    .clearfix;
-    width: 90%;
-    max-width: 1180px;
-    margin: 0 auto;
 }
