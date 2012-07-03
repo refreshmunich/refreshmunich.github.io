@@ -72,8 +72,7 @@
 // Responsive: Mobile First
 // --------------------------
 
-@media screen and (max-width: 400px), 
-       screen and (max-width: 480px) and (orientation: landscape)  {
+@media screen and (max-width: 481px) {
 
     .member__card-container {
         width: 100%;
@@ -110,7 +109,7 @@
 // Fancier styles for larger devices
 // -----------------------------
 
-@media screen and (min-width: 401px) and not (orientation:landscape) {
+@media screen and (min-width: 481px) {
 
     .member__card-container {       // to create show full description on hover effect, we need an extra container
         float: left;                // that hides extra content, but shows it on hover
@@ -195,7 +194,7 @@
 // Responsive: Adjust card sizes per device width 
 // -----------------------------------------------
 
-@media screen and (min-width: 401px) and (max-width: 768px) and not (orientation:landscape) {
+@media screen and (min-width: 481px) and (max-width: 768px) {
     .member__card-container {
         .grid-span6; // one-half of 12 col grid
         margin-bottom: .5em;
