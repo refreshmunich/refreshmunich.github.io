@@ -48,3 +48,14 @@
        -o-transition: @transition;
           transition: @transition;
 }
+
+.linear-gradient(@start, @end) {
+    background-color: @start;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(@start),to(@end));
+    background-image: -webkit-linear-gradient(top, @start, @end);
+    background-image: -moz-linear-gradient(top, @start, @end);
+    background-image: -o-linear-gradient(top, @start, @end);
+    background-image: -ms-linear-gradient(top, @start, @end);
+    background-image: linear-gradient(top, @start, @end);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='@start', EndColorStr='@end');
+}
