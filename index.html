@@ -178,14 +178,16 @@
         <div class="grid-span12">
             <ul id="js-members" class="member__container"></ul>
             <script id="js-members-template" type="js/template">
-                <li class="member__card">
-                <div class="member__inner">
+                <li class="member__card-container">
+                  <div class="member__card">
+                    <div class="member__inner">
                     <a href="http://www.twitter.com/{{handle}}" title="Follow {{name}} on Twitter" class="member__avatar-link">
                         <img src="{{pic}}" alt="{{name}}" class="member__avatar" border="0">
                     </a>
                     <h3 class="member__name">{{name}} <br/><a class="member__handle-link" href="http://www.twitter.com/{{handle}}">@{{handle}}</a></h3>
                     <p class="member__description">{{desc}}</p>
-                </div>
+                    </div>
+                  </div>
                 </li>
             </script>    
         </div>
@@ -206,7 +208,6 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.7.2.min.js"><\/script>')</script>
-    <script type="text/javascript" src="js/vendor/jquery.masonry.min.js"></script>
 
 
     <script type="text/javascript">
@@ -262,17 +263,18 @@
         return 0;
     };
 
-    $(document).ready(function(){           // make sure masonry plugin is loaded
-        var $members = $('#js-members');
-        $members.imagesLoaded(function(){
-            $members.masonry({
-                itemSelector : '.member__card',
-                isFitWidth: true,
-                columnWidth : function( containerWidth ) { return containerWidth / 4; },
-                isAnimated: !Modernizr.csstransitions
-            });
-        });        
-    });
+    // $(document).ready(function(){           // make sure masonry plugin is loaded
+    //     var $members = $('#js-members');
+    //     $members.imagesLoaded(function(){
+    //         $members.masonry({
+    //             itemSelector : '.member__card',
+    //             isFitWidth: true,
+    //             gutter: 2,
+    //             columnWidth : function( containerWidth ) { return containerWidth / 4; },
+    //             isAnimated: !Modernizr.csstransitions
+    //         });
+    //     });        
+    // });
     </script>
 
 <script type="text/javascript" src="js/members_call.js"></script>
