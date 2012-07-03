@@ -176,10 +176,11 @@
     </div>
     <div class="grid-row">
         <div class="grid-span12">
-            <ul id="js-members" class="member__container"></ul>
+            <ul class="member__container" id="js-members">
+            </ul>
             <script id="js-members-template" type="js/template">
                 <li class="member__card-container">
-                  <div class="member__card">
+                  <div class="member__card is-member">
                     <div class="member__inner">
                     <a href="http://www.twitter.com/{{handle}}" title="Follow {{name}} on Twitter" class="member__avatar-link">
                         <img src="{{pic}}" alt="{{name}}" class="member__avatar" border="0">
@@ -189,7 +190,7 @@
                     </div>
                   </div>
                 </li>
-            </script>    
+            </script>
         </div>
     </div>
 </section><!--/#members-->
@@ -199,8 +200,8 @@
 
     <footer class="site-footer">
       <div class="container">
-        <p>Copyright &copy; 2012 Refresh Munich.</p>
-        <p>Made with &hearts; in Minga.</p>
+<!--         <p>Copyright &copy; 2012 Refresh Munich.</p>
+        <p>Made with &hearts; in Minga.</p> -->
       </div><!-- /.container -->
     </footer><!--/footer-->
 
@@ -214,8 +215,18 @@
         var membersTemplate = $.trim( $('#js-members-template').html() );
 
         function buildMembersList(users) {
+
+            console.log(users);
             var html = '',
-                length = users.length;
+                length = users.length + 1, // plus one because we will add to it below
+                join = {
+                    'name': 'Want to join us?',
+                    'screen_name': 'refreshmunich',
+                    'description': 'Get in touch via @twitter and drop in on one of our next Stammtisches for beers and nerdy chatter.',
+                    'profile_image_url': 'http://twimg0-a.akamaihd.net/profile_images/1866985909/icon200x200_normal.png'
+                };
+
+            users.push(join);
 
             for (var i=0; i<length; i++) {
                 html += membersTemplate.replace( /{{handle}}/ig, users[i].screen_name )
@@ -248,6 +259,13 @@
         members = members.sort(sortMembers);
 
         $('#js-members').html( buildMembersList(members) );
+
+        // remove 'is-member' class from join us CTA so we can style it differently
+        $('.member__card-container').filter(':last-child').find('.member__card')
+                                                          .removeClass('is-member')
+                                                          .addClass('member__join-us');
+        
+                                                          
         $('#members .loading').remove();
     }
 

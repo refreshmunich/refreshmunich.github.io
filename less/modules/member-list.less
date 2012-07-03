@@ -11,7 +11,7 @@
 
 @rtMargin:      2.127659574%;    // from grid.less
 @memberPadding: 1em;
-@cardHeight:    135px;
+@cardHeight:    130px;
 @gradientEnd:   #efefef;
 @roundedCorner: 4px;
 
@@ -69,6 +69,30 @@
 }
 
 
+// Join us Call to Action
+// --------------------------
+
+.member__join-us {
+    .border-radius(4px);
+    .box-sizing(border-box);
+
+    background-color: #ececec;
+    //.box-shadow(inset 0 0 10px rgba(0, 0, 0, .15);
+    // border: 1px solid #f0f0f0;
+    border: 2px dashed #d5d5d5;
+
+    height: 100%;
+
+    .member__name {
+        color: @bayernBlue;
+    }
+
+    .member__handle-link {
+        display: none;
+    }
+}
+
+
 // Responsive: Mobile First
 // --------------------------
 
@@ -80,6 +104,20 @@
         padding: 0 0 .5em 0;
         border-top: 1px solid #fff;         // trigger margin collapse
         border-bottom: 1px dashed #e9e9e9;
+    }
+
+    .member__card-container:nth-last-child(2) {
+        border-bottom: none;
+    }
+
+    .member__card-container:last-child {
+        border: none;
+        background: none;
+        padding-top: 1em;
+
+        .member__card {
+            height: 120px;
+        }
     }
 
     .member__card {
@@ -114,7 +152,7 @@
     .member__card-container {       // to create show full description on hover effect, we need an extra container
         float: left;                // that hides extra content, but shows it on hover
         height: @cardHeight;        // and our basic card positioning styles defined here
-        margin: 0 @rtMargin 1em 0;
+        margin: 0 @rtMargin 1.5em 0;
         
         position: relative;
         overflow: visible;
@@ -122,7 +160,7 @@
         .box-sizing(border-box);
     }
 
-    .member__card {
+    .member__card[class~="is-member"] {
         .box-sizing(border-box);
         .border-radius(@roundedCorner);
 
@@ -169,7 +207,7 @@
         overflow: hidden;       // default: longer text hidden
     }
 
-    .member__card:hover {
+    .member__card[class~="is-member"]:hover {
         height: auto;           // expand to show full description
          .member__inner {
             height: auto;
@@ -188,6 +226,7 @@
         margin-top: @memberPadding;
         margin-left: 1em; // pad profile pictures 
     }
+
 }
 
 
@@ -197,7 +236,7 @@
 @media screen and (min-width: 481px) and (max-width: 768px) {
     .member__card-container {
         .grid-span6; // one-half of 12 col grid
-        margin-bottom: .5em;
+        margin-bottom: 1em;
     }
     .member__card-container:nth-child(2n) {
         margin-right: 0;
