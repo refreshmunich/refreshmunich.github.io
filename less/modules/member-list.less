@@ -1,5 +1,14 @@
+/* ------------------------------------
+ *
+ *   MEMBER CARDS
+ *   show full description on hover
+ *
+ * ------------------------------------
+ */
 
-// vars
+
+// --------- VARS -----------
+
 @rtMargin:      2.127659574%;    // from grid.less
 @memberPadding: 1em;
 @cardHeight:    135px;
@@ -7,11 +16,85 @@
 @roundedCorner: 4px;
 
 
+// ----- BASIC STYLES  ------
+
+.member__container {
+    .clearfix;
+    padding: 0; // overrides padding-left: 40px from normalize
+}
+
+.member__avatar {
+    .border-radius(@roundedCorner);
+}
+
+.member__avatar-link {
+    display: inline-block;
+    float: right;    
+    margin-right: @memberPadding;
+}
+
+.member__avatar-link,
+.member__handle-link {
+    z-index: 3;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.member__name { 
+    line-height: 1.3em;
+    margin: @memberPadding @memberPadding 0 @memberPadding;
+}
+
+.member__handle-link:link,
+.member__handle-link:visited {
+    color: @mediumGrey;
+}
+
+.member__handle-link:hover,
+.member__handle-link:active {
+  color: rgb(0,168,198);
+}
+
+.member__description {
+    margin: .5em @memberPadding;
+    z-index: -1;
+    font-size: .875em;
+    line-height: 1.4em;
+}
+
+// basic styles for all devices
+.member__card-container {
+    background-color: #fff;
+    list-style-type: none;  
+}
+
+
+// Responsive: Mobile First
+// --------------------------
+
+@media screen and (max-width: 400px) {
+
+    .member__card-container {
+        width: 100%;
+        margin: 0;
+        padding: 0 0 .5em 0;
+        border-top: 1px solid #fff;         // trigger margin collapse
+        border-bottom: 1px dashed #e9e9e9;
+    }
+
+    .member__card {
+        min-height: 50px;                   // for the twitter folks with no bio
+    }
+}
+
+
+// Member list specific mixins:
+// -----------------------------
+
 .card-style {
     border: 1px solid #F0F0F0;
     border-left-color: #ebebeb;
     border-top-color: #ececec;
-
     .linear-gradient(#ffffff, #f2f2f2);
 }
 
@@ -21,183 +104,94 @@
     .box-shadow(none);
 }
 
-.member__container {
-    .clearfix;
-    padding: 0; // overrides padding-left: 40px from normalize
-}
-
-// why container (extra markup) ?
-// ------------------------------
-// to create show full description on hover effect, we need an extra container
-// that hides extra content, but shows it on hover
-
-.member__card-container {
-    list-style-type: none;
-    .box-sizing(border-box);
-
-    float: left;
-    height: @cardHeight;
-    margin: 0 @rtMargin 1em 0;
-    
-    position: relative;
-    overflow: visible;
 
 
-}
+// Fancier styles for larger devices
+// -----------------------------
 
-.member__description {
-    font-size: .875em;
-    line-height: 1.4em;
-    margin: .5em 0;
-}
+@media screen and (min-width: 401px) {
 
-.member__card {
-    .box-sizing(border-box);
-    .border-radius(@roundedCorner);
-
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    // hide extra description text by default
-    overflow: hidden;
-
-    // but show it on hover
-    &:hover {
+    .member__card-container {       // to create show full description on hover effect, we need an extra container
+        float: left;                // that hides extra content, but shows it on hover
+        height: @cardHeight;        // and our basic card positioning styles defined here
+        margin: 0 @rtMargin 1em 0;
+        
+        position: relative;
         overflow: visible;
-        &:before,
-        &::before {
-            background-image: none;
-        }
-    }        
+        .box-sizing(border-box);
+    }
 
-    .card-style;
-    .box-shadow(1px 1px 2px rgba(0, 0, 0, 0.12));
+    .member__card {
+        .box-sizing(border-box);
+        .border-radius(@roundedCorner);
 
-    &:before,
-    &::before {
-        display: block;
         position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
-        bottom: 0;
-        right: 0;
-        z-index: 1;
-        background-image: -webkit-linear-gradient(top, rgba(255,255,255,0) 70%, @gradientEnd);
-        content: '';
-    }
-}
-  
-.member__inner {    // required because box-model doesn't allow veritcal padding
-
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    min-height: @cardHeight;
-
-    .border-radius(@roundedCorner);
-
-    // default: longer text hidden
-    overflow: hidden;
-
-}
-
-.member__card:hover {
-
-    height: auto;
-
-     .member__inner {
-        overflow: visible;
-        top: -1px;
-        left: -1px;
-        z-index: 3; // above :before and other cards
-        height: auto;
 
         .card-style;
-        .box-shadow(2px 2px 4px rgba(0, 0, 0, 0.13));
-     }
+        .box-shadow(1px 1px 2px rgba(0, 0, 0, 0.12));        
 
-     .unset-card-style;
+        overflow: hidden;           // hide extra description text (in child __inner) by default
+        &:hover {                   // but show it on hover
+            overflow: visible;
+            &:before,               // and hide our hinting gradient (defined below)
+            &::before {
+                background-image: none;
+            }
+        }        
 
-}
+                        // create a gradient to hint at longer/more text
+        &:before,       // CSS2 syntax
+        &::before {     // CSS3 syntax
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+            .linear-gradient(rgba(255,255,255,0) 70%, @gradientEnd);
+            content: '';
+        }
+    }
 
-
-// Avatar/Photo
-// ---------------------
-
-.member__avatar {
-    .border-radius(@roundedCorner);
-}
-.member__avatar-link {
-    display: inline-block;
-    float: right;
-    margin-top: @memberPadding;
-    margin-right: @memberPadding;
-    
-    // border: 3px solid white;
-    // border-radius: 100%;
-    // box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-}
-.member__avatar-link,
-.member__handle-link {
-    z-index: 3;
-    font-weight: 400;
-    text-decoration: none;
-}
-.member__avatar-link {
-    z-index: 3;
-    margin-top: @memberPadding;
-    margin-left: 1em; // pad profile pictures 
-}
-.member__name { 
-    line-height: 1.3em;
-    margin: @memberPadding @memberPadding 0 @memberPadding;
-}
-.member__handle-link:link,
-.member__handle-link:visited {
-    color: @mediumGrey;
-}
-.member__handle-link:hover,
-.member__handle-link:active {
-  color: rgb(0,168,198);
-}
-
-.member__description {
-    margin: 1em @memberPadding;
-    z-index: -1;
-}
-
-
-// Responsive: Mobile  
-// ---------------------
-
-@media screen and (max-width: 400px) {
-
-    .member__card-container {
+    .member__inner {            // inner class required because box-model doesn't allow veritcal padding
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
-        margin: 0;
-        .border-radius(0);
-        .box-shadow(none);
-        overflow: auto;
+        min-height: @cardHeight;
+        .border-radius(@roundedCorner);
+        overflow: hidden;       // default: longer text hidden
+    }
 
-        // .member__card,
-        // .member__inner {
-        //     height: auto;
-        //     // overflow: auto;
-        //     position: relative;
-        //     top: auto;
-        //     left: auto;
-        // }
+    .member__card:hover {
+        height: auto;           // expand to show full description
+         .member__inner {
+            height: auto;
+            overflow: visible;
+            .card-style;        // move card style here, so borders & shadows encapulate whole description
+            .box-shadow(2px 2px 4px rgba(0, 0, 0, 0.13));            
+            top: -1px;          // offset moving shadows to this inner container
+            left: -1px;
+            z-index: 3;         // above :before and other cards
+         }
+         .unset-card-style;     // remove card style from parent (used to hide overflowing styles)
+    }
 
+    .member__avatar-link {
+        z-index: 3;
+        margin-top: @memberPadding;
+        margin-left: 1em; // pad profile pictures 
     }
 }
 
 
-// Responsive: Tablets 
-// ---------------------
+// Responsive: Adjust card sizes per device width 
+// -----------------------------------------------
 
 @media screen and (min-width: 401px) and (max-width: 768px) {
     .member__card-container {
@@ -217,9 +211,6 @@
         margin-right: 0;
     }
 }
-
-// Responsive: Large 
-// ---------------------
 
 @media screen and (min-width: 1025px) {
     .member__card-container {
