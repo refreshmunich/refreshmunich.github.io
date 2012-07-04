@@ -12,9 +12,8 @@ Now it's time to go back and fix that.
 We need to feature events more prominently. This is the most interesting information.
 
 ### Responsive. For real.
-Many users find the website via Twitter and currently it is only hacked to look presentable on mobile.
-
-Use a fluid grid while we'reat it.
+* Many users find the website via Twitter and currently it is only hacked to look presentable on mobile.
+* Use a fluid grid while we'reat it.
 
 ### Decrease page weight and load
 * Reduce HTTP requests by removing less.js and precompilng and minifying css
