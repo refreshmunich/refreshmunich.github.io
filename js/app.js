@@ -105,7 +105,7 @@ $(document).ready(function () {
     // --- If there is an address we want a Maps Link
     if (eventDescription) {
       var mapsLink = $('<a>Open in Maps</a>');
-      var mapsUrl = 'http://maps.google.com/maps?q=' + encodeURIComponent(eventLocation + ' ' + eventDescription);
+      var mapsUrl = 'http://maps.google.com/maps?q=' + encodeURIComponent(eventLocation);
       mapsLink.attr({
         target:"_blank",
         href:mapsUrl
