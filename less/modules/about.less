@@ -1,43 +1,63 @@
-#about ul {
-  margin: 1em 0;
-
-  border-top: 1px dotted @lightGrey;
+.about__title {
+    margin: 0;
 }
 
-#about ul li {
-  padding: 1em 0;
-
-  border-bottom: 1px dotted @lightGrey;
+.faq__container {
+    margin: 1em 0;
+    padding: 0;
+    border-top: 1px solid @lightGrey;
 }
 
-#about ul li:hover h3 {
-  color: @teal;
-
-  cursor: pointer;
+.faq__item {
+    list-style-type: none;
+    border-bottom: 1px solid @lightGrey;    
 }
 
-#about ul li .answer {
-  display: none;
-
-  -webkit-transition:-webkit-transform 0.3s;
-  -webkit-transform:perspective(1000) rotateX(-45deg);
+.faq__question:hover {
+    color: @bayernBlue;
+    cursor: pointer;
 }
 
-#about li h3:target + p {
-  height: 100%;
-  overflow: auto;
+.faq__question:target + p {
+    height: 100%;
+    overflow: auto;
 }
 
-/*
-#about ul li p  {
-  height:0;
-  padding:0 15px;
-  overflow:hidden;
+// .faq__answer {
+//   display: none;
 
-  -webkit-transition:height .4s ease-out, padding .4s ease-out;
-  -moz-transition:height .4s ease-out, padding .4s ease-out;
-  -o-transition:height .4s ease-out, padding .4s ease-out;
-  -ms-transition:height .4s ease-out, padding .4s ease-out;
-  transition:height .4s ease-out, padding .4s ease-out;
+//   -webkit-transition: -webkit-transform 0.3s;
+//   -webkit-transform: perspective(1000) rotateX(-45deg);
+  
+//     p {
+//         height: 0;
+//         padding: 0 15px;
+//         overflow: hidden;
+
+//         .transition('.4s ease-out, padding .4s ease-out');
+//     }
+// }
+
+
+
+// Responsive: Mobile First
+// --------------------------
+
+
+
+@media screen and (min-width: 768px) { 
+    .faq__container {
+        .clearfix;
+    }
+    .faq__item {
+        .grid-row;
+    }
+    .faq__question {
+        float: left;
+        .grid-span4;
+    }
+    .faq__answer {
+        float: left;
+        .grid-span8;
+    }
 }
-*/
