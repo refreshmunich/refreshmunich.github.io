@@ -6,60 +6,55 @@
 @calRingHeight: 35px;
 @calRingSize: 10px;
 
-
 @calColor: @bayernBlue;
+@calRingCutoutColor: @bodyBgColor;
 
-#events {
-	margin: 3em;
-
+.events {
+	margin-top: @calRingHeight;
+	margin-bottom: 1em;
 }
 
 .cal__container {
-
 	width: @calWidth;
 	height: @calHeight;
+	background-color: #fff;
+	position: relative;	
 
 	border: @calBorderSize solid @calColor;
-	.border-radius(@calBorderSize*2); // ca. double border for equal inner and outer border radius
+	.border-radius(@calBorderSize*2); 
 
+	// ca. double border for equal inner and outer border radius
 	// inner border radius = outer border radius - border width
-
-	background-color: #fff;
-	position: relative;
 }
 
 .cal__top {
 	width: @calWidth;
 	text-align: center;
-	height: 55px;
+	height: 50px;
 	margin: 0;
-	padding: 0;
-	
+	padding: 0;	
 	background-color: @calColor;
 }
 
 .cal__ring {
 	list-style-type: none;
 	display: inline-block;
-	height: 35px;
-	width: 10px;
-	border-radius: 20px;
-	
 	position: relative;
-	top: -35px;
+
+	height: @calRingHeight;
+	width: @calRingWidth;		
+	top: @calRingHeight*-1;
 	margin-left: 30%;
 
 	background-color: #fff;
-	border: 10px solid @calColor;
+	border-radius: @calRingSize*2;
+	border: @calRingSize solid @calColor;
 				
-	
 	z-index: 2;
-	
 
 	&:first-child {
 		margin-left: 0;
 	}
-
 
 	&:before,
 	&::before {
@@ -67,14 +62,15 @@
 		position: absolute;
 		z-index: -1;
 
-	height: 45px;
-	width: 20px;
-	border-radius: 20px;
+		width: @calRingWidth + @calRingSize;
+		height: @calRingHeight + @calRingSize;		
+		border-radius: @calRingSize*2;
 
-		top: -11px;
-		left: -11px;
-		
-		border: 6px solid @bodyBgColor;
+		// the 1 offsets are required so that
+		// the rounded borders are sufficiently covered
+		top: (@calRingSize*-1)-1;
+		left: (@calRingSize*-1)-1;
+		border: (@calRingSize*0.5)+1 solid @calRingCutoutColor;
 	}
 }
 
@@ -88,7 +84,6 @@
 	font-weight: 600;
 	font-size: 2.5em;
 	line-height: 1em;
-
 }
 
 .cal__date {
@@ -98,3 +93,6 @@
 .cal__month {
 	text-transform: uppercase;
 }
+
+
+
