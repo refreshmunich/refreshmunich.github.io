@@ -1,0 +1,100 @@
+@calWidth: 200px;
+@calHeight: 200px;
+@calBorderSize: 10px;
+
+@calRingWidth: 10px;
+@calRingHeight: 35px;
+@calRingSize: 10px;
+
+
+@calColor: @bayernBlue;
+
+#events {
+	margin: 3em;
+
+}
+
+.cal__container {
+
+	width: @calWidth;
+	height: @calHeight;
+
+	border: @calBorderSize solid @calColor;
+	.border-radius(@calBorderSize*2); // ca. double border for equal inner and outer border radius
+
+	// inner border radius = outer border radius - border width
+
+	background-color: #fff;
+	position: relative;
+}
+
+.cal__top {
+	width: @calWidth;
+	text-align: center;
+	height: 55px;
+	margin: 0;
+	padding: 0;
+	
+	background-color: @calColor;
+}
+
+.cal__ring {
+	list-style-type: none;
+	display: inline-block;
+	height: 35px;
+	width: 10px;
+	border-radius: 20px;
+	
+	position: relative;
+	top: -35px;
+	margin-left: 30%;
+
+	background-color: #fff;
+	border: 10px solid @calColor;
+				
+	
+	z-index: 2;
+	
+
+	&:first-child {
+		margin-left: 0;
+	}
+
+
+	&:before,
+	&::before {
+		content: '';
+		position: absolute;
+		z-index: -1;
+
+	height: 45px;
+	width: 20px;
+	border-radius: 20px;
+
+		top: -11px;
+		left: -11px;
+		
+		border: 6px solid @bodyBgColor;
+	}
+}
+
+.cal__date,
+.cal__month {
+	display: block;	
+	height: auto;
+	text-align: center;
+	color: @calColor;
+
+	font-weight: 600;
+	font-size: 2.5em;
+	line-height: 1em;
+
+}
+
+.cal__date {
+	font-size: 6em;
+}
+
+.cal__month {
+	text-transform: uppercase;
+}
