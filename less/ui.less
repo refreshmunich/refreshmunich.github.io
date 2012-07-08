@@ -1,0 +1,24 @@
+
+// Loading indicator
+
+.ui-loading {
+	color: @bayernBlue;
+	text-align: center;
+	margin-left: -16px; // offset loading graphic below
+
+	&:before,
+	&::before {
+		width: 16px;
+		height: 11px;
+    	background:url('../images/loading.gif');
+
+    	content: '';
+    	display: inline-block;
+    	margin-right: .5em;
+	}
+
+	&:after,
+	&::after {
+		content: 'Loading';
+	}
+}
