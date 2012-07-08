@@ -34,17 +34,18 @@
 	margin: 0;
 	padding: 0;	
 	background-color: @calColor;
+	.clearfix;
 }
 
 .cal__ring {
 	list-style-type: none;
-	display: inline-block;
+	display: block;
 	position: relative;
 
 	height: @calRingHeight;
 	width: @calRingWidth;		
 	top: @calRingHeight*-1;
-	margin-left: 30%;
+	float: left;
 
 	background-color: #fff;
 	border-radius: @calRingSize*2;
@@ -52,9 +53,12 @@
 				
 	z-index: 2;
 
-	&:first-child {
-		margin-left: 0;
-	}
+	// 2nd ring
+	margin-left: 23.5%;
+
+	// &:first-child {
+	// 	margin-left: @calWidth/3 - (@calRingWidth + @calRingSize);
+	// }
 
 	&:before,
 	&::before {
