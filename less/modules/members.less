@@ -210,6 +210,7 @@
         min-height: @cardHeight;
         .border-radius(@roundedCorner);
         overflow: hidden;       // default: longer text hidden
+        // .transition(height 0.5s linear); // this does not work b/c CSS cannot animate to "auto" height
     }
 
     .member__card[class~="is-member"]:hover {
