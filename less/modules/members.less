@@ -12,7 +12,9 @@
 @rtMargin:      2.127659574%;    // from grid.less
 @memberPadding: 1em;
 @cardHeight:    130px;
-@gradientEnd:   #f2f2f2;
+@gradientEnd:   #ffffff;
+@lightBlueBg:   #F4FAFF;
+@lightBlueBorder: #D4E5EB;
 @roundedCorner: 0;              // temporarily disabling border-radius 
                                 // because of rounded corner leakage
                                 // from long text gradient cover
@@ -77,13 +79,9 @@
 .member__join-us {
     .border-radius(@roundedCorner);
     .box-sizing(border-box);
-
-    background-color: #eee;
-    .box-shadow(inset 0 0 25px rgba(0, 0, 0, .05);
-    // border: 1px solid #f0f0f0;
-    border: 2px dashed #d5d5d5;
-
     height: 100%;
+    background-color: @lightBlueBg;    
+    border: 1px solid @lightBlueBorder;    
 
     .member__name {
         color: @bayernBlue;
@@ -104,7 +102,8 @@
         width: 100%;
         margin: 0;
         padding: 0 0 .5em 0;
-        border-top: 1px solid #fff;         // trigger margin collapse
+        border-top: 1px solid #eee;         // trigger margin collapse
+        border-left: 1px solid #eee;
         border-bottom: 1px solid #f3f3f3;
         box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
     }
@@ -135,10 +134,10 @@
 // -----------------------------
 
 .card-style {
-    border: 1px solid #e5e5e5;
-    border-left-color: #ebebeb;
-    border-top-color: #ebebeb;
-    .linear-gradient(#ffffff, #f2f2f2);
+    border: 1px dashed #e5e5e5;
+    border-left-color: #ececec;
+    border-top-color: #ececec;
+    .linear-gradient(#ffffff, @gradientEnd);
 }
 
 .unset-card-style {
@@ -180,7 +179,8 @@
 
         overflow: hidden;           // hide extra description text (in child __inner) by default
         &:hover {                   // but show it on hover
-            overflow: visible;
+            overflow: visible;      // further styles below
+
             &:before,               // and hide our hinting gradient (defined below)
             &::before {
                 background-image: none;
@@ -223,8 +223,12 @@
             top: -1px;          // offset moving shadows to this inner container
             left: -1px;
             z-index: 3;         // above :before and other cards
+            background-image: none;
+            background-color: @lightBlueBg;
+            border: 1px solid @lightBlueBorder;
          }
          .unset-card-style;     // remove card style from parent (used to hide overflowing styles)
+
     }
 
     .member__avatar-link {
