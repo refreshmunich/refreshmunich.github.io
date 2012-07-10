@@ -37,7 +37,7 @@
 }
 .event__address{
 	margin: 0 0 1em 0;
-	font-style: italic;
+	// font-style: italic;
 }
 
 // Stylized Calendar for next event
@@ -107,10 +107,6 @@
 	// 2nd ring
 	@numRings: 3;
 	margin-left: ( @calWidth - (@numRings * (@calRingWidth+(@calRingSize*2))) ) / (@numRings+1);  //15%;
-
-	// &:first-child {
-	// 	margin-left: @calWidth/3 - (@calRingWidth + @calRingSize);
-	// }
 
 	&:before,
 	&::before {
