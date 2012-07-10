@@ -10,18 +10,49 @@
 @calRingCutoutColor: @bodyBgColor;
 
 .events {
-	margin-top: @calRingHeight;
-	margin-bottom: 1em;
+	margin-top: 5em; // temp
+	margin-bottom: 5em; // temp
 }
 
+
+// Next Events
+// -------------------------
+
+.event__info {
+	h1 {
+		margin: 0;
+		padding-top: .5em;
+	}
+}
+
+.event__next {
+	float: none; 
+	margin: 0 auto;
+}
+
+
+.event__location{
+	font-weight: 600;
+	font-size: 1.5em;
+	margin: .25em 0;
+}
+.event__address{
+	margin: 0 0 1em 0;
+	font-style: italic;
+}
+
+// Stylized Calendar for next event
+// ---------------------------------
 
 .cal__month {
 	text-transform: uppercase;
 }
 
 .cal__container {
+
 	width: @calWidth;
 	height: @calHeight;
+	margin-top: @calRingHeight/2;
 	background-color: #fff;
 	position: relative;	
 
@@ -97,6 +128,44 @@
 		top: (@calRingSize*-1)-1;
 		left: (@calRingSize*-1)-1;
 		border: (@calRingSize*0.5)+1 solid @calRingCutoutColor;
+	}
+}
+
+@media screen and (max-width: 600px) {
+
+	.cal__container {
+		margin: 0 auto;
+	}
+	.event__info {
+		text-align: center;
+	}
+
+	.event__description {
+		text-align: left;
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+@media screen and (min-width: 601px) {
+	.cal__container {
+		float: left;
+	}
+	.event__info {
+		margin-left: @calWidth+48px;
+	}
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+	.event__next {
+		.grid-span12;
+	}
+}
+
+@media screen and (min-width: 769px) {
+	.event__next {
+		.grid-span8;
 	}
 }
 
