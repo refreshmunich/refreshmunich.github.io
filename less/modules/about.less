@@ -18,10 +18,30 @@
     cursor: pointer;
 }
 
-.faq__question:target + p {
-    height: 100%;
-    overflow: auto;
+.faq__answer {
+    display: none;
+
+    // remove margins from start/end paragraphs
+    // to prevent jumpy animation
+    p:first-child {
+        margin-top: 0;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+
+    // transfer these margins parent
+    margin-top: 1em;
+    margin-bottom: 2em;
 }
+
+
+
+// .faq__question:target + p {          // sorry Elias, irgendwie hab ich es kaputt gemacht :-(
+//     height: 100%;
+//     overflow: auto;
+// }
 
 // .faq__answer {
 //   display: none;

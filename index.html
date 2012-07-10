@@ -336,36 +336,29 @@
         return 0;
     };
 
-    // $(document).ready(function(){           // make sure masonry plugin is loaded
-    //     var $members = $('#js-members');
-    //     $members.imagesLoaded(function(){
-    //         $members.masonry({
-    //             itemSelector : '.member__card',
-    //             isFitWidth: true,
-    //             gutter: 2,
-    //             columnWidth : function( containerWidth ) { return containerWidth / 4; },
-    //             isAnimated: !Modernizr.csstransitions
-    //         });
-    //     });        
-    // });
+
+    $('.faq__question').on('click', function(e) {
+        $(this).siblings('.faq__answer').slideToggle();
+    });
 
 
+  // sorry elias, irgendwie hab ich es hier kaputt gemacht :-(
 
-  var $faq = $('#about');
-  $faq.find('.faq__question').click(function(e) {
-    var answer  = $(e.target).siblings('.faq__answer');
-    var visible = answer.css('display') === 'block';
-    var rotate  = visible ? -45 : 0;
-    var delay   = visible ? 0 : 200;
+  // var $faq = $('#about');
+  // $faq.find('.faq__question').click(function(e) {
+  //   var answer  = $(e.target).siblings('.faq__answer');
+  //   var visible = answer.css('display') === 'block';
+  //   var rotate  = visible ? -45 : 0;
+  //   var delay   = visible ? 0 : 200;
 
-    answer.slideToggle();
+  //   answer.slideToggle();
 
-    setTimeout(function() {
-      answer.css({
-        '-webkit-transform':'perspective(1000) rotateX(' + rotate + 'deg)'
-      });
-    }, delay);
-  });
+  //   setTimeout(function() {
+  //     answer.css({
+  //       '-webkit-transform':'perspective(1000) rotateX(' + rotate + 'deg)'
+  //     });
+  //   }, delay);
+  // });
 
     </script>
 
