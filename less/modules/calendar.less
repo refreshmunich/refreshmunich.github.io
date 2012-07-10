@@ -14,6 +14,11 @@
 	margin-bottom: 1em;
 }
 
+
+.cal__month {
+	text-transform: uppercase;
+}
+
 .cal__container {
 	width: @calWidth;
 	height: @calHeight;
@@ -25,6 +30,22 @@
 
 	// ca. double border for equal inner and outer border radius
 	// inner border radius = outer border radius - border width
+
+	.cal__date,
+	.cal__month {
+		display: block;	
+		height: auto;
+		text-align: center;
+		color: @calColor;
+
+		font-weight: 600;
+		font-size: 2.5em;
+		line-height: 1em;
+	}
+
+	.cal__date {
+		font-size: 6em;
+	}
 }
 
 .cal__top {
@@ -54,7 +75,8 @@
 	z-index: 2;
 
 	// 2nd ring
-	margin-left: 23.5%;
+	@numRings: 3;
+	margin-left: ( @calWidth - (@numRings * (@calRingWidth+(@calRingSize*2))) ) / (@numRings+1);  //15%;
 
 	// &:first-child {
 	// 	margin-left: @calWidth/3 - (@calRingWidth + @calRingSize);
@@ -78,25 +100,59 @@
 	}
 }
 
-.cal__date,
-.cal__month {
-	display: block;	
-	height: auto;
-	text-align: center;
-	color: @calColor;
 
-	font-weight: 600;
-	font-size: 2.5em;
-	line-height: 1em;
+// Past Events List
+// -------------------------
+
+ .events__title--past {
+ 	text-transform: uppercase;
+ 	color: #ccc;
+ }
+
+.events--past {	// <ul>
+	padding: 0;
+	border-top: 1px solid @lightGrey;
 }
 
-.cal__date {
-	font-size: 6em;
+.event--past {	// <li>
+	list-style-type: none;
+	border-bottom: 1px solid @lightGrey;
+	.clearfix;
+	color: #999;
+	padding: 1em 0;
+	p {
+		margin: 0;
+	}
 }
 
-.cal__month {
+.event__when {
+	width: 50px;
+	margin-right: 1em;
+	float: left;
+	border: 2px solid @lightGrey;
+	.border-radius(4px);
+}
+
+.event__date,
+.event__month {
+	display: block;
+	text-align: center;	
+}
+
+.event__date {
+	font-size: 1.125em; // 18/16
+	line-height: 1.5em;
+}
+
+.event__month {
+	font-size: .8125em; // 13/16
+	line-height: 1.5em;
 	text-transform: uppercase;
+	font-weight: 600;
+	background-color: @lightGrey;
 }
 
-
-
+.event__type {
+	color: #ccc;
+	font-size: .875em; // 14/16
+}
