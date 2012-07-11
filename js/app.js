@@ -298,5 +298,5 @@ $(document).ready(function () {
 
 // --- Lets IE understand Google's date format
 function parseISO8601(dateString) {
-  return dateString.replace(/(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})/, '$1/$2/$3 $4:$5:$6').split('.')[0]
+  return dateString.replace(/(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})/, '$1/$2/$3 $4:$5:$6').split('.')[0];
 }
