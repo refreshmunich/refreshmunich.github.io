@@ -353,22 +353,6 @@
         $(this).siblings('.faq__answer').slideToggle();
     });
 
-    var logo = $('.refresh-icon');
-
-    $(window).scroll(function(event) {
-      var scrollValue    = $(this).scrollTop();
-      var rotate         = scrollValue < 120 ? scrollValue * 2 : 0;    
-      var translateValue = "rotate(" + rotate + "deg) translateZ(0)";
-      console.log(translateValue);
-    
-      logo.css({
-        '-webkit-transform':translateValue,
-        '-moz-transform':   translateValue,
-        '-ms-transform':    translateValue,
-        '-o-transform':     translateValue
-      });
-    });
-
 
   // sorry elias, irgendwie hab ich es hier kaputt gemacht :-(
 
