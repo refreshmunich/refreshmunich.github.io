@@ -69,7 +69,7 @@
 	-webkit-animation-timing-function: ease-in-out;
 	-webkit-transform-origin: 0 0;
 
-	@-webkit-keyframes initCalFlip {
+	@-webkit-keyframes calFlip {
 		0%   {
 			-webkit-transform: rotateX(60deg);
 		}
@@ -87,29 +87,8 @@
 		}
 	}
 
-	-webkit-animation: initCalFlip 2s;
+	-webkit-animation: calFlip 2s;
 
-	&.poke {
-		@-webkit-keyframes mouseCalFlip {
-			0%   {
-				-webkit-transform: rotateX(0deg);
-			}
-			25%  {
-				-webkit-transform: rotateX(-15deg);
-			}
-			50%  {
-				-webkit-transform: rotateX(10deg);
-			}
-			75%  {
-				-webkit-transform: rotateX(-5deg);
-			}
-			100% {
-				-webkit-transform: rotateX(0deg);
-			}
-		}
-
-		-webkit-animation: mouseCalFlip 2s;
-	}
 
 	border: @calBorderSize solid @calColor;
 	.border-radius(@calBorderSize*2); 
