@@ -35,9 +35,6 @@
 .event__next {
 	float: none; 
 	margin: 0 auto;
-	-webkit-perspective: 1000;
-	-webkit-perspective-origin-x: 110px;
-	-webkit-perspective-origin-y: 110px;
 }
 .event__time {
 	font-weight: 600;
@@ -65,30 +62,7 @@
 	height: @calHeight;
 	margin-top: @calRingHeight/2;
 	background-color: #fff;
-
-	-webkit-animation-timing-function: ease-in-out;
-	-webkit-transform-origin: 0 0;
-
-	@-webkit-keyframes calFlip {
-		0%   {
-			-webkit-transform: rotateX(60deg);
-		}
-		25%  {
-			-webkit-transform: rotateX(-30deg);
-		}
-		50%  {
-			-webkit-transform: rotateX(20deg);
-		}
-		75%  {
-			-webkit-transform: rotateX(-10deg);
-		}
-		100% {
-			-webkit-transform: rotateX(0deg);
-		}
-	}
-
-	-webkit-animation: calFlip 2s;
-
+	position: relative;	
 
 	border: @calBorderSize solid @calColor;
 	.border-radius(@calBorderSize*2); 
