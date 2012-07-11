@@ -14,7 +14,7 @@ html, body {
 
 body {
     background-color: @bodyBgColor;
-    font: 400 15px/1.4em @sans-serif;
+    font: 400 14px/1.4em @sans-serif;
     color: #555;
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: aliased;
@@ -36,7 +36,7 @@ h1 {
 
 h1,
 h2 {
-    font: 500 2em/1.5em @serif;
+    font: 400 2em/1.5em @serif;
     color: @bayernBlue;
 }
 
@@ -47,4 +47,32 @@ h2 {
 
 h3 {
     font: 600 16px/1.5em @sans-serif;
+}
+
+
+[data-icon]:before {
+    font-family: 'Pictos Custom';
+    content: attr(data-icon);
+}
+
+
+.site-banner {
+    background: url('../images/bt.jpg') no-repeat 50% 70%;
+    height: 400px;
+    position: relative;
+    margin: 1em 0 2em 0;
+}
+.site-banner__copy {
+    
+    position: absolute;
+    top: 40px;
+    left: 100px;
+    
+    span {
+        background: #000;
+        background: rgba(0, 0, 0, 0.6);
+        font: 200 2.5em/1.28em 'adelle-sans', sans-serif;
+        color: #fff;
+    }
+
 }

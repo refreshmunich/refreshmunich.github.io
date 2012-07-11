@@ -1,27 +1,150 @@
 
 
-/* Footer */
+// Header 
+// --------------------
 
-.site-footer {
-  margin-top: 1em;
-
-  background-color: @bayernBlue;
-
-  font-size: .8125em;
-  line-height: 1.5em;
-  text-align: center;
-  color: #fff;
+.header-nav__list {
+    padding: 0;
+    text-align: center;
 }
 
-.site-footer:before {
-  display: block;
-  height: 180px;
+.header-nav__item {
+    font-size: 1.5em;
+    line-height: 80px;
+    display: inline-block;
+    padding: 0 1em;
+    vertical-align: middle;    
 
-  background: @bodyBgColor url('../images/munich-skyline.svg') no-repeat bottom center;
+    a {
+        text-decoration: none;
+    }
 
-  content: '';
+    a:link,
+    a:visited {
+        color: #666;
+    }
+
+    a:hover,
+    a:active {
+        color: @bayernBlue;
+    }
 }
 
-.site-footer .wrap {
-  padding: 1em 0 2em;
+.header-nav__logo {
+
+    padding-left: 2em;
+    padding-right: 2em;
+
+    a {
+        display: block;
+        height: 66px;
+
+        -webkit-transition-property: -webkit-transform;
+        -webkit-transition-duration: 1s;
+        -moz-transition-property: -moz-transform;
+        -moz-transition-duration: 1s;
+    }
+
+    a:link,
+    a:visited {
+        color: @bayernBlue;
+    }
+
+
+    a:hover {
+        -webkit-animation-name: rotate; 
+        -webkit-animation-duration: 2s; 
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+        -moz-animation-name: rotate; 
+        -moz-animation-duration: 2s; 
+        -moz-animation-iteration-count: infinite;
+        -moz-animation-timing-function: linear;
+    }
+
+
+    span {
+        display: inline-block;
+        text-indent: -9999px;
+    }
+
+
+
+}
+
+
+// Footer 
+// --------------------
+
+.footer {
+
+    background-color: @bayernBlue;
+    font-size: .875em;
+    line-height: 1.5em;
+    color: #ececec;
+
+    p {
+        margin: 0 0 1em;
+    }
+
+    a {
+        color: #fff;
+    }
+
+    .grid-container-fluid {
+        max-width: 800px; // fit to Munich Skyline graphic
+        padding: 0 0 2em 0;
+    }
+
+    &:before,
+    &::before {
+        display: block;
+        height: 180px;
+        background: @membersBg url('../images/munich-skyline.svg') no-repeat bottom center;
+        content: '';
+    }
+}
+
+.footer__headline {
+    margin: 2em 0 0;
+    font-size: 1.1em;
+    text-transform: uppercase;
+}
+
+.footer__copyright {
+    border-top: 1px solid #61B1E7;
+    padding-top: 1.5em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+
+    .clearfix;
+
+    p {
+        width: 50%;
+        float: left;
+        margin: 0;
+    }
+}
+
+.footer__legal-list {
+    padding: 0;
+    margin: 0;
+    width: 50%;
+    float: right;
+    text-align: right;
+
+    li {
+        display: inline-block;
+        width: 60px;        
+    }
+
+    a:link,
+    a:visited {
+        text-decoration: none;
+    }
+
+    a:hover,
+    a:active {
+        text-decoration: underline;
+    }
 }

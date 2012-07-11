@@ -16,50 +16,46 @@
 
     <link href="//get.pictos.cc/fonts/1354/9" rel="stylesheet" type="text/css">
     <script src="js/vendor/modernizr.js"></script>
+
+    <style>
+        @-webkit-keyframes rotate {
+            from {-webkit-transform: rotate(0deg);}
+            to {-webkit-transform: rotate(360deg);}
+        }
+
+        @-moz-keyframes rotate {
+            from {-moz-transform: rotate(0deg);}
+            to {-moz-transform: rotate(360deg);}
+        }
+    </style>
     
 
   </head>
   <body>
 
-    <header class="site-header">
-      <div class="container">
-        <h1 id="headerLogo">Refresh</h1>
-        <nav>
-          <ul>
-            <li><a href="#/next-event">Next Event</a></li>
-            <li><a href="#/about">About</a></li>
-            <li><a href="#/faq">FAQ</a></li>
-            <li><a href="#/photos">Photos</a></li>
-            <li><a href="#/members">Members</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header><!--/#hdr-->
+    <header class="site-header">        
+        <nav class="header-nav">
+            <ul class="header-nav__list">                
+                <li class="header-nav__item"><a href="#/about">About</a></li>
+                <li class="header-nav__item"><a href="#/meetups">Meetups</a></li>
+                <li class="header-nav__item header-nav__logo"><a data-icon="E" href="#/home" class="refresh-icon"><span>Home</span></a></li>
+                <li class="header-nav__item"><a href="#/photos">Photos</a></li>
+                <li class="header-nav__item"><a href="#/members">Members</a></li>
+            </ul>
+        </nav>    
+    </header>
 
-    <section id="manifesto">
-      <div class="container">
-        <!-- <img src="images/circle-3d-centered.png" class="logo" id="bigLogo" alt="Refresh Munich Logo"> -->
-        <p>
-          We are a young <em>community</em> of <em>designers</em> and <em>developers</em> coming together to learn the best of <em>both worlds</em>. Interested in solving <em>aesthetic</em> and <em>logic</em> problems we bundle ideas and <em>refresh</em> our thinking . You should join us!
+    <div role="main">
+
+    <div role="banner" class="site-banner">
+        <p role="banner" class="site-banner__copy">
+            <span>
+            We are a community of designers and developers,<br>
+            passionate about pixels and code. <br>
+            The only way forward is together.
+            </span>
         </p>
-      </div>
-    </section><!--/#manifesto-->
-
-    
-      <div id="manifestoDummy"></div>
-
-
-
-      
-        <section id="next-event">
-          <h1>Next Event</h1>
-          <h2 id="eventTitle"></h2>
-          <p id="eventTime"></p>
-          <p id="eventLocation"></p>
-          <p id="eventDescription"></p>
-          <p id="eventMapsLink"></p>
-        </section><!--/#next-event-->
-  
+    </div>
 
     <section id="events" class="grid-container-fluid events">
         <div class="grid-row">
@@ -79,18 +75,21 @@
                 </div>
 
                 <div class="event__info">
-                    <h1 class="event__headline">Next Stammtisch</h1>
+                    <p class="event__headline">Next Meetup</p>
                     <!-- <p class="event__type">Stammtisch</p> -->
-                    <p class="event__location">Taco Libre</p>
+                    <p class="event__time">Thurs. 12 July 2012, 7pm</p>
+                    <p class="event__location">Taco Libre</p>                    
                     <p class="event__address">Bahnhofplatz 5, 80335 München<br>
                                               <a href="http://www.tacolibre.de">www.tacolibre.de</a></p>
-                    <p class="event__description">Join us for beers, burritos and a group discussion on the future of ecosystems and operating systems, from iOS to Android/Nexus7, Surface/Windows8 and now Firefox OS. And whatever else comes up!</p>
+
+                    <p class="event__description">Join us for beers, burritos and a group discussion on the future of ecosystems and operating systems, from iOS to Android/Nexus7, Surface/Windows8 and now Firefox OS. And whatever else comes up!</p>                    
                 </div>
 
             </div>
             
-                <!--
-                <h2 class="events__title--past">Past events</h2>
+            <br><br>
+            <div class="events__past">
+                <p class="event__headline">Past Meetups</p> 
                 <ul class="events--past">
                     <li class="event--past">
                         <time class="event__when" datetime="2012-06-28T19:00">                
@@ -141,7 +140,8 @@
                         <p class="event__location">Cafe Puck</p>
                     </li>             
                 </ul>
-                -->
+            </div>
+                
             
 
         </div><!--/.grid-row-->
@@ -200,59 +200,76 @@
         
     </section><!--/#about-->
 
-
-
-
-
-      <section id="photos">
-        <div class="container">
-          <h1>Photo Stream</h1>
-          <div class="loading"><div></div>Loading</div>
-          <div id="photoContainer">
-
-          </div>
-        </div>
-      </section><!--/#next-event-->
-
-
-    <section id="members" class="grid-container-fluid">       
-        <div class="grid-row">
-            <div class="grid-span12">
-                <h1>Members</h1>
-                <p>Münchner are a friendly bunch. Don't be shy.</p>
-                <p>Come join some of our regulars, including these fine folks for dinner, beers and friendly chats.</p>
-                <p id="js-members-loading" class="ui-loading"></p>
+    <section id="members">
+        <div class="grid-container-fluid">       
+            <div class="grid-row">
+                <div class="grid-span12">
+                    <h1>Members</h1>
+                    <p>Münchner are a friendly bunch. Don't be shy.</p>
+                    <p>Come join some of our regulars, including these fine folks for dinner, beers and friendly chats.</p>
+                    <p id="js-members-loading" class="ui-loading"></p>
+                </div>
             </div>
-        </div>
-        <div class="grid-row">
-            <div class="grid-span12">
-                <ul class="member__container" id="js-members">
-                </ul>
-                <script id="js-members-template" type="js/template">
-                <li class="member__card-container">
-                    <div class="member__card is-member">
-                        <div class="member__inner">
-                            <a href="http://www.twitter.com/{{handle}}" title="Follow {{name}} on Twitter" class="member__avatar-link">
-                                <img src="{{pic}}" alt="{{name}}" class="member__avatar" border="0">
-                            </a>
-                        <h3 class="member__name">{{name}} <br/><a class="member__handle-link" href="http://www.twitter.com/{{handle}}">@{{handle}}</a></h3>
-                        <p class="member__description">{{desc}}</p>
+            <div class="grid-row">
+                <div class="grid-span12">
+                    <ul class="member__container" id="js-members">
+                    </ul>
+                    <script id="js-members-template" type="js/template">
+                    <li class="member__card-container">
+                        <div class="member__card is-member">
+                            <div class="member__inner">
+                                <a href="http://www.twitter.com/{{handle}}" title="Follow {{name}} on Twitter" class="member__avatar-link">
+                                    <img src="{{pic}}" alt="{{name}}" class="member__avatar" border="0">
+                                </a>
+                            <h3 class="member__name">{{name}} <br/><a class="member__handle-link" href="http://www.twitter.com/{{handle}}">@{{handle}}</a></h3>
+                            <p class="member__description">{{desc}}</p>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                </script>
+                    </li>
+                    </script>
+                </div>
             </div>
         </div>
     </section><!--/#members-->
 
 
+    </div><!--/[role="main"] -->
     
 
-    <footer class="site-footer">
-      <div class="container">
-<!--         <p>Copyright &copy; 2012 Refresh Munich.</p>
-        <p>Made with &hearts; in Minga.</p> -->
-      </div><!-- /.container -->
+    <footer class="footer">
+        <div class="grid-container-fluid">       
+            <div class="grid-row">        
+                <div class="grid-span4">
+                    <h3 class="footer__headline">Team</h3>
+                    <p>Refresh Munich is brought to you by Julie Ng and Elias Klughammer. With high fives from co-founders Sebastian and Dana from London.</p>
+                    <p>Made with &hearts; in Minga.</p> 
+                </div>
+                <div class="grid-span4">
+                    <h3 class="footer__headline">Refresh on Twitter</h3>
+
+
+                </div>
+                <div class="grid-span4">
+                    <h3 class="footer__headline">Colophon</h3>
+                    <p>Refresh is set in Adelle and Adelle sans by <a href="http://www.type-together.com/" target="_blank">TypeTogether</a>. Fonts are served by <a href="http://www.typekit.com" target="_blank">Typekit.</a></p>
+
+                    <h3 class="footer__headline">Fork us on Github</h3>
+                    <p>Easter eggs? Bugs? <a href="https://github.com/refreshmunich/website">Check out our source code on Github</a> and let us know.</p>
+
+                </div>
+            </div>
+            <div class="grid-row">
+                <div class="grid-span12 footer__copyright">
+                    <p>Copyright &copy; 2012 Refresh Munich.</p>                    
+
+                    <ul class="footer__legal-list">
+                        <li><a href="legal.html#imprint">Imprint</a></li>
+                        <li><a href="legal.html#privacy">Privacy</a></li>
+                        <li><a href="legal.html#contact">Contact</a></li>
+                    </ul>                    
+                </div>                
+            </div>
+        </div>
     </footer><!--/footer-->
 
 
@@ -268,7 +285,7 @@
 
             console.log(users);
             var html = '',
-                length = users.length + 1, // plus one because we will add CTA to it below
+                length = users.length; // + 1, // plus one because we will add CTA to it below
                 join = {
                     'name': 'Want to join us?',
                     'screen_name': 'refreshmunich',
@@ -311,9 +328,9 @@
         $('#js-members').html( buildMembersList(members) );
 
         // remove 'is-member' class from join us CTA so we can style it differently
-        $('.member__card-container').filter(':last-child').find('.member__card')
-                                                          .removeClass('is-member')
-                                                          .addClass('member__join-us');
+        // $('.member__card-container').filter(':last-child').find('.member__card')
+        //                                                   .removeClass('is-member')
+        //                                                   .addClass('member__join-us');
         
                                                           
         $('#js-members-loading').remove();

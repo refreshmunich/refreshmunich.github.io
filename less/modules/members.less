@@ -11,16 +11,18 @@
 
 @rtMargin:      2.127659574%;    // from grid.less
 @memberPadding: 1em;
-@cardHeight:    130px;
+@cardHeight:    90px;
 @gradientEnd:   #ffffff;
-@lightBlueBg:   #F4FAFF;
-@lightBlueBorder: #D4E5EB;
 @roundedCorner: 0;              // temporarily disabling border-radius 
                                 // because of rounded corner leakage
                                 // from long text gradient cover
 
 
 // ----- BASIC STYLES  ------
+
+#members {
+    background-color: @membersBg;
+}
 
 .member__container {
     .clearfix;
@@ -45,8 +47,13 @@
 }
 
 .member__name { 
+    font-size: 1em;
     line-height: 1.3em;
     margin: @memberPadding @memberPadding 0 @memberPadding;
+}
+
+.member__handle-link  {
+    font-size: .857142em; // 12/14
 }
 
 .member__handle-link:link,
@@ -108,21 +115,22 @@
         box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
     }
 
-    .member__card-container:nth-last-child(2) {
-        border-bottom: none;
-    }
 
-    .member__card-container:last-child {
-        border: none;
-        background: none;
-        box-shadow: none;
+    // .member__card-container:nth-last-child(2) {
+    //     border-bottom: none;
+    // }
 
-        padding-top: 1em;
+    // .member__card-container:last-child {
+    //     border: none;
+    //     background: none;
+    //     box-shadow: none;
 
-        .member__card {
-            height: 120px;
-        }
-    }
+    //     padding-top: 1em;
+
+    //     .member__card {
+    //         height: 120px;
+    //     }
+    // }
 
     .member__card {
         min-height: 50px;                   // for the twitter folks with no bio
@@ -134,7 +142,7 @@
 // -----------------------------
 
 .card-style {
-    border: 1px dashed #e5e5e5;
+    border: 1px solid #e5e5e5;
     border-left-color: #ececec;
     border-top-color: #ececec;
     .linear-gradient(#ffffff, @gradientEnd);

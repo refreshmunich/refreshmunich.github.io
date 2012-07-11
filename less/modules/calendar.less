@@ -10,7 +10,7 @@
 @calRingCutoutColor: @bodyBgColor;
 
 .events {
-	margin-top: 5em; // temp
+	margin-top: 3em; // temp
 	margin-bottom: 5em; // temp
 }
 
@@ -19,26 +19,35 @@
 // -------------------------
 
 .event__info {
+	padding-top: .5em;
+
 	h1 {
 		margin: 0;
 		padding-top: .5em;
 	}
 }
-
+.event__headline {
+	text-transform: uppercase;
+	margin-bottom: .5em;
+	color: #ccc;
+	font-weight: 600;
+}
 .event__next {
 	float: none; 
 	margin: 0 auto;
 }
-
-.event__location {
+.event__time {
 	font-weight: 600;
 	font-size: 1.5em;
+	margin-top: 0;
+}
+.event__location {
 	margin: .25em 0;
 }
 .event__address{
 	margin: 0 0 1em 0;
-	// font-style: italic;
 }
+
 
 // Stylized Calendar for next event
 // ---------------------------------
@@ -71,6 +80,7 @@
 		font-weight: 600;
 		font-size: 2.5em;
 		line-height: 1em;
+		font-family: Helvetica, Arial, sans-serif;
 	}
 
 	.cal__date {
@@ -162,7 +172,8 @@
 }
 
 @media screen and (min-width: 769px) {
-	.event__next {
+	.event__next,
+	.events__past {
 		.grid-span8;
 	}
 }
@@ -171,19 +182,29 @@
 // Past Events List
 // -------------------------
 
+.events__past {
+	clear: both;
+	float: none;
+	margin: 2em auto;
+}
+
  .events__title--past {
- 	text-transform: uppercase;
+ 	// text-transform: uppercase;
+ 	text-align: center;
  	color: #ccc;
  }
 
 .events--past {	// <ul>
 	padding: 0;
-	border-top: 1px solid @lightGrey;
+	// border-top: 1px solid @lightGrey;
 }
 
 .event--past {	// <li>
 	list-style-type: none;
-	border-bottom: 1px solid @lightGrey;
+	display: inline-block;
+	.grid-span4;
+	
+	// border-bottom: 1px solid @lightGrey;
 	.clearfix;
 	color: #999;
 	padding: 1em 0;
@@ -193,7 +214,7 @@
 }
 
 .event__when {
-	width: 50px;
+	width: 45px;
 	margin-right: 1em;
 	float: left;
 	border: 2px solid @lightGrey;
@@ -208,7 +229,8 @@
 
 .event__date {
 	font-size: 1.125em; // 18/16
-	line-height: 1.5em;
+	line-height: 1em;
+	padding: .4em 0 .25em; 
 }
 
 .event__month {
