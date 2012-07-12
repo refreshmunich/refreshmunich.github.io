@@ -279,23 +279,6 @@
 
 
   <script type="text/javascript">
-    var logo = $('.refresh-icon');
-
-    $(window).scroll(function(event) {
-      var scrollValue  = $(this).scrollTop();
-      var rotate     = scrollValue < 120 ? scrollValue * 2 : 0;
-      var translateValue = "rotate(" + rotate + "deg) translateZ(0)";
-
-      logo.css({
-        '-webkit-transform':translateValue,
-        '-moz-transform':   translateValue,
-        '-ms-transform':  translateValue,
-        '-o-transform':   translateValue
-      });
-    });
-
-
-
     var membersTemplate = $.trim( $('#js-members-template').html() );
 
     function buildMembersList(users) {
@@ -392,6 +375,7 @@
   </script>
 
 <script type="text/javascript" src="js/members_call.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
 
   <!--
   <script src="js/vendor/jquery-1.7.1.min.js"></script>
