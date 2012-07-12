@@ -279,6 +279,23 @@
 
 
     <script type="text/javascript">
+        var logo = $('.refresh-icon');
+
+        $(window).scroll(function(event) {
+            var scrollValue    = $(this).scrollTop();
+            var rotate         = scrollValue < 120 ? scrollValue * 2 : 0;
+            var translateValue = "rotate(" + rotate + "deg) translateZ(0)";
+
+            logo.css({
+                '-webkit-transform':translateValue,
+                '-moz-transform':   translateValue,
+                '-ms-transform':    translateValue,
+                '-o-transform':     translateValue
+            });
+        });
+
+
+
         var membersTemplate = $.trim( $('#js-members-template').html() );
 
         function buildMembersList(users) {

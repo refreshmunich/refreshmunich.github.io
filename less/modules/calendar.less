@@ -35,6 +35,9 @@
 .event__next {
 	float: none; 
 	margin: 0 auto;
+	-webkit-perspective: 1000;
+	-webkit-perspective-origin-x: 110px;
+	-webkit-perspective-origin-y: 110px;
 }
 .event__time {
 	font-weight: 600;
@@ -56,13 +59,35 @@
 	text-transform: uppercase;
 }
 
+@-webkit-keyframes initCalFlip {
+  0%   {
+    -webkit-transform: rotateX(60deg);
+  }
+  25%  {
+    -webkit-transform: rotateX(-30deg);
+  }
+  50%  {
+    -webkit-transform: rotateX(20deg);
+  }
+  75%  {
+    -webkit-transform: rotateX(-10deg);
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+  }
+}
+
 .cal__container {
 
 	width: @calWidth;
 	height: @calHeight;
 	margin-top: @calRingHeight/2;
 	background-color: #fff;
-	position: relative;	
+	position: relative;
+
+	-webkit-animation-timing-function: ease-in-out;
+	-webkit-transform-origin: 0 0;
+	-webkit-animation:initCalFlip 2s;
 
 	border: @calBorderSize solid @calColor;
 	.border-radius(@calBorderSize*2); 
