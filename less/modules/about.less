@@ -1,46 +1,46 @@
 .about__title {
-    margin: 0;
+  margin: 0;
 }
 
 .faq__container {
-    margin: 1em 0;
-    padding: 0;
-    border-top: 1px solid @lightGrey;
+  margin: 1em 0;
+  padding: 0;
+  border-top: 1px solid @lightGrey;
 }
 
 .faq__item {
-    list-style-type: none;
-    border-bottom: 1px solid @lightGrey;    
+  list-style-type: none;
+  border-bottom: 1px solid @lightGrey;  
 }
 
 .faq__question:hover {
-    color: @bayernBlue;
-    cursor: pointer;
+  color: @bayernBlue;
+  cursor: pointer;
 }
 
 .faq__answer {
-    display: none;
+  display: none;
 
-    // remove margins from start/end paragraphs
-    // to prevent jumpy animation
-    p:first-child {
-        margin-top: 0;
-    }
+  // remove margins from start/end paragraphs
+  // to prevent jumpy animation
+  p:first-child {
+    margin-top: 0;
+  }
 
-    p:last-child {
-        margin-bottom: 0;
-    }
+  p:last-child {
+    margin-bottom: 0;
+  }
 
-    // transfer these margins parent
-    margin-top: 1em;
-    margin-bottom: 2em;
+  // transfer these margins parent
+  margin-top: 1em;
+  margin-bottom: 2em;
 }
 
 
 
-// .faq__question:target + p {          // sorry Elias, irgendwie hab ich es kaputt gemacht :-(
-//     height: 100%;
-//     overflow: auto;
+// .faq__question:target + p {      // sorry Elias, irgendwie hab ich es kaputt gemacht :-(
+//   height: 100%;
+//   overflow: auto;
 // }
 
 // .faq__answer {
@@ -49,13 +49,13 @@
 //   -webkit-transition: -webkit-transform 0.3s;
 //   -webkit-transform: perspective(1000) rotateX(-45deg);
   
-//     p {
-//         height: 0;
-//         padding: 0 15px;
-//         overflow: hidden;
+//   p {
+//     height: 0;
+//     padding: 0 15px;
+//     overflow: hidden;
 
-//         .transition('.4s ease-out, padding .4s ease-out');
-//     }
+//     .transition('.4s ease-out, padding .4s ease-out');
+//   }
 // }
 
 
@@ -64,18 +64,18 @@
 // ---------------------------------------------------
 
 @media screen and (min-width: 768px) { 
-    .faq__container {
-        .clearfix;
-    }
-    .faq__item {
-        .grid-row;
-    }
-    .faq__question {
-        float: left;
-        .grid-span4;
-    }
-    .faq__answer {
-        float: left;
-        .grid-span8;
-    }
+  .faq__container {
+    .clearfix;
+  }
+  .faq__item {
+    .grid-row;
+  }
+  .faq__question {
+    float: left;
+    .grid-span4;
+  }
+  .faq__answer {
+    float: left;
+    .grid-span8;
+  }
 }

@@ -46,13 +46,13 @@
 }
 
 .linear-gradient(@start, @end, @p1: 0%) {
-    background-color: @start;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(@start),to(@end));
-    background-image: -webkit-linear-gradient(top, @start @p1, @end);
-    background-image: -moz-linear-gradient(top, @start @p1, @end);
-    background-image: -o-linear-gradient(top, @start @p1, @end);
-    background-image: -ms-linear-gradient(top, @start @p1, @end);
-    background-image: linear-gradient(top, @start @p1, @end);
-    // take out IE because it doesn't understand rgba
-    // filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='@start', EndColorStr='@end');
+  background-color: @start;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(@start),to(@end));
+  background-image: -webkit-linear-gradient(top, @start @p1, @end);
+  background-image: -moz-linear-gradient(top, @start @p1, @end);
+  background-image: -o-linear-gradient(top, @start @p1, @end);
+  background-image: -ms-linear-gradient(top, @start @p1, @end);
+  background-image: linear-gradient(top, @start @p1, @end);
+  // take out IE because it doesn't understand rgba
+  // filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='@start', EndColorStr='@end');
 }
