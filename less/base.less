@@ -1,10 +1,3 @@
-
-// * {
-//   -webkit-box-sizing: border-box;
-//   -moz-box-sizing: border-box;
-//   box-sizing: border-box;
-// }
-
 html, body {  
   height:100%;  
   width:100%;
@@ -12,13 +5,6 @@ html, body {
   padding: 0;
 }
 
-body {
-  background-color: @bodyBgColor;
-  font: 400 14px/1.4em @sans-serif;
-  color: #555;
-  -webkit-text-size-adjust: 100%;
-  -webkit-font-smoothing: aliased;
-}
 
 a:link,
 a:visited {
@@ -30,18 +16,27 @@ a:active {
   color: @green;
 }
 
+
+
+body {
+  background-color: @bodyBgColor;
+  font: 400 14px/1.4em @sans-serif;
+  color: #555;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: aliased;
+}
+
 h1 {
   text-align: center;
 }
 
 h1,
 h2 {
-  font: 400 2em/1.5em @serif;
+  font: 400 2em/1.5em @sans-serif;
   color: @bayernBlue;
 }
 
 h2 {
-  // font-weight: 400;
   font-size: 1.2em;
 }
 
@@ -49,41 +44,7 @@ h3 {
   font: 600 16px/1.5em @sans-serif;
 }
 
-
 [data-icon]:before {
   font-family: 'Pictos Custom';
   content: attr(data-icon);
-}
-
-
-.site-banner {
-  // background: url('../images/bt.jpg') no-repeat 50% 70%;
-  background-color: @bayernBlue;
-
-  -webkit-font-smoothing: antialiased;
-  
-  background-image: linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), 
-  linear-gradient(-45deg, black 25%, transparent 25%, transparent 75%, black 75%, black);
-  background-size:60px 60px;  
-  
-  position: relative;
-  margin: 1em 0 2em 0;
-}
-.site-banner__copy {
-  
-  // position: absolute;
-  // top: 40px;
-  // left: 100px;
-
-  text-align: center;
-  margin: 1em 0;
-  padding: 3em 0;
-  
-  span {
-    // background: #000;
-    // background: rgba(0, 0, 0, 0.6);
-    font: 200 2em/1.28em 'adelle-sans', sans-serif;
-    color: #fff;
-  }
-
 }
