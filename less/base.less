@@ -5,6 +5,17 @@ html, body {
   padding: 0;
 }
 
+body {
+  background-color: @bodyBgColor;
+  font: 400 14px/1.4em @sans-serif;
+  color: #555;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: aliased;
+}
+
+
+// Links
+// --------------
 
 a:link,
 a:visited {
@@ -17,14 +28,8 @@ a:active {
 }
 
 
-
-body {
-  background-color: @bodyBgColor;
-  font: 400 14px/1.4em @sans-serif;
-  color: #555;
-  -webkit-text-size-adjust: 100%;
-  -webkit-font-smoothing: aliased;
-}
+// Headings
+// --------------
 
 h1 {
   text-align: center;
@@ -43,6 +48,10 @@ h2 {
 h3 {
   font: 600 16px/1.5em @sans-serif;
 }
+
+
+// Icon Webfont
+// --------------
 
 [data-icon]:before {
   font-family: 'Pictos Custom';
