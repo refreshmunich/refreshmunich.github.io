@@ -198,7 +198,7 @@
 
 @media screen and (min-width: 769px) {
 	.event__next,
-	.events__past {
+	.past-events {
 		.grid-span8;
 	}
 }
@@ -207,29 +207,25 @@
 // Past Events List
 // -------------------------
 
-.events__past {
+.past-events {
 	clear: both;
 	float: none;
 	margin: 2em auto;
 }
 
- .events__title--past {
- 	// text-transform: uppercase;
+ .past-headline {
  	text-align: center;
  	color: #ccc;
  }
 
-.events--past {	// <ul>
+.past-list {	// <ul>
 	padding: 0;
-	// border-top: 1px solid @lightGrey;
 }
 
-.event--past {	// <li>
+.past {	// <li>
 	list-style-type: none;
 	display: inline-block;
 	.grid-span4;
-	
-	// border-bottom: 1px solid @lightGrey;
 	.clearfix;
 	color: #999;
 	padding: 1em 0;
@@ -238,7 +234,7 @@
 	}
 }
 
-.event__when {
+.past-when {
 	width: 45px;
 	margin-right: 1em;
 	float: left;
@@ -246,19 +242,19 @@
 	.border-radius(4px);
 }
 
-.event__date,
-.event__month {
+.past-date,
+.past-month {
 	display: block;
 	text-align: center;	
 }
 
-.event__date {
+.past-date {
 	font-size: 1.125em; // 18/16
 	line-height: 1em;
 	padding: .4em 0 .25em; 
 }
 
-.event__month {
+.past-month {
 	font-size: .8125em; // 13/16
 	line-height: 1.5em;
 	text-transform: uppercase;
@@ -266,7 +262,7 @@
 	background-color: @lightGrey;
 }
 
-.event__type {
+.past-type {
 	color: #ccc;
 	font-size: .875em; // 14/16
 }
