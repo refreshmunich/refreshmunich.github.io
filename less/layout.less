@@ -14,12 +14,16 @@
   padding: 0;
   margin-bottom: 0;
   text-align: center;
+  // border: 1px solid red;
 }
 
 .nav__item {
+  // border: 1px solid green;
   font-size: 1.2em;
-  line-height: 80px;
+  line-height: 60px;
   display: inline-block;
+  .ie7-inline-block();
+
   padding: 0 1em;
   vertical-align: middle;  
 
@@ -47,7 +51,6 @@
 
   a {
     display: block;
-    height: 66px;
   }
 
   a:link,
@@ -60,6 +63,42 @@
     text-indent: -9999px;
   }
 
+}
+
+
+.refresh-icon {
+  margin: 0;
+
+  font-size: 80px;
+  line-height: 1em;
+
+  text-align: center;
+  color: @bayernBlue;
+
+}
+
+
+// Responsive: Adjust nav for mobile  
+// -------------------------------------
+
+@smLogo: 50px; // adjust logo size for phones in portrait mode
+
+@media screen and (max-width: 320px) {  // mobile portrait
+  .nav__item {
+    font-size: .9em;
+    padding: 0 .5em;
+    line-height: @smLogo;
+  }
+  .refresh-icon {
+    font-size: @smLogo;
+    line-height: @smLogo;
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 500px) { // mobile landscape
+  .nav__item {
+    padding: 0 .5em;
+  }
 }
 
 
@@ -151,6 +190,7 @@
 
   li {
     display: inline-block;
+    .ie7-inline-block();
     width: 60px;    
   }
 
