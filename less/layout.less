@@ -136,7 +136,8 @@
 .footer {
 
   background-color: @bayernBlue;
-  font-size: .875em;
+  font-weight: 300;
+  font-size: .9em;
   line-height: 1.5em;
   color: #ececec;
 
@@ -207,12 +208,20 @@
   }
 }
 
-.footer__col {
+.footer__col {    
   float: left;
+  .grid-span4;
+
+  margin-right: @rtMargin;
+  &.is-last {
+    margin-right: 0;
+  }
 }
 
 @media screen and (max-width: 480px) {
   .footer__col {
+    float: none;
+    width: auto;
     border-top: 1px solid #61B1E7;
     border-top: 1px solid rgba(97, 177, 231, 0.67);
   }
@@ -226,26 +235,4 @@
       margin-left: .8em;
     }
   }
-  // .footer__copyright {
-  //   p,
-  //   .footer__legal {
-  //     float: none;
-  //     width: auto;
-  //     margin: 0 0 1em;
-  //     text-align: center;
-  //   }
-  // }
-}
-
-@media screen and (min-width: 481px) {
-  .footer__col {    
-    .grid-span4;
-
-    margin-right: @rtMargin;
-    &.is-last {
-      margin-right: 0;
-    }
-  }
-
-  
 }
