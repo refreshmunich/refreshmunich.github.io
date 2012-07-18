@@ -7,7 +7,7 @@ html, body {
 
 body {
   background-color: @bodyBgColor;
-  font: 400 14px/1.4em @sans-serif;
+  font: 400 14px/1.8em @sans-serif;
   color: #555;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: aliased;
@@ -49,8 +49,28 @@ h3 {
   font: 600 16px/1.5em @sans-serif;
 }
 
+
+.section {
+  margin: 10em 0;
+
+  &.members {
+    margin-bottom: 0;
+  }
+}
+
 .section-title {
   font-weight: 600;
+}
+
+.section-subtitle {
+  font-weight: 100;
+  font-size: 1.5em;
+  text-align: center;
+  color: @mediumGrey;
+}
+
+.text-center {
+  text-align: center;
 }
 
 // Icon Webfont
