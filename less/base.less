@@ -50,6 +50,8 @@ h3 {
 }
 
 
+
+
 .section {
   margin: 10em 0;
 
@@ -65,12 +67,32 @@ h3 {
 .section-subtitle {
   font-weight: 100;
   font-size: 1.5em;
+  line-height: 1.5em;
   text-align: center;
   color: @mediumGrey;
+  margin-top: 0;
 }
 
 .text-center {
   text-align: center;
+}
+
+
+.constrain-width {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 1024px) {
+  .constrain-width {
+    max-width: 90%;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .constrain-width {
+    max-width: 800px;
+  }
 }
 
 // Icon Webfont
