@@ -10,8 +10,8 @@
 }
 
 .about-formula {
-  font-size: 50px;
-  line-height: 100px;
+  font-size: 40px;
+  line-height: 80px;
   font-weight: 100;
   color: #ccc;
 }
@@ -26,7 +26,7 @@
   margin: 0;
 
   color: @bayernBlue;
-  font-size: 100px;
+  font-size: 80px;
 
   span {
     display: inline-block;
@@ -46,12 +46,37 @@
   margin-top: 1em; // align with <p>
 }
 
+.about-table {
+  // these are widest because of text. 
+  // Limit widths, important esp. for mobile
+  td:first-child,
+  td:last-child {
+    width: 20%;
+  }
+}
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 320px) {
+  .about-formula-text {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
   .about-copy,
   .about-photo {
     .grid-unset();
+  }
 
+  .about-formula {
+    font-size: 30px;
+    line-height: 60px;
+  }
+  .about-formula-text {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .about-icon {
+    font-size:50px;
   }
 }
 
