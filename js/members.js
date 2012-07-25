@@ -7,7 +7,7 @@ var MembersList = {
     this.membersTemplate = $.trim( $('#js-members-template').html() ),
     this.membersLoading  = $('#js-members-loading'),
     this.membersList     = $('#js-members');
-    this.debug           = true;    // true enables console logging
+    this.debug           = false;    // true enables console logging
 
     this.loadMembers();
   },
@@ -61,19 +61,18 @@ var MembersList = {
                    .replace( /{{pic}}/ig, users[i].profile_image_url );
     }    
     return html;
-  }
-
-
-// var sortMembers = function (a, b, key) {
-//   var nameA = a.name.toLowerCase();
-//   var nameB = b.name.toLowerCase();
+  },
   
-//   if (nameA < nameB)
-//     return -1;
-//   else if (nameA > nameB)
-//     return 1;
+  sortMembers: function (a, b, key) {
+    var nameA = a.name.toLowerCase();
+    var nameB = b.name.toLowerCase();
 
-//   return 0;
-// };
+    if (nameA < nameB)
+      return -1;
+    else if (nameA > nameB)
+      return 1;
+
+    return 0;
+  }
 
 };
