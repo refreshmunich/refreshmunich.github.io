@@ -332,13 +332,7 @@
     members = members.sort(sortMembers);
 
     $('#js-members').html( buildMembersList(members) );
-
-    // remove 'is-member' class from join us CTA so we can style it differently
-    // $('.member__card-container').filter(':last-child').find('.member__card')
-    //                           .removeClass('is-member')
-    //                           .addClass('member__join-us');
-    
-                              
+                      
     $('#js-members-loading').remove();
   }
 
@@ -360,35 +354,12 @@
   });
 
 
-  // sorry elias, irgendwie hab ich es hier kaputt gemacht :-(
-
-  // var $faq = $('#about');
-  // $faq.find('.faq__question').click(function(e) {
-  //   var answer  = $(e.target).siblings('.faq__answer');
-  //   var visible = answer.css('display') === 'block';
-  //   var rotate  = visible ? -45 : 0;
-  //   var delay   = visible ? 0 : 200;
-
-  //   answer.slideToggle();
-
-  //   setTimeout(function() {
-  //   answer.css({
-  //     '-webkit-transform':'perspective(1000) rotateX(' + rotate + 'deg)'
-  //   });
-  //   }, delay);
-  // });
 
   </script>
 
 <script type="text/javascript" src="js/members_call.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
 
-  <!--
-  <script src="js/vendor/jquery-1.7.1.min.js"></script>
-  <script src="js/vendor/jquery.scrollTo.min.js"></script>
-  <script src="js/vendor/jquery.lazyload.min.js"></script>
-  <script src="js/vendor/jquery.fancybox.pack.js"></script>
-  -->
 
   <!--
   <script src="js/app.js"></script>
