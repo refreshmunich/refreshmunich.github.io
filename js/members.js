@@ -1,4 +1,8 @@
-var membersTemplate = $.trim( $('#js-members-template').html() );
+
+// Cache references to our template and DOM elements
+var membersTemplate = $.trim( $('#js-members-template').html() ),
+    membersLoading  = $('#js-members-loading'),
+    membersList     = $('#js-members');
 
 function buildMembersList(users) {
 
@@ -44,9 +48,8 @@ function members_list(data) {
   members = data.users;
   members = members.sort(sortMembers);
 
-  $('#js-members').html( buildMembersList(members) );
-                    
-  $('#js-members-loading').remove();
+  membersList.html( buildMembersList(members) );                  
+  membersLoading.remove();
 }
 
 var sortMembers = function (a, b, key) {
