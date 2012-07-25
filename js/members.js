@@ -44,26 +44,16 @@ var MembersList = {
   },
 
   buildHTML: function(users) {
-    console.log("buildHTML:");
-    console.log(users);
-    var html = '',
-      length = users.length; // + 1, // plus one because we will add CTA to it below
-      join = {
-        'name': 'Want to join us?',
-        'screen_name': 'refreshmunich',
-        'description': 'Get in touch via <a href="http://www.twitter.com/refreshmunich" target="_blank">@twitter</a> and drop in on one of our next Stammtisches for beers and nerdy chatter.',
-        'profile_image_url': 'http://twimg0-a.akamaihd.net/profile_images/1866985909/icon200x200_normal.png'
-      };
+    var html = '',                     // store our markup
+        length = users.length;         // how many users do we have?
 
-    users.push(join);
+    for (var i=0; i<length; i++) {     // Now iterate through js-template and replace variables
 
-    for (var i=0; i<length; i++) {
       html += this.membersTemplate.replace( /{{handle}}/ig, users[i].screen_name )
                    .replace( /{{name}}/ig, users[i].name )
                    .replace( /{{desc}}/ig, users[i].description )
                    .replace( /{{pic}}/ig, users[i].profile_image_url );
-    }
-
+    }    
     return html;
   }
 
