@@ -7,6 +7,7 @@ var MembersList = {
     this.membersTemplate = $.trim( $('#js-members-template').html() ),
     this.membersLoading  = $('#js-members-loading'),
     this.membersList     = $('#js-members');
+    this.debug           = true;    // true enables console logging
 
     this.loadMembers();
   },
@@ -22,14 +23,19 @@ var MembersList = {
   },
 
   loadSuccess: function(data){
-    console.log("Sucessfully loaded");
-
-    var self = MembersList;
-    self.buildList(data.users);
+    var self = MembersList;               // store reference to ourself to use in place of 'this'
+    if (self.debug) {                     // because within this scope, 'this' refers to sucess event
+      console.log("Sucessfully loaded:");
+      console.log(data);
+    }
+    
+    self.buildList(data.users);   
   },
 
   loadError: function(data){
-    console.log("Error loading data");
+    // TODO - display error message to user
+    // or fall back to local JSON
+    console.log("Error loading data from Twitter:");
     console.log(data);
   },
 
