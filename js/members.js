@@ -29,7 +29,10 @@ var MembersList = {
       console.log(data);
     }
     
-    self.buildList(data.users);   
+    members = data.users;
+    members = members.sort(self.sortByName);
+
+    self.buildList(members);   
   },
 
   loadError: function(data){
@@ -62,8 +65,8 @@ var MembersList = {
     }    
     return html;
   },
-  
-  sortMembers: function (a, b, key) {
+
+  sortByName: function (a, b, key) {
     var nameA = a.name.toLowerCase();
     var nameB = b.name.toLowerCase();
 
