@@ -1,13 +1,13 @@
 
 var MembersList = {
 
-  init:function() {
+  init: function() {
     console.log("initialized");
 
     // Cache references to our template and DOM elements
-    var membersTemplate = $.trim( $('#js-members-template').html() ),
-        membersLoading  = $('#js-members-loading'),
-        membersList     = $('#js-members');
+    this.membersTemplate = $.trim( $('#js-members-template').html() ),
+    this.membersLoading  = $('#js-members-loading'),
+    this.membersList     = $('#js-members');
 
     this.loadMembers();
   },
@@ -18,13 +18,15 @@ var MembersList = {
       slug:'members',
       owner_screen_name:'refreshmunich',
     }).error(this.loadError)
-      .complete(this.loadSuccess);  
-
+      .success(this.loadSuccess)
+      .complete(this.removeLoader);  
   },
 
   loadSuccess: function(data){
     console.log("Sucessfully loaded");
-    console.log(data);
+
+    var self = MembersList;
+    self.buildList(data.users);
   },
 
   loadError: function(data){
@@ -32,8 +34,22 @@ var MembersList = {
     console.log(data);
   },
 
+  removeLoader: function() {
+    var self = MembersList;
+    self.membersLoading.remove();
+  },
+
+  buildList: function(data) {
+    // console.log("Data");
+    // console.log(data);
+
+    
+    this.membersList.html( this.buildHTML(data) );    
+  },
+
   buildHTML: function(users) {
-    // console.log(users);
+    console.log("buildHTML:");
+    console.log(users);
     var html = '',
       length = users.length; // + 1, // plus one because we will add CTA to it below
       join = {
@@ -46,7 +62,7 @@ var MembersList = {
     users.push(join);
 
     for (var i=0; i<length; i++) {
-      html += membersTemplate.replace( /{{handle}}/ig, users[i].screen_name )
+      html += this.membersTemplate.replace( /{{handle}}/ig, users[i].screen_name )
                    .replace( /{{name}}/ig, users[i].name )
                    .replace( /{{desc}}/ig, users[i].description )
                    .replace( /{{pic}}/ig, users[i].profile_image_url );
