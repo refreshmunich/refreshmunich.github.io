@@ -2,9 +2,8 @@
 var MembersList = {
 
   init: function() {
-    console.log("initialized");
 
-    // Cache references to our template and DOM elements
+    // Store references to our template and DOM elements
     this.membersTemplate = $.trim( $('#js-members-template').html() ),
     this.membersLoading  = $('#js-members-loading'),
     this.membersList     = $('#js-members');
@@ -40,11 +39,8 @@ var MembersList = {
   },
 
   buildList: function(data) {
-    // console.log("Data");
-    // console.log(data);
-
-    
-    this.membersList.html( this.buildHTML(data) );    
+    var markup = this.buildHTML(data);  // generate our markup
+    this.membersList.html(markup);      // add it to the DOM
   },
 
   buildHTML: function(users) {
@@ -69,31 +65,8 @@ var MembersList = {
     }
 
     return html;
-  },
+  }
 
-// --- Fire the Twitter API request
-// $.getJSON('https://api.twitter.com/1/lists/members.json?callback=?', {
-//   slug:'members',
-//   owner_screen_name:'refreshmunich',
-// }, function (data) {
-
-//   members = data.users;
-//   members = members.sort(sortMembers);
-
-//   $('#js-members').html( buildMembersList(members) );
-
-//   // --- Remove loading indicator
-//   $('#members .loading').remove();
-
-// });
-
- members_list: function(data) {
-  members = data.users;
-  members = members.sort(sortMembers);
-
-  membersList.html( buildMembersList(members) );                  
-  membersLoading.remove();
-}
 
 // var sortMembers = function (a, b, key) {
 //   var nameA = a.name.toLowerCase();
