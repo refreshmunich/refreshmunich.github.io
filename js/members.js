@@ -4,10 +4,11 @@ var MembersList = {
   init: function() {
 
     // Store references to our template and DOM elements
-    this.membersTemplate = $.trim( $('#js-members-template').html() ),
-    this.membersLoading  = $('#js-members-loading'),
-    this.membersList     = $('#js-members');
-    this.debug           = false;    // true enables console logging
+    this.membersTemplate  =  $.trim( $('#js-members-template').html() );
+    this.membersLoading   =  $('#js-members-loading');
+    this.membersList      =  $('#js-members');
+    this.errorMsg         =  $('#js-members-loading-error');
+    this.debug            =  false;    // true enables console logging
 
     this.loadMembers();
   },
@@ -32,14 +33,19 @@ var MembersList = {
     members = data.users;
     members = members.sort(self.sortByName);
 
-    self.buildList(members);   
+    self.buildList(members);
   },
 
   loadError: function(data){
     // TODO - display error message to user
     // or fall back to local JSON
-    console.log("Error loading data from Twitter:");
-    console.log(data);
+
+    var self = MembersList;
+    if (self.debug) {
+      console.log("Error loading data from Twitter:");
+      console.log(data);
+    }
+    self.errorMsg.show();
   },
 
   removeLoader: function() {
