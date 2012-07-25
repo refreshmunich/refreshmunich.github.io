@@ -1,10 +1,15 @@
 
+var MembersList = {
+
+  init:function() {
+    console.log("initialized");
 // Cache references to our template and DOM elements
 var membersTemplate = $.trim( $('#js-members-template').html() ),
     membersLoading  = $('#js-members-loading'),
     membersList     = $('#js-members');
+  },
 
-function buildMembersList(users) {
+ buildMembersList: function(users) {
 
   console.log(users);
   var html = '',
@@ -26,7 +31,7 @@ function buildMembersList(users) {
   }
 
   return html;
-}
+},
 
 // --- Fire the Twitter API request
 // $.getJSON('https://api.twitter.com/1/lists/members.json?callback=?', {
@@ -44,7 +49,7 @@ function buildMembersList(users) {
 
 // });
 
-function members_list(data) {
+ members_list: function(data) {
   members = data.users;
   members = members.sort(sortMembers);
 
@@ -52,14 +57,16 @@ function members_list(data) {
   membersLoading.remove();
 }
 
-var sortMembers = function (a, b, key) {
-  var nameA = a.name.toLowerCase();
-  var nameB = b.name.toLowerCase();
+// var sortMembers = function (a, b, key) {
+//   var nameA = a.name.toLowerCase();
+//   var nameB = b.name.toLowerCase();
   
-  if (nameA < nameB)
-    return -1;
-  else if (nameA > nameB)
-    return 1;
+//   if (nameA < nameB)
+//     return -1;
+//   else if (nameA > nameB)
+//     return 1;
 
-  return 0;
+//   return 0;
+// };
+
 };
