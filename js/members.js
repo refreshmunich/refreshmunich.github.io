@@ -9,7 +9,27 @@ var MembersList = {
         membersLoading  = $('#js-members-loading'),
         membersList     = $('#js-members');
 
-    
+    this.loadMembers();
+  },
+
+  loadMembers: function() {    
+    // get members list from Twitter API
+    $.getJSON('https://api.twitter.com/1/lists/members.json?callback=?', {
+      slug:'members',
+      owner_screen_name:'refreshmunich',
+    }).error(this.loadError)
+      .complete(this.loadSuccess);  
+
+  },
+
+  loadSuccess: function(data){
+    console.log("Sucessfully loaded");
+    console.log(data);
+  },
+
+  loadError: function(data){
+    console.log("Error loading data");
+    console.log(data);
   },
 
   buildHTML: function(users) {
