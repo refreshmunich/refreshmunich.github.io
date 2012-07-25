@@ -25,3 +25,5 @@ function observeScrolling() {
     });
   });
 }
+
+MembersList.init();
