@@ -1,12 +1,19 @@
-@import 'normalize';
-@import 'vars';
-@import 'mixins';
 
+// Required for internals
+// You shoudl never need to edit these
+@import '_normalize';
+@import '_vars';
+@import '_grid';
+@import '_mixins';
+
+
+// Basic Site look and feel
 @import 'base';
-@import 'grid';
 @import 'layout';
 @import 'ui';
 
+
+// Section specific styles
 @import 'about';
 @import 'events';
 @import 'members';
