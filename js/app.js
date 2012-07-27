@@ -27,3 +27,4 @@ function observeScrolling() {
 }
 
 MembersList.init();
+Photos.init();
