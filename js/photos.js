@@ -11,7 +11,7 @@ var Photos = {
     this.photosLoading  =  $('#js-photos-loading');
     this.errorMsg       =  $('#js-photos-loading-error');
     this.latestFirst    =  true;
-    this.debug          =  true; // true enables console logging
+    this.debug          =  false; // true enables console logging
 
     this.loadPhotos();
   },
