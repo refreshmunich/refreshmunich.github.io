@@ -1,30 +1,27 @@
-# Version 2
+# Website (v2)
 
-This is a work in progress of the next version of the refreshmunich.com website
+Release: July 2012
 
-### Why change it?
-Originally different people built different pieces of the site and in order to launch quickly, we took liberties and ignored some best practices.
+This is the Refreshmunich.com website, powered entirely via APIs. No CMS. We have open sourced it, so we can all learn and exchange.
 
-Now it's time to go back and fix that.
 
-## Goals
-### Events
-We need to feature events more prominently. This is the most interesting information.
+### What was wrong with v1?
 
-### Responsive. For real.
-* Many users find the website via Twitter and currently it is only hacked to look presentable on mobile.
-* Use a fluid grid while we'reat it.
+Originally many more worked on the site and in order to launch quickly, we took liberties and ignored some best practices. It was time to go back and fix that.
 
-### Decrease page weight and load
-* Reduce HTTP requests by removing less.js and precompilng and minifying css
-* Minimize number of JS plugins and JS.
-* Remove unncessary features, like rotating arrow. Too prominent (jng)
+### Changes
 
-### Misc. Notes
-* Replace current JS implementation of full Twitter bios on hover with CSS one. Had to do this anyway with the fluid grid. Performance was laggy on fast resizes.
+* Meetups now more prominently featured. No more searching/digging for next date, address, etc.
+* Responsive - for real. We now use a purposed and designed responsive layout. 
+* LESS is now compiled and not processed via javascript (never do this!)
+* Twitter bios on hover are now 100%, no JS.
+* Reorganized Javascript
+* Greatly reduced number of HTTP requests
+* Reduced number of JS plugins.
 
-* Tried jQuery Masonry but doesn't work well for fluid grids and responsive designs that adjust the grid at certain breakpoints. Even with CSS overrides, strange column wide gaps appeared.
+### Todo
 
+* Bring back nice photo gallery
 
 ## License 
 Copyright (C) 2012 Refresh Munich
