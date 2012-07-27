@@ -15,7 +15,7 @@ This is the Refreshmunich.com website, powered entirely via APIs. No CMS. We hav
 
 ### Markup
 * For large blocks of nested code, a comment often indicates a closing tag, e.g. <!--/#about-->
-* Markup is de-coupled from Javascript and can be found in the <script id="js-photos-template" type="js/template"> for easy adjustments/customizations
+* Markup is de-coupled from Javascript and can be found in the <script> tags with type="js/template" for easy adjustments/customizations
 
 ## History
 
