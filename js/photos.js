@@ -1,15 +1,16 @@
 var Photos = {
 
   init: function() {
+    
     // Flickr settings
     this.setID   = '72157629231564646'; // our photostream
     this.api_key = 'b9ea2bbfbae76e8986f7f480705b3d04';
 
-    this.photos         =  $('#js-photos');               // our photos container in the DOM
+    this.photos         =  $('#js-photos-container'); // our photos container in the DOM
+    this.photosTemplate =  $.trim( $('#js-photos-template').html() );
     this.photosLoading  =  $('#js-photos-loading');
     this.errorMsg       =  $('#js-photos-loading-error');
-    this.photosTemplate =  $.trim( $('#js-photos-template').html() );
-    this.debug          =  true;                        // true enables console logging
+    this.debug          =  true; // true enables console logging
 
     this.loadPhotos();
   },
