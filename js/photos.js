@@ -8,6 +8,7 @@ var Photos = {
     this.photos         =  $('#js-photos');               // our photos container in the DOM
     this.photosLoading  =  $('#js-photos-loading');
     this.errorMsg       =  $('#js-photos-loading-error');
+    this.photosTemplate =  $.trim( $('#js-photos-template').html() );
     this.debug          =  true;                        // true enables console logging
 
     this.loadPhotos();
@@ -51,33 +52,32 @@ var Photos = {
     self.photosLoading.remove();
   },
 
-  renderPhotos: function(photos) {
+  renderPhotos: function(data) {
+    var markup = this.buildHTML(data);
+    this.photos.html(markup);
+  },
 
-    // loop through our photos in reverse () order
-    for (var i = photos.length - 1; i >= 0; i--) {
-      var photo = photos[i];
-      var image = $('<img>');
-      var baseUrl = 'http://farm' + photo.farm + 
-                     '.staticflickr.com/' + photo.server + 
-                     '/' + photo.id + '_' + photo.secret;
+  buildHTML: function(photos) {
+    var html = '',                     // store our markup
+        length = photos.length;        // how many photos do we have?
+
+    for (var i=0; i<length; i++) {
+      var photo = photos[i]; 
+
+      // figure out Flickr URLs
+      var baseUrl  = 'http://farm' + photo.farm + '.staticflickr.com/' 
+                   + photo.server + '/' 
+                   + photo.id + '_' + photo.secret;
       var thumbUrl = baseUrl + '_t.jpg';
       var bigUrl   = baseUrl + '.jpg';
 
-      image.attr({
-        src:thumbUrl,
-      });
-
-      var link = $('<a></a>');
-      link.attr({
-        'href':   bigUrl,
-        'target': '_blank',
-        'title':  photo.title
-      });
-      link.append(image);
-
-      this.photos.append(link);
-    }
-  }
+      // replace in our template
+      html += this.photosTemplate.replace( /{{title}}/ig, photo.title)
+                   .replace( /{{largeVersion}}/ig, bigUrl )
+                   .replace( /{{thumbnail}}/ig, thumbUrl );
+    }    
+    return html;
+  }  
 
 };
 
