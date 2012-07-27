@@ -10,12 +10,12 @@ This is the Refreshmunich.com website, powered entirely via APIs. No CMS. We hav
 ### LESS/CSS
 
 * files starting with "_", e.g. "_vars.less" are usu. internal building blocks. Stealing underscore naming conventions from other languages/frameworks e.g. Ruby/Rails. 
-* CSS class naming conventions generally follow @necolas' practices. See ([About HTML semantics and front-end architecture](http://nicolasgallagher.com/about-html-semantics-front-end-architecture/)) and ([this gist](https://gist.github.com/1309546))
+* CSS class naming conventions generally follow @necolas' practices. See [About HTML semantics and front-end architecture](http://nicolasgallagher.com/about-html-semantics-front-end-architecture/) and [this gist](https://gist.github.com/1309546)
 * All DOM elements used/referenced to in Javascript use the "js-" prefix, to cleanly separate presentation and functionality.
 
 ### Markup
 * For large blocks of nested code, a comment often indicates a closing tag, e.g. <!--/#about-->
-* Markup is de-coupled from Javascript and can be found in the <script> tags with type="js/template" for easy adjustments/customizations
+* Markup is de-coupled from Javascript and can be found in the script tags with type="js/template" for easy adjustments/customizations
 
 ## History
 
