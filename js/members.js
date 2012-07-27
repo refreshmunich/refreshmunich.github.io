@@ -26,7 +26,7 @@ var MembersList = {
   loadSuccess: function(data){
     var self = MembersList;               // store reference to ourself to use in place of 'this'
     if (self.debug) {                     // because within this scope, 'this' refers to sucess event
-      console.log("Sucessfully loaded:");
+      console.log("Sucessfully loaded JSON from Twitter:");
       console.log(data);
     }
     
