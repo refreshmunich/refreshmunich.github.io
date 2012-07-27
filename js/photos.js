@@ -1,3 +1,27 @@
+var Photos = {
+
+  init: function() {
+    
+  },
+
+  loadJSON: function() {
+
+  },
+
+  loadSuccess: function() {
+
+  },
+
+  loadError: function() {
+
+  },
+
+  buildHTML: function() {
+
+  }
+
+};
+
   // --- Load the photos from Flickr
   var setId = '72157629231564646'
 
