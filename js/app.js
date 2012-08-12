@@ -31,10 +31,10 @@ function renderNextEvent(content) {
   var tolerance = 6 * 60 * 60 * 1000;
   var convert   = new Markdown.Converter().makeHtml;
 
-  var location = lines[2];
-  var address  = lines[3] + '\n' + lines[4];
+  var location = lines[4];
+  var address  = lines[5] + '\n' + lines[6];
   var adressHtml = convert(address);
-  var description = nextEvent.split(lines[4])[1];
+  var description = nextEvent.split(lines[6])[1];
   var descriptionHtml = convert(description);
 
   $('.event__location').html(location);
@@ -75,7 +75,8 @@ function renderPastEvents(pastEvents) {
 
     var time     = lines[0];
     var date     = Date.parse(time);
-    var location = lines[2];
+    var type     = lines[2];
+    var location = lines[4];
     console.log(location);
 
     html += '<li class="past">' +
@@ -83,7 +84,7 @@ function renderPastEvents(pastEvents) {
                 '<span class="past-month">' + getMonthAbbr(date.getMonth()) + '</span>' +       
                 '<span class="past-date">' + date.getDate() + '</span>' +
               '</time>' +
-              '<p class="past-type">Stammtisch</p>' +
+              '<p class="past-type">' + type + '</p>' +
               '<p class="past-location">' + location + '</p>' +
             '</li>';
   }
