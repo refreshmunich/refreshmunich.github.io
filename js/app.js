@@ -32,7 +32,7 @@ function renderNextEvent(content) {
   var convert   = new Markdown.Converter().makeHtml;
 
   var location = lines[2];
-  var address  = lines[3] + '\n\n' + lines[4];
+  var address  = lines[3] + '\n' + lines[4];
   var adressHtml = convert(address);
   var description = nextEvent.split(lines[4])[1];
   var descriptionHtml = convert(description);
