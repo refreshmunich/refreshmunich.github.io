@@ -1260,6 +1260,59 @@ h3 {
   margin: 1em .5em 0;
   padding: .5em .5em 0;
 }
-.legal {
+.legal,
+.contact {
   max-width: 850px;
+}
+.legal.section,
+.contact.section {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+.contact .section-title {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+.team {
+  margin: 0;
+  padding: 0;
+  *zoom: 1;
+}
+.team:before,
+.team:after {
+  display: table;
+  content: "";
+}
+.team:after {
+  clear: both;
+}
+.team-member {
+  list-style-type: none;
+  width: 50%;
+  float: left;
+  margin: 0;
+}
+.team-photo {
+  float: left;
+  margin-right: 2em;
+}
+.team-name,
+.team-info {
+  margin: 0;
+}
+@media screen and (max-width: 600px) {
+  .team {
+    text-align: center;
+  }
+  .team-photo {
+    float: none;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .team-name {
+    clear: both;
+  }
+}
+.legal .section-title {
+  text-align: left;
 }
