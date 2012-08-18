@@ -1,0 +1,63 @@
+// Micro clearfix by @necolas
+// nicolasgallagher.com/micro-clearfix-hack/
+
+.clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.ie7-inline-block() {
+  *display: inline; /* IE7 inline-block hack */
+  *zoom: 1;
+}
+
+
+// Border Radius
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+
+// Box sizing
+.box-sizing(@boxmodel) {
+  -webkit-box-sizing: @boxmodel;
+     -moz-box-sizing: @boxmodel;
+      -ms-box-sizing: @boxmodel;
+          box-sizing: @boxmodel;
+}
+
+// Drop shadows
+.box-shadow(@shadow) {
+  -webkit-box-shadow: @shadow;
+     -moz-box-shadow: @shadow;
+          box-shadow: @shadow;
+}
+
+// Transitions
+.transition(@transition) {
+  -webkit-transition: @transition;
+     -moz-transition: @transition;
+      -ms-transition: @transition;
+       -o-transition: @transition;
+          transition: @transition;
+}
+
+.linear-gradient(@start, @end, @p1: 0%) {
+  background-color: @start;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(@start),to(@end));
+  background-image: -webkit-linear-gradient(top, @start @p1, @end);
+  background-image: -moz-linear-gradient(top, @start @p1, @end);
+  background-image: -o-linear-gradient(top, @start @p1, @end);
+  background-image: -ms-linear-gradient(top, @start @p1, @end);
+  background-image: linear-gradient(top, @start @p1, @end);
+  // take out IE because it doesn't understand rgba
+  // filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='@start', EndColorStr='@end');
+}

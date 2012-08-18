@@ -1,0 +1,111 @@
+html, body {  
+  height: 100%;  
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: @bodyBgColor;
+  font: 300 14px/1.8em @sans-serif;
+  color: #555;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: aliased;
+}
+
+
+// Links
+// --------------
+
+a:link,
+a:visited {
+  color: @bayernBlue;
+}
+
+a:hover,
+a:active {
+  color: @green;
+}
+
+
+// Typography
+// --------------
+
+h1 {
+  text-align: center;
+}
+
+h1,
+h2 {
+  font: 400 2em/1.5em @sans-serif;
+  color: @bayernBlue;
+}
+
+h2 {
+  font-size: 1.2em;
+}
+
+h3 {
+  font: 600 16px/1.5em @sans-serif;
+}
+
+.grid-row {
+  img {
+    max-width: 100%;
+  }
+}
+
+
+
+.section {
+  margin-top: 8em;
+  margin-bottom: 8em;
+
+  &.members {
+    margin-bottom: 0;
+  }
+}
+
+.section-title {
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.section-subtitle {
+  font-weight: 100;
+  font-size: 1.5em;
+  line-height: 1.5em;
+  text-align: center;
+  color: @mediumGrey;
+  margin-top: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+.constrain-width {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 1024px) {
+  .constrain-width {
+    max-width: 90%;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .constrain-width {
+    max-width: 800px;
+  }
+}
+
+// Icon Webfont
+// --------------
+
+[data-icon]:before {
+  font-family: 'Pictos Custom';
+  content: attr(data-icon);
+}

@@ -1,0 +1,285 @@
+/* ------------------------------------
+ *
+ *   MEMBER CARDS
+ *   show full description on hover
+ *
+ * ------------------------------------
+ */
+
+
+// --------- VARS -----------
+
+@memberPadding: 1em;
+@cardHeight:    90px;
+@gradientEnd:   #ffffff;
+@roundedCorner: 0;        // temporarily disabling border-radius 
+                          // because of rounded corner leakage
+                          // from long text gradient cover
+
+
+// ----- BASIC STYLES  ------
+
+.members {
+  background-color: @membersBg;
+  padding-bottom: 5em;
+}
+
+.members-copy {
+  text-align: center;
+}
+
+.member__container {
+  .clearfix;
+  padding: 0; // overrides padding-left: 40px from normalize
+}
+
+.member__avatar {
+  .border-radius(5px);
+}
+
+.member__avatar-link {
+  display: inline-block;
+  float: right;  
+  margin-right: @memberPadding;
+}
+
+.member__avatar-link,
+.member__handle-link {
+  //z-index: 3;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.member__name { 
+  font-size: 1em;
+  line-height: 1.3em;
+  margin: @memberPadding @memberPadding 0 @memberPadding;
+}
+
+.member__handle-link  {
+  font-size: .857142em; // 12/14
+}
+
+.member__handle-link:link,
+.member__handle-link:visited {
+  color: @mediumGrey;
+}
+
+.member__handle-link:hover,
+.member__handle-link:active {
+  color: rgb(0,168,198);
+}
+
+.member__description {
+  margin: .5em @memberPadding;
+  z-index: -1;
+  font-size: .875em;
+  line-height: 1.4em;
+}
+
+// basic styles for all devices
+.member__card-container {
+  background-color: #fff;
+  list-style-type: none;  
+}
+
+
+// Join us Call to Action
+// --------------------------
+
+.member__join-us {
+  .border-radius(@roundedCorner);
+  .box-sizing(border-box);
+  height: 100%;
+  background-color: @lightBlueBg;  
+  border: 1px solid @lightBlueBorder;  
+
+  .member__name {
+    color: @bayernBlue;
+  }
+
+  .member__handle-link {
+    display: none;
+  }
+}
+
+
+// Responsive: Mobile First
+// --------------------------
+
+@media screen and (max-width: 481px) {
+
+  .member__card-container {
+    width: 100%;
+    margin: 0;
+    padding: 0 0 .5em 0;
+    border-top: 1px solid #eee;     // trigger margin collapse
+    border-left: 1px solid #eee;
+    //border-bottom: 1px solid #f3f3f3;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+  }
+
+
+  // .member__card-container:nth-last-child(2) {
+  //   border-bottom: none;
+  // }
+
+  // .member__card-container:last-child {
+  //   border: none;
+  //   background: none;
+  //   box-shadow: none;
+
+  //   padding-top: 1em;
+
+  //   .member__card {
+  //     height: 120px;
+  //   }
+  // }
+
+  .member__card {
+    min-height: 50px;           // for the twitter folks with no bio
+  }
+}
+
+
+// Member list specific mixins:
+// -----------------------------
+
+.card-style {
+  border: 1px solid #e5e5e5;
+  border-left-color: #ececec;
+  border-top-color: #ececec;
+  .linear-gradient(#ffffff, @gradientEnd);
+}
+
+.unset-card-style {
+  border-top: none;
+  border-left: none;
+  .box-shadow(none);
+}
+
+
+
+// Fancier styles for larger devices
+// -----------------------------
+
+@media screen and (min-width: 481px) {
+
+  .member__card-container {     // to create show full description on hover effect, we need an extra container
+    float: left;        // that hides extra content, but shows it on hover
+    height: @cardHeight;    // and our basic card positioning styles defined here
+    margin: 0 @rtMargin 1.5em 0;
+    
+    position: relative;
+    overflow: visible;
+    background: none;
+    .box-sizing(border-box);
+  }
+
+  .member__card[class~="is-member"] {
+    .box-sizing(border-box);
+    .border-radius(@roundedCorner);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    .card-style;
+    // .box-shadow(0 0 2px rgba(0, 0, 0, 0.12));    
+
+    overflow: hidden;       // hide extra description text (in child __inner) by default
+    &:hover {           // but show it on hover
+      overflow: visible;    // further styles below
+
+      &:before,         // and hide our hinting gradient (defined below)
+      &::before {
+        background-image: none;
+      }
+    }    
+
+            // create a gradient to hint at longer/more text
+    &:before,     // CSS2 syntax
+    &::before {   // CSS3 syntax
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      bottom: 0;
+      right: 0;
+      z-index: 1;
+      .linear-gradient(rgba(255,255,255,0), @gradientEnd, 70%);
+      content: '';
+    }
+  }
+
+  .member__inner {      // inner class required because box-model doesn't allow veritcal padding
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: @cardHeight;
+    .border-radius(@roundedCorner);
+    overflow: hidden;     // default: longer text hidden
+    // .transition(height 0.5s linear); // this does not work b/c CSS cannot animate to "auto" height
+  }
+
+  .member__card[class~="is-member"]:hover {
+    height: auto;       // expand to show full description
+     .member__inner {
+      height: auto;
+      overflow: visible;
+      .card-style;    // move card style here, so borders & shadows encapulate whole description
+      .box-shadow(2px 2px 4px rgba(0, 0, 0, 0.13));      
+      top: -1px;      // offset moving shadows to this inner container
+      left: -1px;
+      z-index: 3;     // above :before and other cards
+      background-image: none;
+      // background-color: @lightBlueBg;
+      // border: 1px solid @lightBlueBorder;
+     }
+     .unset-card-style;   // remove card style from parent (used to hide overflowing styles)
+
+  }
+
+  .member__avatar-link {
+    //z-index: 3;
+    margin-top: @memberPadding;
+    margin-left: 1em; // pad profile pictures 
+  }
+
+}
+
+
+// Responsive: Adjust card sizes per device width 
+// -----------------------------------------------
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .member__card-container {
+    .grid-span6; // one-half of 12 col grid
+    margin-bottom: 1em;
+  }
+  .member__card-container:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .member__card-container {
+    .grid-span4; // one-third of 12 col grid
+  }
+  .member__card-container:nth-child(3n) {
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .member__card-container {
+    .grid-span3; // one-fourth of 12 col grid
+  }
+  .member__card-container:nth-child(4n) {
+    margin-right: 0;
+  }
+}
+

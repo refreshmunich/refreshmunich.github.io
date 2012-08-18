@@ -1,0 +1,69 @@
+// Set narrower page width
+// same with as Munich skyline
+.legal,
+.contact {
+    max-width: 850px; 
+}
+
+
+.legal,
+.contact {
+
+  &.section {
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+
+}
+
+// Contact
+
+.contact {
+  .section-title {
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+}
+.team {
+  margin: 0;
+  padding: 0;
+  .clearfix;
+}
+.team-member {
+  list-style-type: none;
+  width: 50%;
+  float: left;
+  margin: 0;
+
+}
+.team-photo {
+  float: left;
+  margin-right: 2em;
+}
+
+.team-name,
+.team-info {
+  margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .team {
+    text-align: center;
+  }
+  .team-photo {
+    float: none;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .team-name {
+    clear: both;
+  }
+}
+
+// Legal Text
+
+.legal {
+  .section-title {
+    text-align: left;
+  }
+}

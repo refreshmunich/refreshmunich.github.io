@@ -1,0 +1,140 @@
+// .about__title {
+//   margin: 0;
+// }
+
+.about-table {
+  text-align: center;
+  margin: 2em auto;
+
+  width: 100%;
+}
+
+.about-formula {
+  font-size: 40px;
+  line-height: 80px;
+  font-weight: 100;
+  color: #ccc;
+}
+
+.about-formula-text {
+  color: #999;
+  font-weight: 600;
+}
+
+.about-icon {
+  display: block;
+  margin: 0;
+
+  color: @bayernBlue;
+  font-size: 80px;
+
+  span {
+    display: inline-block;
+    text-indent: -9999px;
+  }
+}
+
+.about-icon--people {
+  font-size: 142px;
+}
+
+
+.about-photo {
+  text-align: center;
+}
+.about-image {
+  margin-top: 1em; // align with <p>
+}
+
+.about-table {
+  // these are widest because of text. 
+  // Limit widths, important esp. for mobile
+  td:first-child,
+  td:last-child {
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .about-formula-text {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about-copy,
+  .about-photo {
+    .grid-unset();
+  }
+
+  .about-formula {
+    font-size: 30px;
+    line-height: 60px;
+  }
+  .about-formula-text {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .about-icon {
+    font-size:50px;
+  }
+}
+
+// FAQ
+// ---------------
+
+.faq__container {
+  margin: 1em 0;
+  padding: 0;
+  border-top: 1px solid @lightGrey;
+}
+
+.faq__item {
+  list-style-type: none;
+  border-bottom: 1px solid @lightGrey;  
+}
+
+.faq__question:hover {
+  color: @bayernBlue;
+  cursor: pointer;
+}
+
+.faq__answer {
+  display: none;
+
+  // remove margins from start/end paragraphs
+  // to prevent jumpy animation
+  p:first-child {
+    margin-top: 0;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  // transfer these margins parent
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+
+
+// Responsive: Push into grid for larger screen sizes
+// ---------------------------------------------------
+
+@media screen and (min-width: 768px) { 
+  .faq__container {
+    .clearfix;
+  }
+  .faq__item {
+    .grid-row;
+  }
+  .faq__question {
+    float: left;
+    .grid-span4;
+  }
+  .faq__answer {
+    float: left;
+    .grid-span8;
+  }
+}

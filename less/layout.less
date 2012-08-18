@@ -1,0 +1,243 @@
+
+.site-container {
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+
+
+// Header 
+// --------------------
+
+.nav__list {
+  padding: 0;
+  margin-bottom: 0;
+  text-align: center;
+  // border: 1px solid red;
+}
+
+.nav__item {
+  // border: 1px solid green;
+  font-size: 1.2em;
+  line-height: 60px;
+  display: inline-block;
+  .ie7-inline-block();
+
+  padding: 0 1em;
+  vertical-align: middle;  
+
+  a {
+    text-decoration: none;
+    -webkit-transition: color 0.2s;
+    -moz-transition: color 0.2s;
+  }
+
+  a:link,
+  a:visited {
+    color: #666;
+  }
+
+  a:hover,
+  a:active {
+    color: @bayernBlue;
+  }
+}
+
+.nav__logo {
+
+  padding-left: 2em;
+  padding-right: 2em;
+
+  a {
+    display: block;
+    -webkit-transform-origin: 50% 35px;
+  }
+
+  a:link,
+  a:visited {
+    color: @bayernBlue;
+  }
+
+  span {
+    display: inline-block;
+    text-indent: -9999px;
+  }
+
+}
+
+
+.refresh-icon {
+  margin: 0;
+
+  font-size: 80px;
+  line-height: 1em;
+
+  text-align: center;
+  color: @bayernBlue;
+
+}
+
+
+// Responsive: Adjust nav for mobile  
+// -------------------------------------
+
+@smLogo: 50px; // adjust logo size for phones in portrait mode
+
+@media screen and (max-width: 320px) {  // mobile portrait
+  .nav__item {
+    font-size: .9em;
+    padding: 0 .5em;
+    line-height: @smLogo;
+  }
+  .refresh-icon {
+    font-size: @smLogo;
+    line-height: @smLogo;
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 500px) { // mobile landscape
+  .nav__item {
+    padding: 0 .5em;
+  }
+}
+
+
+
+// Banner 
+// --------------------
+
+.site-banner {
+  background-color: @bayernBlue; 
+  margin: -1em 0 2em 0;
+}
+
+.site-banner__copy {
+  width: 90%;
+  max-width: 800px;
+  margin: 1em auto;
+  padding: 1.5em 0;
+  
+  font: 100 2em/1.28em 'adelle-sans', sans-serif;
+  color: #fff;
+  text-align: center;  
+}
+
+@media screen and (max-width: 480px) {
+  .site-banner__copy {
+    font-size: 1.5em;
+  }
+}
+
+
+// Footer 
+// --------------------
+
+.footer {
+
+  background-color: @bayernBlue;
+  font-weight: 300;
+  font-size: .9em;
+  line-height: 1.5em;
+  color: #ececec;
+
+  p {
+    margin: 0 0 1em;
+  }
+
+  a {
+    color: #fff;
+  }
+
+  .grid-container-fluid {
+    max-width: 800px; // fit to Munich Skyline graphic
+    padding: 0 0 2em 0;
+  }
+
+  &:before,
+  &::before {
+    display: block;
+    height: 180px;
+    background: @membersBg url('../images/munich-skyline.svg') no-repeat bottom center;
+    content: '';
+  }
+
+  &.has-whitesky:before,
+  &.has-whitesky::before {
+    background-color: #fff;
+  }
+}
+
+.footer__headline {
+  margin: 2em 0 0;
+  font-size: 1.1em;
+  text-transform: uppercase;
+}
+
+.footer__copyright {
+  border-top: 1px solid #61B1E7;
+  padding-top: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+
+  .clearfix;
+
+  p {
+    width: 50%;
+    float: left;
+    margin: 0;
+  }
+}
+
+.footer__legal {
+  padding: 0;
+  margin: 0;
+  width: 50%;
+  float: right;
+  text-align: right;
+
+  li {
+    display: inline-block;
+    .ie7-inline-block();
+    width: 60px;    
+  }
+
+  a:link,
+  a:visited {
+    text-decoration: none;
+  }
+
+  a:hover,
+  a:active {
+    text-decoration: underline;
+  }
+}
+
+.footer__col {    
+  float: left;
+  .grid-span4;
+
+  margin-right: @rtMargin;
+  &.is-last {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer__col {
+    float: none;
+    width: auto;
+    border-top: 1px solid #61B1E7;
+    border-top: 1px solid rgba(97, 177, 231, 0.67);
+  }
+  .footer__headline {
+    margin-top: 1.5em;
+  }
+
+  .footer__legal {
+    li {
+      width: auto;
+      margin-left: .8em;
+    }
+  }
+}

@@ -1,0 +1,271 @@
+@calWidth: 200px;
+@calHeight: 200px;
+@calBorderSize: 10px;
+
+@calRingWidth: 10px;
+@calRingHeight: 35px;
+@calRingSize: 10px;
+
+@calColor: @bayernBlue;
+@calRingCutoutColor: @bodyBgColor;
+
+.events {
+	margin-top: 3em; // temp
+	margin-bottom: 5em; // temp
+}
+
+ 
+// Past Events List
+// -------------------------
+ 
+.past-events {
+	clear: both;
+	float: none;
+	margin: 2em auto;
+}
+ 
+ .past-headline {
+ 	text-align: center;
+ 	color: #ccc;
+ }
+ 
+.past-list {	// <ul>
+	padding: 0;
+	width: 250px;
+	margin: 0 auto;
+}
+ 
+.past {	// <li>
+	
+	list-style-type: none;
+	display: block;
+	.clearfix;
+	color: #999;
+	padding: 1em 0;
+	p {
+		margin: 0;
+	}
+}
+ 
+.past-when {
+	width: 45px;
+	margin-right: 1em;
+	float: left;
+	border: 2px solid @lightGrey;
+	.border-radius(4px);
+}
+ 
+.past-date,
+.past-month {
+	display: block;
+	text-align: center;	
+}
+ 
+.past-date {
+	font-size: 1.125em; // 18/16
+	line-height: 1em;
+	padding: .4em 0 .25em; 
+}
+ 
+.past-month {
+	font-size: .8125em; // 13/16
+	line-height: 1.5em;
+	text-transform: uppercase;
+	font-weight: 600;
+	background-color: @lightGrey;
+}
+ 
+.past-type {
+	color: #ccc;
+	font-size: .875em; // 14/16
+}
+
+
+
+// Next Events
+// -------------------------
+
+.event__info {
+	padding-top: .5em;
+
+	h1 {
+		margin: 0;
+		padding-top: .5em;
+	}
+}
+.event__headline {
+	text-transform: uppercase;
+	margin-bottom: .5em;
+	color: #ccc;
+	font-weight: 600;
+}
+.event__next {
+	float: none; 
+	margin: 0 auto;
+	-webkit-perspective: 1000;
+	-webkit-perspective-origin-x: 110px;
+	-webkit-perspective-origin-y: 110px;
+}
+.event__time {
+	font-weight: 600;
+	font-size: 1.5em;
+	margin-top: 0;
+}
+.event__location {
+	margin: .25em 0;
+}
+.event__address{
+	margin: 0 0 1em 0;
+}
+
+
+// Stylized Calendar for next event
+// ---------------------------------
+
+.cal__month {
+	text-transform: uppercase;
+}
+
+@-webkit-keyframes initCalFlip {
+  0%   {
+    -webkit-transform: rotateX(60deg);
+  }
+  25%  {
+    -webkit-transform: rotateX(-30deg);
+  }
+  50%  {
+    -webkit-transform: rotateX(20deg);
+  }
+  75%  {
+    -webkit-transform: rotateX(-10deg);
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+  }
+}
+
+.cal__container {
+
+	width: @calWidth;
+	height: @calHeight;
+	margin-top: @calRingHeight/2;
+	background-color: #fff;
+	position: relative;
+
+	-webkit-animation-timing-function: ease-in-out;
+	-webkit-transform-origin: 0 0;
+	-webkit-animation:initCalFlip 2s;
+
+	border: @calBorderSize solid @calColor;
+	.border-radius(@calBorderSize*2); 
+
+	// ca. double border for equal inner and outer border radius
+	// inner border radius = outer border radius - border width
+
+	.cal__date,
+	.cal__month {
+		display: block;	
+		height: auto;
+		text-align: center;
+		color: @calColor;
+
+		font-weight: 600;
+		font-size: 2.5em;
+		line-height: 1em;
+		font-family: Helvetica, Arial, sans-serif;
+	}
+
+	.cal__date {
+		font-size: 6em;
+	}
+}
+
+.cal__top {
+	width: @calWidth;
+	text-align: center;
+	height: 50px;
+	margin: 0;
+	padding: 0;	
+	background-color: @calColor;
+	.clearfix;
+}
+
+.cal__ring {
+	list-style-type: none;
+	display: block;
+	position: relative;
+
+	height: @calRingHeight;
+	width: @calRingWidth;		
+	top: @calRingHeight*-1;
+	float: left;
+
+	background-color: #fff;
+	border-radius: @calRingSize*2;
+	border: @calRingSize solid @calColor;
+				
+	z-index: 2;
+
+	// 2nd ring
+	@numRings: 3;
+	margin-left: ( @calWidth - (@numRings * (@calRingWidth+(@calRingSize*2))) ) / (@numRings+1);  //15%;
+
+	&:before,
+	&::before {
+		content: '';
+		position: absolute;
+		z-index: -1;
+
+		width: @calRingWidth + @calRingSize;
+		height: @calRingHeight + @calRingSize;		
+		border-radius: @calRingSize*2;
+
+		// the 1 offsets are required so that
+		// the rounded borders are sufficiently covered
+		top: (@calRingSize*-1)-1;
+		left: (@calRingSize*-1)-1;
+		border: (@calRingSize*0.5)+1 solid @calRingCutoutColor;
+	}
+}
+
+@media screen and (max-width: 600px) {
+
+	.cal__container {
+		margin: 0 auto;
+	}
+	.event__info {
+		text-align: center;
+	}
+
+	.event__description {
+		text-align: left;
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+@media screen and (min-width: 601px) {
+	.cal__container {
+		float: left;
+	}
+	.event__headline {
+		text-align: left;
+	}
+	.event__info {
+		margin-left: @calWidth+48px;
+	}
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+	.event__next {
+		.grid-span12;
+	}
+}
+
+@media screen and (min-width: 769px) {
+	.event__next {
+		.grid-span8;
+	}
+}
+
