@@ -59,8 +59,6 @@ function renderNextEvent(content) {
   $('.cal__month').html(month);
   $('.event__time').html(dateText);
   $('#recent-event').removeClass('is-hidden');
-
-  renderPastEvents(pastEvents);
 }
 
 function renderPastEvents(pastEvents) {
