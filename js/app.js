@@ -77,7 +77,6 @@ function renderPastEvents(pastEvents) {
     var date     = Date.parse(time);
     var type     = lines[2];
     var location = lines[4];
-    console.log(location);
 
     html += '<li class="past">' +
               '<time class="past-when" datetime="' + date + '">' +
