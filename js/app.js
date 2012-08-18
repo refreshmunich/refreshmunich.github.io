@@ -62,6 +62,9 @@ function renderNextEvent(content) {
 }
 
 function renderPastEvents(pastEvents) {
+  // --- Do not render past events because it's not finished (TODO)
+  return;
+
   var html = '';
 
   for (var i = 0; i < pastEvents.length; i++) {
