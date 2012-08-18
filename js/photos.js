@@ -21,7 +21,7 @@ var Photos = {
       method:'flickr.photosets.getPhotos',
       api_key: this.api_key,
       format:'json',
-      photoset_id:this.setID,
+      photoset_id:this.setID
     }).error(this.loadError)
       .success(this.loadSuccess)
       .complete(this.removeLoader);

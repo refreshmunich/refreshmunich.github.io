@@ -17,7 +17,7 @@ var MembersList = {
     // get members list from Twitter API
     $.getJSON('https://api.twitter.com/1/lists/members.json?callback=?', {
       slug:'members',
-      owner_screen_name:'refreshmunich',
+      owner_screen_name:'refreshmunich'
     }).error(this.loadError)
       .success(this.loadSuccess)
       .complete(this.removeLoader);  
@@ -30,8 +30,8 @@ var MembersList = {
       console.log(data);
     }
     
-    members = data.users;
-    members = members.sort(self.sortByName);
+    var members = data.users;
+        members = members.sort(self.sortByName);
 
     self.buildList(members);
   },
