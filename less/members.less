@@ -158,7 +158,7 @@
     .box-sizing(border-box);
   }
 
-  .member__card[class~="is-member"] {
+  .member__card {
     .box-sizing(border-box);
     .border-radius(@roundedCorner);
 
@@ -206,7 +206,7 @@
     // .transition(height 0.5s linear); // this does not work b/c CSS cannot animate to "auto" height
   }
 
-  .member__card[class~="is-member"]:hover {
+  .member__card:hover {
     height: auto;       // expand to show full description
      .member__inner {
       height: auto;
