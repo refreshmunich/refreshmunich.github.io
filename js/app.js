@@ -37,9 +37,9 @@ function renderNextEvent(content) {
   var description = nextEvent.split(lines[6])[1];
   var descriptionHtml = convert(description);
 
-  $('.event__location').html(location);
-  $('.event__address').html(adressHtml);
-  $('.event__description').html(descriptionHtml);
+  $('#js-venue').html(location);
+  $('#js-address').html(adressHtml);
+  $('#js-description').html(descriptionHtml);
 
   // --- If the current time is the event's start time plus 6 hours, it's 'old'
   if ((dateNow + tolerance) > date) {
@@ -55,9 +55,9 @@ function renderNextEvent(content) {
   // --- Month names because JS doesn't know them
   var month = getMonthAbbr(date.getMonth());
 
-  $('.cal__date').html(date.getDate());
-  $('.cal__month').html(month);
-  $('.event__time').html(dateText);
+  $('#js-day').html(date.getDate());
+  $('#js-month').html(month);
+  $('#js-time').html(dateText);
   $('#recent-event').removeClass('is-hidden');
 }
 
