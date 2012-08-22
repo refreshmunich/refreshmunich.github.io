@@ -81,8 +81,6 @@
 .member__card-container {
   background-color: #fff;
   list-style-type: none;  
-
-  .clearfix;  
 }
 
 
@@ -117,29 +115,11 @@
     padding: 0 0 .5em 0;
     border-top: 1px solid #eee;     // trigger margin collapse
     border-left: 1px solid #eee;
-    //border-bottom: 1px solid #f3f3f3;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
   }
 
-
-  // .member__card-container:nth-last-child(2) {
-  //   border-bottom: none;
-  // }
-
-  // .member__card-container:last-child {
-  //   border: none;
-  //   background: none;
-  //   box-shadow: none;
-
-  //   padding-top: 1em;
-
-  //   .member__card {
-  //     height: 120px;
-  //   }
-  // }
-
   .member__card {
-    min-height: 50px;           // for the twitter folks with no bio
+    min-height: 50px;               // for the twitter folks with no bio
   }
 }
 
@@ -168,8 +148,8 @@
 @media screen and (min-width: 481px) {
 
   .member__card-container {     // to create show full description on hover effect, we need an extra container
-    float: left;        // that hides extra content, but shows it on hover
-    height: @cardHeight;    // and our basic card positioning styles defined here
+    float: left;                // that hides extra content, but shows it on hover
+    height: @cardHeight;        // and our basic card positioning styles defined here
     margin: 0 @rtMargin 1.5em 0;
     
     position: relative;
@@ -189,19 +169,18 @@
     height: 100%;
 
     .card-style;
-    // .box-shadow(0 0 2px rgba(0, 0, 0, 0.12));    
 
     overflow: hidden;       // hide extra description text (in child __inner) by default
-    &:hover {           // but show it on hover
+    &:hover {               // but show it on hover
       overflow: visible;    // further styles below
 
-      &:before,         // and hide our hinting gradient (defined below)
+      &:before,             // and hide our hinting gradient (defined below)
       &::before {
         background-image: none;
       }
     }    
 
-            // create a gradient to hint at longer/more text
+                  // create a gradient to hint at longer/more text
     &:before,     // CSS2 syntax
     &::before {   // CSS3 syntax
       display: block;
@@ -223,7 +202,7 @@
     width: 100%;
     min-height: @cardHeight;
     .border-radius(@roundedCorner);
-    overflow: hidden;     // default: longer text hidden
+    overflow: hidden;                   // default: longer text hidden
     // .transition(height 0.5s linear); // this does not work b/c CSS cannot animate to "auto" height
   }
 
@@ -232,23 +211,22 @@
      .member__inner {
       height: auto;
       overflow: visible;
-      .card-style;    // move card style here, so borders & shadows encapulate whole description
+      .card-style;        // move card style here, so borders & shadows encapulate whole description
+
       .box-shadow(2px 2px 4px rgba(0, 0, 0, 0.13));      
-      top: -1px;      // offset moving shadows to this inner container
+      top: -1px;          // offset moving shadows to this inner container
       left: -1px;
-      z-index: 3;     // above :before and other cards
+      
+      z-index: 3;         // above :before and other cards
       background-image: none;
-      // background-color: @lightBlueBg;
-      // border: 1px solid @lightBlueBorder;
      }
      .unset-card-style;   // remove card style from parent (used to hide overflowing styles)
 
   }
 
   .member__avatar-link {
-    //z-index: 3;
     margin-top: @memberPadding;
-    margin-left: 1em; // pad profile pictures 
+    margin-left: 1em;     // pad profile pictures 
   }
 
 }
