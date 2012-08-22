@@ -65,33 +65,33 @@ function renderPastEvents(pastEvents) {
   // --- Do not render past events because it's not finished (TODO)
   return;
 
-  var html = '';
+  // var html = '';
 
-  for (var i = 0; i < pastEvents.length; i++) {
-    var pastEvent = pastEvents[i];
-    var lines     = pastEvent.split(/\n/gi);
+  // for (var i = 0; i < pastEvents.length; i++) {
+  //   var pastEvent = pastEvents[i];
+  //   var lines     = pastEvent.split(/\n/gi);
 
-    if (!lines[0])
-      lines.splice(0, 1);
+  //   if (!lines[0])
+  //     lines.splice(0, 1);
 
-    var time     = lines[0];
-    var date     = Date.parse(time);
-    var type     = lines[2];
-    var location = lines[4];
+  //   var time     = lines[0];
+  //   var date     = Date.parse(time);
+  //   var type     = lines[2];
+  //   var location = lines[4];
 
-    html += '<li class="past">' +
-              '<time class="past-when" datetime="' + date + '">' +
-                '<span class="past-month">' + getMonthAbbr(date.getMonth()) + '</span>' +       
-                '<span class="past-date">' + date.getDate() + '</span>' +
-              '</time>' +
-              '<p class="past-type">' + type + '</p>' +
-              '<p class="past-location">' + location + '</p>' +
-            '</li>';
-  }
+  //   html += '<li class="past">' +
+  //             '<time class="past-when" datetime="' + date + '">' +
+  //               '<span class="past-month">' + getMonthAbbr(date.getMonth()) + '</span>' +       
+  //               '<span class="past-date">' + date.getDate() + '</span>' +
+  //             '</time>' +
+  //             '<p class="past-type">' + type + '</p>' +
+  //             '<p class="past-location">' + location + '</p>' +
+  //           '</li>';
+  // }
 
-  $('.past-list').html(html);
+  // $('.past-list').html(html);
 
-  $('.past-events').removeClass('is-hidden'); 
+  // $('.past-events').removeClass('is-hidden'); 
 }
 
 function getMonthAbbr(integer) {
