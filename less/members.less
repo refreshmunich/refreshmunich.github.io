@@ -81,11 +81,14 @@
 .member__card-container {
   background-color: #fff;
   list-style-type: none;  
-
-  .clearfix(); // oops we need this for <IE9
-  border-bottom: 1px solid @lightBlueBorder;
 }
 
+.lt-ie9 {
+  .member__card-container {
+    .clearfix(); // oops we need this for <IE9
+    border-bottom: 1px solid @lightBlueBorder;
+  }
+}
 
 // Join us Call to Action
 // --------------------------
