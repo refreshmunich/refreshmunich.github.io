@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
   <head>
   <meta charset="utf-8">
 
@@ -15,9 +18,9 @@
   <link href="css/styles.css" rel="stylesheet" type="text/css" media="screen">
 
   <link href="//get.pictos.cc/fonts/1354/9" rel="stylesheet" type="text/css">
-  <script src="js/vendor/modernizr.js"></script>
-
+  
   <!--[if lt IE 9]>
+    <script src="js/vendor/modernizr.js"></script>
     <style type="text/css">
       body, h1, h2, h3 {
         font-family: Helvetica, Arial, sans-serif;
@@ -62,18 +65,23 @@
             <li class="cal__ring"></li>
             <li class="cal__ring"></li>
           </ul>
-          <time datetime="2012-07-12T19:00">        
-            <span class="cal__date"></span>
-            <span class="cal__month"></span>      
+          <time datetime="2012-08-30T19:00">        
+            <span class="cal__date" id="js-day"></span>
+            <span class="cal__month" id="js-month"></span>      
           </time>
         </div>
 
-        <div class="event__info">
-          <p class="event__headline">Next Meetup</p>
-          <p class="event__time"></p>
-          <p class="event__location"></p>          
-          <p class="event__address"></p>
-          <p class="event__description"></p>          
+        <div class="event__info vevent">
+          <p class="event__headline summary">Next Meetup</p>
+          <time datetime="2012-08-30T19:00" class="dtstart event__time" ><span class="value-title" title="2012-08-30T19:00" id="js-time-start"></span></time>
+          <time datetime="2012-08-30T23:00" class="dtend" id="js-time-end"></time>
+          <section class="event__loaction location">
+            <div class="event__venue" id="js-venue"></div> 
+            <div class="event__address" id="js-address"></div>  
+          </section>
+                   
+          
+          <div class="event__description description" id="js-description"></div>    
         </div>
       </div><!--/.event__info-->      
 
@@ -240,8 +248,10 @@
                 <a href="http://www.twitter.com/{{handle}}" title="Follow {{name}} on Twitter" class="member__avatar-link">
                   <img src="{{pic}}" alt="{{name}}" class="member__avatar" border="0">
                 </a>
-              <h3 class="member__name">{{name}} <br/><a class="member__handle-link" href="http://www.twitter.com/{{handle}}">@{{handle}}</a></h3>
-              <p class="member__description">{{desc}}</p>
+                <h3 class="member__name">{{name}} <br/>
+                  <a class="member__handle-link" href="http://www.twitter.com/{{handle}}">@{{handle}}</a>
+                </h3>
+                <p class="member__description">{{desc}}</p>
               </div>
             </div>
           </li>

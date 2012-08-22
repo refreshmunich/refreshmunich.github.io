@@ -1059,14 +1059,17 @@ h3 {
 .member__card-container {
   background-color: #fff;
   list-style-type: none;
-  *zoom: 1;
 }
-.member__card-container:before,
-.member__card-container:after {
+.lt-ie9 .member__card-container {
+  *zoom: 1;
+  border-bottom: 1px solid #d4e5eb;
+}
+.lt-ie9 .member__card-container:before,
+.lt-ie9 .member__card-container:after {
   display: table;
   content: "";
 }
-.member__card-container:after {
+.lt-ie9 .member__card-container:after {
   clear: both;
 }
 .member__join-us {
@@ -1132,7 +1135,7 @@ h3 {
     -ms-box-sizing: border-box;
     box-sizing: border-box;
   }
-  .member__card[class~="is-member"] {
+  .member__card {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
@@ -1157,15 +1160,15 @@ h3 {
     background-image: linear-gradient(top, #ffffff 0%, #ffffff);
     overflow: hidden;
   }
-  .member__card[class~="is-member"]:hover {
+  .member__card:hover {
     overflow: visible;
   }
-  .member__card[class~="is-member"]:hover:before,
-  .member__card[class~="is-member"]:hover::before {
+  .member__card:hover:before,
+  .member__card:hover::before {
     background-image: none;
   }
-  .member__card[class~="is-member"]:before,
-  .member__card[class~="is-member"]::before {
+  .member__card:before,
+  .member__card::before {
     display: block;
     position: absolute;
     width: 100%;
@@ -1193,7 +1196,7 @@ h3 {
     border-radius: 0;
     overflow: hidden;
   }
-  .member__card[class~="is-member"]:hover {
+  .member__card:hover {
     height: auto;
     border-top: none;
     border-left: none;
@@ -1201,7 +1204,7 @@ h3 {
     -moz-box-shadow: none;
     box-shadow: none;
   }
-  .member__card[class~="is-member"]:hover .member__inner {
+  .member__card:hover .member__inner {
     height: auto;
     overflow: visible;
     border: 1px solid #e5e5e5;
