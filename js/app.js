@@ -57,7 +57,7 @@ function renderNextEvent(content) {
 
   $('#js-day').html(date.getDate());
   $('#js-month').html(month);
-  $('#js-time').html(dateText);
+  $('#js-time-start').html(dateText);
   $('#recent-event').removeClass('is-hidden');
 }
 
