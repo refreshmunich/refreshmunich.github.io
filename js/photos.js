@@ -76,7 +76,7 @@ var Photos = {
     var bigUrl   = baseUrl + photo.image.hash + '.jpg';
 
     // replace in our template
-    html += this.photosTemplate.replace( /{{title}}/ig, photo.title)
+    html += this.photosTemplate.replace( /{{title}}/ig, '')
                  .replace( /{{largeVersion}}/ig, bigUrl )
                  .replace( /{{thumbnail}}/ig, thumbUrl );
     
