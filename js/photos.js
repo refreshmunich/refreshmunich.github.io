@@ -3,8 +3,7 @@ var Photos = {
   init: function() {
 
     // Flickr settings
-    this.setID   = '72157629231564646'; // our photostream
-    this.api_key = 'b9ea2bbfbae76e8986f7f480705b3d04';
+    this.albumID   = 'm3NQU'; // our album
 
     this.photos         =  $('#js-photos-container'); // our photos container in the DOM
     this.photosTemplate =  $.trim( $('#js-photos-template').html() );
@@ -17,12 +16,8 @@ var Photos = {
   },
 
   loadPhotos: function() {
-    $.getJSON('http://api.flickr.com/services/rest/?jsoncallback=?', {
-      method:'flickr.photosets.getPhotos',
-      api_key: this.api_key,
-      format:'json',
-      photoset_id:this.setID,
-    }).error(this.loadError)
+    $.getJSON('http://api.imgur.com/2/album/' + this.albumID + '.json')
+      .error(this.loadError)
       .success(this.loadSuccess)
       .complete(this.removeLoader);
   },
@@ -34,9 +29,8 @@ var Photos = {
       console.log(data);
     }
 
-    var photos = data.photoset.photo;
+    var photos = data.album.images.reverse();
     photos.length && self.renderPhotos(photos); // if we have photos, render them.
-
   },
 
   loadError: function(data) {
@@ -55,6 +49,8 @@ var Photos = {
   },
 
   renderPhotos: function(data) {
+    console.log(data);
+
     var markup = ''; 
     var length = data.length;
 
@@ -74,15 +70,13 @@ var Photos = {
   buildHTML: function(photo) {
     var html = '';
 
-    // figure out Flickr URLs
-    var baseUrl  = 'http://farm' + photo.farm + '.staticflickr.com/' 
-                 + photo.server + '/' 
-                 + photo.id + '_' + photo.secret;
-    var thumbUrl = baseUrl + '_t.jpg';
-    var bigUrl   = baseUrl + '.jpg';
+    // figure out Image Url
+    var baseUrl  = 'http://i.imgur.com/';
+    var thumbUrl = baseUrl + photo.image.hash + 's.jpg';
+    var bigUrl   = baseUrl + photo.image.hash + '.jpg';
 
     // replace in our template
-    html += this.photosTemplate.replace( /{{title}}/ig, photo.title)
+    html += this.photosTemplate.replace( /{{title}}/ig, '')
                  .replace( /{{largeVersion}}/ig, bigUrl )
                  .replace( /{{thumbnail}}/ig, thumbUrl );
     
