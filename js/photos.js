@@ -49,8 +49,6 @@ var Photos = {
   },
 
   renderPhotos: function(data) {
-    console.log(data);
-
     var markup = ''; 
     var length = data.length;
 
