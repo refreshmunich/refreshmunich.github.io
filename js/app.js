@@ -42,7 +42,7 @@ function renderNextEvent(content) {
   $('#js-description').html(descriptionHtml);
 
   // --- If the current time is the event's start time plus 6 hours, it's 'old'
-  if ((dateNow + tolerance) > date) {
+  if (dateNow > (date + tolerance)) {
     // --- Do not render the next event
     return renderPastEvents(events);
   }
