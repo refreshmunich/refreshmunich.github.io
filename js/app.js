@@ -101,6 +101,7 @@ function getMonthAbbr(integer) {
 
 // --- If user scrolls the page, do the following things
 function observeScrolling() {
+  return;
   $(window).scroll(function(event) {
     var scrollValue  = $(this).scrollTop();
     var rotate     = scrollValue < 120 ? scrollValue * 2 : 0;
