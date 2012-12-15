@@ -525,18 +525,27 @@ hr {
 .site-banner {
   background-color: #0098d4;
   margin: -1em 0 2em 0;
+  color: #fff;
+  text-align: center;
 }
-.site-banner__copy {
+.site-banner__headline {
   width: 90%;
   max-width: 800px;
   margin: 1em auto;
   padding: 1.5em 0;
   font: 100 2em/1.28em 'adelle-sans', sans-serif;
-  color: #fff;
-  text-align: center;
+}
+.site-banner--legal .site-banner__headline {
+  margin-bottom: 0;
+  padding-bottom: 1em;
+}
+.site-banner--legal .site-banner__copy {
+  margin-top: -1em;
+  padding: 0 1em 2em 1em;
+  line-height: 1.5em;
 }
 @media screen and (max-width: 480px) {
-  .site-banner__copy {
+  .site-banner__headline {
     font-size: 1.5em;
   }
 }
