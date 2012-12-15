@@ -174,19 +174,20 @@
   text-transform: uppercase;
 }
 
-.footer__copyright {
+.footer__last-row {
   border-top: 1px solid #61B1E7;
   padding-top: 1.5em;
   margin-top: 1em;
   margin-bottom: 1em;
 
   .clearfix;
+}
 
-  p {
-    width: 50%;
-    float: left;
-    margin: 0;
-  }
+
+.footer__copyright {
+  width: 50%;
+  float: left;
+  margin: 0;
 }
 
 .footer__legal {
@@ -234,10 +235,18 @@
     margin-top: 1.5em;
   }
 
+  .footer__copyright {
+    width: 100%;
+    text-transform: uppercase;
+  }
+
   .footer__legal {
+    width: 100%;
+    text-align: left;
+
     li {
       width: auto;
-      margin-left: .8em;
+      margin-right: .8em;
     }
   }
 }
