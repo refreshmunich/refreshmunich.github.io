@@ -40,14 +40,18 @@
     </nav>  
   </header>
 
-  <div role="main">
+  <div role="main" class="site-legal">
 
+  <div role="banner" class="site-banner site-banner--legal">
+    <p class="site-banner__headline">Refresh Munich e.V.</p>
+    <p class="site-banner__copy">is a non-profit association registered in Munich Germany.</p>
+  </div>
 
-  <section id="contact" class="section grid-container-fluid contact">
-    
+  <section id="contact" class="section grid-container-fluid team">
+
     <h1 class="section-title">Team</h1>
 
-    <ul class="team">
+    <ul class="team-list">
       <li class="team-member">
         <img src="images/team-elias.jpg" class="team-photo" alt="Elias Klughammer">
         <h4 class="team-name">Elias Klughammer</h4>
@@ -62,34 +66,55 @@
       </li>
     </ul>
 
+    <hr>
+
   </section><!--/#contact-->
 
   <section id="impressum" class="section grid-container-fluid legal">
-    <h1 class="section-title">Imprint</h1>
 
-    <p>Legal statement in compliance with § 5 TMG:</p>
-    <p>
-      <strong>Contact</strong><br>
-      <a href="mailto:team@refreshmunich.com">team@refreshmunich.com</a>
-    </p> 
+    <h1 class="section-title">Impressum</h1>
     
-    <p>Responsible for content per § 55 Abs. 2 RStV:</p>
+    <p>The following information is provided in compliance with German law, § 5 TMG:</p>
     
+    <h4>Mailing Address</h4>
     <p>
-      Elias Klughammer<br>
-      Ulrichsbergerstr. 17<br>
-      94469 Deggendorf<br>
-      elias.klughammer [at] gmail.com<br>
-      +49 991 9913390
+      Refresh Munich e.V.<br>
+      c/o cospired GmbH<br>
+      Roßmarkt 6<br>
+      80331 München<br>
+      <a href="mailto:hello@uxmunich.com">hello@uxmunich.com</a><br>
     </p>
 
+    <p>Registergericht: Amtsgericht München<br>
+       Registernummer: VR 204536</p>
+
+    <h4>Vertretungsberechtigte</h4>
+    <ul class="legal-vorstand">
+      <li>Vorstand: Dirk Haage</li>
+      <li>Vorstand: Elias Klughammer</li>
+      <li>Vorstand: Julie Ng</li>
+    </ul>
+
+    <p><a target="_blank" href="verein/Refresh-Satzung-Stand-20121126.pdf">Vereinssatzung Refresh Munich e.V.</a><br>
+       <em class="charter-date">Stand 26.11.2012</em></p>
+
+    <h4>Inhaltlich Verantwortlicher gemäß § 5 TMG</h4>
+    <p>Julie Ng</p>
+
+    <hr>
+
+    <h1 class="section-title">Content</h1>
 
     <h4>Liability for Content</h4>
     <p>Our web pages contain links to pages maintained by third parties, the content of which is beyond our control. Therefore we assume no liability for such third-party content. Responsibility for the content of linked web pages lies with the owners and providers of those pages. All linked pages were carefully examined for potential violations of law when the links were created, at which time no illicit content was apparent. We cannot reasonably be expected to continuously monitor the content of linked pages, however, in the absence of specific indications of a violation of law. If we are notified of such a violation, we will remove the offending links without delay.</p>
 
     <h4>Copyright</h4>
     <p>All content, e.g. text and photos on this website is subject to German copyright law. Copy, modification or distribution of content is prohibited without written consent from Refreshmunich unless indicated otherwise.</p>
+
+    <hr>
+
   </section><!--/#impressum-->
+
 
 
   <section id="privacy" class="section grid-container-fluid legal">
@@ -104,7 +129,7 @@
 
     <p>If you do not wish these cookies to be tracked, you can disable them in your browser.</p>
 
-  </section><!--/#impressum-->  
+  </section><!--/#privacy-->  
 
   </div><!--/[role="main"] -->
   
@@ -131,16 +156,15 @@
       </div><!--/.grid-row-->
 
       <div class="grid-row">
-        <div class="grid-span12 footer__copyright">
-          <p>&copy; 2012 Refresh Munich.</p>          
+        <div class="grid-span12 footer__last-row">
+          <p class="footer__copyright">&copy; 2012 Refresh Munich e.V.</p>          
           <ul class="footer__legal">
-            <li><a href="legal.html#imprint">Imprint</a></li>
+            <li><a href="legal.html#impressum">Impressum</a></li>
             <li><a href="legal.html#privacy">Privacy</a></li>
             <li><a href="legal.html#contact">Contact</a></li>
           </ul>          
         </div>        
       </div><!--/.grid-row-->
-
     </div><!--/.grid-container-fluid-->
   </footer><!--/.footer-->
 
