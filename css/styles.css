@@ -1308,29 +1308,54 @@ hr {
   margin: 6px 8px;
 }
 .legal,
-.contact {
+.team {
   max-width: 850px;
 }
 .legal.section,
-.contact.section {
+.team.section {
   margin-top: 0;
   margin-bottom: 0;
 }
-.contact .section-title {
-  margin-top: 2em;
-  margin-bottom: 2em;
+.site-legal {
+  margin-bottom: 5em;
 }
-.team {
-  margin: 0;
+.site-legal .section-title {
+  text-align: left;
+  margin-top: 0;
+}
+.legal h3,
+.legal h4 {
+  margin: 1.5em 0 -1em 0;
+}
+.legal-vorstand {
+  margin: 1em 0 0;
+  padding: 0;
+}
+.legal-vorstand li {
+  list-style-type: none;
+}
+.charter-date {
+  color: #c0c0c0;
+}
+.team .section-title {
+  margin-top: 2em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+.team-desc {
+  text-align: center;
+}
+.team-list {
+  margin: 3em 0 0 0;
   padding: 0;
   *zoom: 1;
 }
-.team:before,
-.team:after {
+.team-list:before,
+.team-list:after {
   display: table;
   content: "";
 }
-.team:after {
+.team-list:after {
   clear: both;
 }
 .team-member {
@@ -1359,25 +1384,4 @@ hr {
   .team-name {
     clear: both;
   }
-}
-.site-legal {
-  margin-bottom: 5em;
-}
-.site-legal .section-title {
-  text-align: left;
-  margin-top: 0;
-}
-.legal h3,
-.legal h4 {
-  margin: 1.5em 0 -1em 0;
-}
-.legal-vorstand {
-  margin: 1em 0 0;
-  padding: 0;
-}
-.legal-vorstand li {
-  list-style-type: none;
-}
-.charter-date {
-  color: #c0c0c0;
 }

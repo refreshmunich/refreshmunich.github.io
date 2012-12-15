@@ -1,63 +1,17 @@
 // Set narrower page width
 // same with as Munich skyline
 .legal,
-.contact {
+.team {
     max-width: 850px; 
 }
 
-
 .legal,
-.contact {
-
+.team {
   &.section {
     margin-top: 0;
     margin-bottom: 0;
   }
 
-}
-
-// Contact
-
-.contact {
-  .section-title {
-    margin-top: 2em;
-    margin-bottom: 2em;
-  }
-}
-.team {
-  margin: 0;
-  padding: 0;
-  .clearfix;
-}
-.team-member {
-  list-style-type: none;
-  width: 50%;
-  float: left;
-  margin: 0;
-
-}
-.team-photo {
-  float: left;
-  margin-right: 2em;
-}
-
-.team-name,
-.team-info {
-  margin: 0;
-}
-
-@media screen and (max-width: 600px) {
-  .team {
-    text-align: center;
-  }
-  .team-photo {
-    float: none;
-    margin-right: auto;
-    margin-left: auto;
-  }
-  .team-name {
-    clear: both;
-  }
 }
 
 // Legal Text
@@ -88,4 +42,57 @@
 
 .charter-date {
   color: #c0c0c0;
+}
+
+
+// Team
+// ----------------
+
+.team {
+  .section-title {
+    margin-top: 2em;
+    margin-bottom: 1em;
+    text-align: center;
+  }
+}
+
+.team-desc {
+  text-align: center;
+}
+
+.team-list {
+  margin: 3em 0 0 0;
+  padding: 0;
+  .clearfix;
+}
+
+.team-member {
+  list-style-type: none;
+  width: 50%;
+  float: left;
+  margin: 0;
+}
+
+.team-photo {
+  float: left;
+  margin-right: 2em;
+}
+
+.team-name,
+.team-info {
+  margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .team {
+    text-align: center;
+  }
+  .team-photo {
+    float: none;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .team-name {
+    clear: both;
+  }
 }
