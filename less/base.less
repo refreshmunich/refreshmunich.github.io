@@ -56,7 +56,7 @@ h3 {
 // Generic typography tweaks for mobile
 // --------------------------------------
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
   .main {
     font-size: 16px;  // larger font for mobile
     line-height: 1.5em;
@@ -117,11 +117,14 @@ hr {
     max-width: 90%;
   }
 
-  .section {
-    border-top: 1px solid #ddd;    
-    padding-top: 1em;
-    margin-top: 2em;
-    margin-bottom: 2em;
+  .main {
+    .section {
+      margin-top: 2em;
+      margin-bottom: 2em;
+      &.members {
+        margin-bottom: 0;
+      }
+    }
   }
 }
 
