@@ -42,7 +42,7 @@ function renderNextEvent(content) {
   $('#js-description').html(descriptionHtml);
 
   // --- If the current time is the event's start time plus 6 hours, it's 'old'
-  if ((dateNow + tolerance) > date) {
+  if (dateNow > (+date + tolerance)) {
     // --- Do not render the next event
     return renderPastEvents(events);
   }
@@ -101,6 +101,7 @@ function getMonthAbbr(integer) {
 
 // --- If user scrolls the page, do the following things
 function observeScrolling() {
+  return;
   $(window).scroll(function(event) {
     var scrollValue  = $(this).scrollTop();
     var rotate     = scrollValue < 120 ? scrollValue * 2 : 0;
