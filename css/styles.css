@@ -1301,10 +1301,8 @@ hr {
   }
 }
 .photos-container {
-  max-width: 708px;
   margin-left: auto;
   margin-right: auto;
-  text-align: center;
 }
 .photo-link {
   display: inline-block;
