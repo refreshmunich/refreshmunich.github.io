@@ -1367,13 +1367,14 @@ hr {
 }
 .team-member {
   list-style-type: none;
-  width: 50%;
+  width: 33.33333333%;
   float: left;
   margin: 0;
 }
 .team-photo {
   float: left;
   margin-right: 2em;
+  max-width: 85px;
 }
 .team-name,
 .team-info {
