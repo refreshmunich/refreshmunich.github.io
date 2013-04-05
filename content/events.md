@@ -1,4 +1,4 @@
-Thursday 21. April 2013, 19:00
+Thursday 18. April 2013, 19:00
 
 Stammtisch
 
