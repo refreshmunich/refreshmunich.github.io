@@ -12,12 +12,8 @@ $(document).ready(function () {
 
 function loadEvents() {
   $.ajax({
-    url:'https://api.github.com/gists/3330905',
-    dataType:'jsonp',
-    success:function(response) {
-      var content = response.data.files['EVENTS.md'].content;
-      renderNextEvent(content);
-    }
+    url:'/content/events.md',
+    success:renderNextEvent
   });
 }
 
