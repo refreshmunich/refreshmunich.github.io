@@ -12,12 +12,12 @@ Thursday 21. March 2013, 19:00
 
 Stammtisch
 
-Andy's Krablergarten
+Andy’s Krablergarten
 Thalkirchner Straße 2
 80337 München
 [www.andyskrablergarten.com](http://www.andyskrablergarten.com/)
 
-Our March Stammtisch just before Easter. And it's time to try something new: Andy's Krablergarten (Sendlinger Tor U1/2)
+Our March Stammtisch just before Easter. And it’s time to try something new: Andy’s Krablergarten (Sendlinger Tor U1/2)
 
 ---
 
@@ -30,7 +30,7 @@ Preysingstrasse 20
 81667 München
 [www.piu-muenchen.de](http://www.piu-muenchen.de)
 
-It's time for another Stammtisch! Join us for talks and some delicious food at Piu!
+It’s time for another Stammtisch! Join us for talks and some delicious food at Piu!
 
 ---
 
@@ -67,7 +67,7 @@ Preysingstrasse 20
 81667 München
 [www.piu-muenchen.de](http://www.piu-muenchen.de)
 
-It's time for another Stammtisch! Join us for talks and some delicious food at Piu!
+It’s time for another Stammtisch! Join us for talks and some delicious food at Piu!
 
 ---
 
@@ -106,7 +106,7 @@ Rosenheimer Straße 5
 81667 München
 [www.gast-muenchen.de](http://www.gast-muenchen.de)
 
-It's time for another Stammtisch! If the weather is good, we'll be outside again, and trying a new place at Gasteig. See you there!
+It’s time for another Stammtisch! If the weather is good, we’ll be outside again, and trying a new place at Gasteig. See you there!
 
 ---
 
@@ -119,7 +119,7 @@ Sophienstrasse 7
 80333 München
 [www.parkcafe089.de](http://http://www.parkcafe089.de)
 
-Join us for co-founder/organizer @DanaNeda's last Stammtisch before he goes off to London! As usual, beers, dinner and nerdy talk. We'll be outside in the beer garden. There is also backup indoor seating in case of rain.
+Join us for co-founder/organizer @DanaNeda’s last Stammtisch before he goes off to London! As usual, beers, dinner and nerdy talk. We’ll be outside in the beer garden. There is also backup indoor seating in case of rain.
 
 ---
 
