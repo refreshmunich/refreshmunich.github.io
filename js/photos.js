@@ -49,7 +49,7 @@ var Photos = {
   },
 
   renderPhotos: function(data) {
-    var markup = ''; 
+    var markup = '';
     var length = data.length;
 
     if (this.latestFirst) {
@@ -59,7 +59,7 @@ var Photos = {
     } else {
       for(var i = 0; i<length; i++) {
         markup += this.buildHTML(data[i]);
-      }        
+      }
     }
 
     this.photos.html(markup);
@@ -77,9 +77,9 @@ var Photos = {
     html += this.photosTemplate.replace( /{{title}}/ig, '')
                  .replace( /{{largeVersion}}/ig, bigUrl )
                  .replace( /{{thumbnail}}/ig, thumbUrl );
-    
+
     return html;
-  }  
+  }
 
 };
 

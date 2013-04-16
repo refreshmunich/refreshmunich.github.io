@@ -32,7 +32,7 @@
 
     // --- Build the time string
     var eventTime        = eventWeekDay + ', ' + eventDay + '. ' + eventMonth + ' ' + eventYear + ', ' + eventHours + ':' + eventMinutes;
-    
+
     var eventLocation    = nextEvent['gd$where'][0].valueString;
     var eventDescription = nextEvent.content['$t'];
 

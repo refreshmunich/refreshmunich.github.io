@@ -13,14 +13,14 @@ var MembersList = {
     this.loadMembers();
   },
 
-  loadMembers: function() {    
+  loadMembers: function() {
     // get members list from Twitter API
     $.getJSON('https://api.twitter.com/1/lists/members.json?callback=?', {
       slug:'members',
       owner_screen_name:'refreshmunich'
     }).error(this.loadError)
       .success(this.loadSuccess)
-      .complete(this.removeLoader);  
+      .complete(this.removeLoader);
   },
 
   loadSuccess: function(data){
@@ -29,7 +29,7 @@ var MembersList = {
       console.log("Sucessfully loaded JSON from Twitter:");
       console.log(data);
     }
-    
+
     var members = data.users;
         members = members.sort(self.sortByName);
 
@@ -68,7 +68,7 @@ var MembersList = {
                    .replace( /{{name}}/ig, users[i].name )
                    .replace( /{{desc}}/ig, users[i].description )
                    .replace( /{{pic}}/ig, users[i].profile_image_url );
-    }    
+    }
     return html;
   },
 

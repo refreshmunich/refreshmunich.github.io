@@ -77,7 +77,7 @@ function renderPastEvents(pastEvents) {
 
   //   html += '<li class="past">' +
   //             '<time class="past-when" datetime="' + date + '">' +
-  //               '<span class="past-month">' + getMonthAbbr(date.getMonth()) + '</span>' +       
+  //               '<span class="past-month">' + getMonthAbbr(date.getMonth()) + '</span>' +
   //               '<span class="past-date">' + date.getDate() + '</span>' +
   //             '</time>' +
   //             '<p class="past-type">' + type + '</p>' +
@@ -87,7 +87,7 @@ function renderPastEvents(pastEvents) {
 
   // $('.past-list').html(html);
 
-  // $('.past-events').removeClass('is-hidden'); 
+  // $('.past-events').removeClass('is-hidden');
 }
 
 function getMonthAbbr(integer) {
