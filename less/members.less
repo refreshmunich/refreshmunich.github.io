@@ -12,7 +12,7 @@
 @memberPadding: 1em;
 @cardHeight:    90px;
 @gradientEnd:   #ffffff;
-@roundedCorner: 0;        // temporarily disabling border-radius 
+@roundedCorner: 0;        // temporarily disabling border-radius
                           // because of rounded corner leakage
                           // from long text gradient cover
 
@@ -40,7 +40,7 @@
 
 .member__avatar-link {
   display: inline-block;
-  float: right;  
+  float: right;
   margin-right: @memberPadding;
 }
 
@@ -51,7 +51,7 @@
   text-decoration: none;
 }
 
-.member__name { 
+.member__name {
   font-size: 1em;
   line-height: 1.3em;
   margin: @memberPadding @memberPadding 0 @memberPadding;
@@ -81,7 +81,7 @@
 // basic styles for all devices
 .member__card-container {
   background-color: #fff;
-  list-style-type: none;  
+  list-style-type: none;
 }
 
 .lt-ie9 {
@@ -98,8 +98,8 @@
   .border-radius(@roundedCorner);
   .box-sizing(border-box);
   height: 100%;
-  background-color: @lightBlueBg;  
-  border: 1px solid @lightBlueBorder;  
+  background-color: @lightBlueBg;
+  border: 1px solid @lightBlueBorder;
 
   .member__name {
     color: @bayernBlue;
@@ -158,7 +158,7 @@
     float: left;                // that hides extra content, but shows it on hover
     height: @cardHeight;        // and our basic card positioning styles defined here
     margin: 0 @rtMargin 1.5em 0;
-    
+
     position: relative;
     overflow: visible;
     background: none;
@@ -185,7 +185,7 @@
       &::before {
         background-image: none;
       }
-    }    
+    }
 
                   // create a gradient to hint at longer/more text
     &:before,     // CSS2 syntax
@@ -220,10 +220,10 @@
       overflow: visible;
       .card-style;        // move card style here, so borders & shadows encapulate whole description
 
-      .box-shadow(2px 2px 4px rgba(0, 0, 0, 0.13));      
+      .box-shadow(2px 2px 4px rgba(0, 0, 0, 0.13));
       top: -1px;          // offset moving shadows to this inner container
       left: -1px;
-      
+
       z-index: 3;         // above :before and other cards
       background-image: none;
      }
@@ -233,13 +233,13 @@
 
   .member__avatar-link {
     margin-top: @memberPadding;
-    margin-left: 1em;     // pad profile pictures 
+    margin-left: 1em;     // pad profile pictures
   }
 
 }
 
 
-// Responsive: Adjust card sizes per device width 
+// Responsive: Adjust card sizes per device width
 // -----------------------------------------------
 
 @media screen and (min-width: 481px) and (max-width: 768px) {

@@ -911,19 +911,19 @@ hr {
 }
 @-webkit-keyframes initCalFlip {
   0% {
-    -webkit-transform: rotatex(60deg);
+    -webkit-transform: rotateX(60deg);
   }
   25% {
-    -webkit-transform: rotatex(-30deg);
+    -webkit-transform: rotateX(-30deg);
   }
   50% {
-    -webkit-transform: rotatex(20deg);
+    -webkit-transform: rotateX(20deg);
   }
   75% {
-    -webkit-transform: rotatex(-10deg);
+    -webkit-transform: rotateX(-10deg);
   }
   100% {
-    -webkit-transform: rotatex(0deg);
+    -webkit-transform: rotateX(0deg);
   }
 }
 .cal__container {

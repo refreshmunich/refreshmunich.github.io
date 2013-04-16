@@ -14,29 +14,29 @@
 	margin-bottom: 5em; // temp
 }
 
- 
+
 // Past Events List
 // -------------------------
- 
+
 .past-events {
 	clear: both;
 	float: none;
 	margin: 2em auto;
 }
- 
+
  .past-headline {
  	text-align: center;
  	color: #ccc;
  }
- 
+
 .past-list {	// <ul>
 	padding: 0;
 	width: 250px;
 	margin: 0 auto;
 }
- 
+
 .past {	// <li>
-	
+
 	list-style-type: none;
 	display: block;
 	.clearfix;
@@ -46,7 +46,7 @@
 		margin: 0;
 	}
 }
- 
+
 .past-when {
 	width: 45px;
 	margin-right: 1em;
@@ -54,19 +54,19 @@
 	border: 2px solid @lightGrey;
 	.border-radius(4px);
 }
- 
+
 .past-date,
 .past-month {
 	display: block;
-	text-align: center;	
+	text-align: center;
 }
- 
+
 .past-date {
 	font-size: 1.125em; // 18/16
 	line-height: 1em;
-	padding: .4em 0 .25em; 
+	padding: .4em 0 .25em;
 }
- 
+
 .past-month {
 	font-size: .8125em; // 13/16
 	line-height: 1.5em;
@@ -74,7 +74,7 @@
 	font-weight: 600;
 	background-color: @lightGrey;
 }
- 
+
 .past-type {
 	color: #ccc;
 	font-size: .875em; // 14/16
@@ -100,7 +100,7 @@
 	font-weight: 600;
 }
 .event__next {
-	float: none; 
+	float: none;
 	margin: 0 auto;
 	-webkit-perspective: 1000;
 	-webkit-perspective-origin-x: 110px;
@@ -157,14 +157,14 @@
 	-webkit-animation:initCalFlip 2s;
 
 	border: @calBorderSize solid @calColor;
-	.border-radius(@calBorderSize*2); 
+	.border-radius(@calBorderSize*2);
 
 	// ca. double border for equal inner and outer border radius
 	// inner border radius = outer border radius - border width
 
 	.cal__date,
 	.cal__month {
-		display: block;	
+		display: block;
 		height: auto;
 		text-align: center;
 		color: @calColor;
@@ -185,7 +185,7 @@
 	text-align: center;
 	height: 50px;
 	margin: 0;
-	padding: 0;	
+	padding: 0;
 	background-color: @calColor;
 	.clearfix;
 }
@@ -196,14 +196,14 @@
 	position: relative;
 
 	height: @calRingHeight;
-	width: @calRingWidth;		
+	width: @calRingWidth;
 	top: @calRingHeight*-1;
 	float: left;
 
 	background-color: #fff;
 	border-radius: @calRingSize*2;
 	border: @calRingSize solid @calColor;
-				
+
 	z-index: 2;
 
 	// 2nd ring
@@ -217,7 +217,7 @@
 		z-index: -1;
 
 		width: @calRingWidth + @calRingSize;
-		height: @calRingHeight + @calRingSize;		
+		height: @calRingHeight + @calRingSize;
 		border-radius: @calRingSize*2;
 
 		// the 1 offsets are required so that
