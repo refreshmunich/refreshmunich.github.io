@@ -1,0 +1,20 @@
+
+  <a name="/photos"></a>
+  <section id="photos" class="section photos grid-container-fluid">
+    <div class="grid-row">
+      <h1 class="section-title">Photos</h1>
+      <p class="section-subtitle">From our meetups</p>
+      <p id="js-photos-loading" class="ui-loading"></p>
+      <p id="js-photos-loading-error" class="text-center is-error is-hidden">Sorry, there was a problem loading data  from Flickr. Please try again later.</p>
+      <div id="js-photos-container" class="photos-container">
+        {% raw %}
+        <script id="js-photos-template" type="js/template">
+        <a class="photo-link" target="_blank" href="{{largeVersion}}">
+          <img class="photo-img" src="{{thumbnail}}" border="0" alt="Refresh">
+        </a>
+        </script>
+        {% endraw %}
+      </div>
+      <p class="text-center">View more photos on <a target="_blank" href="http://imgur.com/a/m3NQU">Imgur</a>.</p>
+    </div>
+  </section><!--/#photos-->
