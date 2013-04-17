@@ -13,41 +13,42 @@ title: Welcome
 
 
   {% assign meetup = site.posts.first %}
+  {% if meetup.placeholder == false %}
+    <a name="/meetups"></a>
+    <section id="recent-event" class="section events grid-container-fluid">
+      <div class="grid-row">
 
-  <a name="/meetups"></a>
-  <section id="recent-event" class="section events grid-container-fluid">
-    <div class="grid-row">
+        <div class="event__next">
 
-      <div class="event__next">
+          <div class="cal__container">
+            <ul class="cal__top">
+              <li class="cal__ring"></li>
+              <li class="cal__ring"></li>
+              <li class="cal__ring"></li>
+            </ul>
+            <time datetime="2012-08-30T19:00">
+              <span class="cal__date">{{ meetup.calendar_date }}</span>
+              <span class="cal__month">{{ meetup.calendar_month }}</span>
+            </time>
+          </div>
 
-        <div class="cal__container">
-          <ul class="cal__top">
-            <li class="cal__ring"></li>
-            <li class="cal__ring"></li>
-            <li class="cal__ring"></li>
-          </ul>
-          <time datetime="2012-08-30T19:00">
-            <span class="cal__date">{{ meetup.calendar_date }}</span>
-            <span class="cal__month">{{ meetup.calendar_month }}</span>
-          </time>
-        </div>
+          <div class="event__info vevent">
+            <p class="event__headline summary">Next Meetup</p>
+            <time datetime="" class="dtstart event__time" >
+              <span class="value-title" title="">{{ meetup.time }}</span>
+            </time>
+            <time datetime="" class="dtend"></time>
+            <section class="event__loaction location">
+              <div class="event__venue">{{ meetup.venue | markdownify }}</div>
+            </section>
 
-        <div class="event__info vevent">
-          <p class="event__headline summary">Next Meetup</p>
-          <time datetime="" class="dtstart event__time" >
-            <span class="value-title" title="">{{ meetup.time }}</span>
-          </time>
-          <time datetime="" class="dtend"></time>
-          <section class="event__loaction location">
-            <div class="event__venue">{{ meetup.venue | markdownify }}</div>
-          </section>
+            <div class="event__description description">{{ meetup.description }}</div>
+          </div>
+        </div><!--/.event__info-->
 
-          <div class="event__description description">{{ meetup.description }}</div>
-        </div>
-      </div><!--/.event__info-->
-
-    </div><!--/.grid-row-->
-  </section><!-- /#recent-event -->
+      </div><!--/.grid-row-->
+    </section><!-- /#recent-event -->
+  {% endif %}
 
 
   <section id="meetups" class="section grid-container-fluid">

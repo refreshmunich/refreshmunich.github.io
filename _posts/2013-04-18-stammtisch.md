@@ -1,4 +1,6 @@
 ---
+date: 2013-04-01 00:01:01
+placeholder: false
 title: Stammtisch
 time: Thursday 18. April 2013, 19:00
 calendar_month: Apr
