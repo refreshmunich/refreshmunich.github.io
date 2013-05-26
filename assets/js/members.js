@@ -9,11 +9,15 @@ var MembersList = {
     this.membersList      =  $('#js-members');
     this.errorMsg         =  $('#js-members-loading-error');
     this.debug            =  false;    // true enables console logging
+    this.loadTimeoutTime  =  10;        // Loading Timeout in sec
 
     this.loadMembers();
   },
 
   loadMembers: function() {
+    // Start Timeout Timer
+    this.loadTimerStart();
+    
     // get members list from Twitter API
     $.getJSON('https://api.twitter.com/1/lists/members.json?callback=?', {
       slug:'members',
@@ -23,12 +27,30 @@ var MembersList = {
       .complete(this.removeLoader);
   },
 
+  loadTimerStart: function() {
+  	this.timer = setTimeout(this.loadTimeoutReached, this.loadTimeoutTime*1000);
+  },
+
+  loadTimeoutReached: function() {
+  	var self = MembersList;				  // store reference to ourself to use in place of 'this'
+  	self.loadTimerStop();				  // because within this scope, 'this' refers to setInterval event
+  	self.loadError(self.loadTimeoutTime+"sec loading Timeout reached.");  // Display Error Msg
+  	self.removeLoader();                  // Hide Loader
+  },
+
+  loadTimerStop: function() {
+  	clearTimeout(this.timer);
+  },
+
   loadSuccess: function(data){
     var self = MembersList;               // store reference to ourself to use in place of 'this'
     if (self.debug) {                     // because within this scope, 'this' refers to sucess event
       console.log("Sucessfully loaded JSON from Twitter:");
       console.log(data);
     }
+    
+    self.loadTimerStop();                  // Kill Timeout Timer
+    self.errorMsg.hide();                  // If Error Msg is already shown after Timeout --> Hide it again
 
     var members = data.users;
         members = members.sort(self.sortByName);
@@ -45,6 +67,8 @@ var MembersList = {
       console.log("Error loading data from Twitter:");
       console.log(data);
     }
+    
+    self.loadTimerStop();                  // Kill Timeout Timer
     self.errorMsg.show();
   },
 
