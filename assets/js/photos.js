@@ -25,7 +25,7 @@ var Photos = {
   loadSuccess: function(data) {
     var self = Photos;
     if(self.debug) {
-      console.log("Successfully loaded JSON from Flickr:");
+      console.log("Successfully loaded JSON from Imgur:");
       console.log(data);
     }
 
@@ -36,7 +36,7 @@ var Photos = {
   loadError: function(data) {
     var self = Photos;
     if(self.debug) {
-      console.log("Error loading JSON from Flickr:");
+      console.log("Error loading JSON from Imgur:");
       console.log(data);
     }
 
