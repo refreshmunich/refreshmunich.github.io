@@ -5,6 +5,10 @@ title: Stammtisch
 time: Thursday 18. July 2013, 19:00
 calendar_month: JUL
 calendar_date: 18
-description: Our July Stammtisch. Location to be determined.
+description: Our July Stammtisch.
 venue: |
+  Wirtshaus Zum Straubinger  
+  Blumenstraße 5  
+  80331 Munich  
+  [www.zumstraubinger.de](http://www.zumstraubinger.de)
 ---
