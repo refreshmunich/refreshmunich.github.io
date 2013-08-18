@@ -19,10 +19,8 @@ var MembersList = {
     this.loadTimerStart();
     
     // get members list from Twitter API
-    $.getJSON('https://api.twitter.com/1/lists/members.json?callback=?', {
-      slug:'members',
-      owner_screen_name:'refreshmunich'
-    }).error(this.loadError)
+    $.getJSON('http://refresh-member-fetcher.herokuapp.com?callback=?')
+      .error(this.loadError)
       .success(this.loadSuccess)
       .complete(this.removeLoader);
   },
