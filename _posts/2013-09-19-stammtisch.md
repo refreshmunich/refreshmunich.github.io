@@ -1,5 +1,5 @@
 ---
-date: 2013-08-18 00:01:01
+date: 2013-08-19 00:01:01
 placeholder: false
 title: Stammtisch
 time: Thursday 19 September 2013, 19:00
