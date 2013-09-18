@@ -10,6 +10,6 @@ venue: |
   HEY LUIGI  
   Holzstr. 29  
   80469 Munich  
-  [www.heyluigi.de](http://www.cafe-zeitgeist.com)  
+  [www.heyluigi.de](http://www.heyluigi.de)  
   (U1/2 Fraunhoferstr.)
 ---
