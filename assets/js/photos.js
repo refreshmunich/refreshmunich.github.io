@@ -63,6 +63,25 @@ var Photos = {
     }
 
     this.photos.html(markup);
+    this.initGallery();
+  },
+
+  initGallery: function() {
+    $("#js-photos-container .fancybox").fancybox({
+      openEffect  : 'none',
+      closeEffect : 'none',
+      nextEffect: 'elastic',
+      prevEffect: 'none',
+      maxWidth  : 800,
+      maxHeight : 600,
+      closeBtn: false,
+      padding: 0,
+      helpers: {
+        overlay: {
+          locked: false
+        }
+      }
+    });
   },
 
   buildHTML: function(photo) {
