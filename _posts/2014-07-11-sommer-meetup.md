@@ -15,4 +15,7 @@ venue: |
   Germany
 
   Please see directions on the [event registration page](https://www.eventbrite.com/e/refresh-munich-grillfest-tickets-12134371231). It's in the middle of an industrial area. But we've got a photo and we'll have signs to guide you.
+
+  **Interested in giving a talk?**  
+  We're still looking for short 15 minute talks, in English or German. Interested? Contact [hello@refreshmunich.com](mailto:hello@refreshmunich.com)
 ---
