@@ -1,5 +1,5 @@
 ---
-date: 2014-07-31 00:01:01
+date: 2014-07-28 00:01:01
 placeholder: false
 title: Stammtisch
 time: Thursday 31 July 2014, 19:00
