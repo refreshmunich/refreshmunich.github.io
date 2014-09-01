@@ -5,7 +5,10 @@ title: Stammtisch
 time: Thursday 4 September 2014, 19:00
 calendar_month: SEP
 calendar_date: 4
-description: Our August / September Stammtisch.
+description: Join us at the August / September Stammtisch for some Schnitzels and drinks!
 venue: |
-  Location tba
+  **Steinheil 16**  
+  Steinheilstr. 16  
+  80333 München  
+  U-Bahn Theresienstr.
 ---
