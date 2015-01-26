@@ -1,0 +1,40 @@
+---
+layout: none
+---
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+BEGIN:VTIMEZONE
+TZID:Europe/Berlin
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+DTSTART:19810329T020000
+TZNAME:MESZ
+TZOFFSETTO:+0200
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+DTSTART:19961027T030000
+TZNAME:MEZ
+TZOFFSETTO:+0100
+END:STANDARD
+END:VTIMEZONE
+{% assign meetup = site.posts.first %}
+{% if meetup.placeholder == false %}
+BEGIN:VEVENT
+CREATED:20150126T131641Z
+UID:{{ meetup.date | cgi_escape }}@refreshmunich.com
+URL;VALUE=URI:http://refreshmunich.com
+TRANSP:OPAQUE
+SUMMARY:Refresh Munich Meetup
+DTSTART;TZID=Europe/Berlin:{{ meetup.event.start | date: "%Y%m%dT%H%M" }}00
+DTEND;TZID=Europe/Berlin:{{ meetup.event.end | date: "%Y%m%dT%H%M" }}00
+DTSTAMP;TZID=Europe/Berlin:{{ meetup.event.start | date: "%Y%m%dT%H%M" }}00
+LOCATION:{{ meetup.venue | replace: "\n", "\\n" }}
+SEQUENCE:0
+DESCRIPTION:{{ meetup.description | replace: "\n", "\\n" }}
+END:VEVENT
+{% endif %}
+END:VCALENDAR
