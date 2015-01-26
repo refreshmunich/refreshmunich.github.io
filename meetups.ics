@@ -1,5 +1,5 @@
 ---
-layout: none
+layout: nil
 ---
 BEGIN:VCALENDAR
 VERSION:2.0
@@ -25,14 +25,14 @@ END:VTIMEZONE
 {% if meetup.placeholder == false %}
 BEGIN:VEVENT
 CREATED:20150126T131641Z
-UID:{{ meetup.date | cgi_escape }}@refreshmunich.com
+UID:{{ meetup.date }}@refreshmunich.com
 URL;VALUE=URI:http://refreshmunich.com
 TRANSP:OPAQUE
 SUMMARY:Refresh Munich Meetup
 DTSTART;TZID=Europe/Berlin:{{ meetup.event.start | date: "%Y%m%dT%H%M" }}00
 DTEND;TZID=Europe/Berlin:{{ meetup.event.end | date: "%Y%m%dT%H%M" }}00
 DTSTAMP;TZID=Europe/Berlin:{{ meetup.event.start | date: "%Y%m%dT%H%M" }}00
-LOCATION:{{ meetup.venue | replace: "\n", "\\n" }}
+LOCATION:{{ meetup.venue.name }}\n{{ meetup.venue.street }}\n{{ meetup.venue.plz }}
 SEQUENCE:0
 DESCRIPTION:{{ meetup.description | replace: "\n", "\\n" }}
 END:VEVENT

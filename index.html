@@ -39,7 +39,16 @@ title: Welcome
             </time>
             <time datetime="" class="dtend"></time>
             <section class="event__loaction location">
-              <div class="event__venue">{{ meetup.venue | markdownify }}</div>
+              <div class="event__venue">
+                {{ meetup.venue.name }}<br>
+                {{ meetup.venue.street }}<br>
+                {{ meetup.venue.plz }}<br>
+                {% if meetup.venue.url %}
+                <a href="{{ meetup.venue.url }}" target="_blank">
+                  {{ meetup.venue.url }}
+                </a>
+                {% endif %}
+              </div>
             </section>
 
             <div class="event__description description">{{ meetup.description }}</div>
