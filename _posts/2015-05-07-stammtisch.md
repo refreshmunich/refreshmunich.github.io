@@ -5,8 +5,14 @@ title: Stammtisch
 time: Thursday 07 May 2015, 19:00
 calendar_month: MAY
 calendar_date: 07
-description: Sorry for the delay. But save the date and get ready for the first post-conference Stammtisch!
+description:
 venue: |
-  **Stammtisch**  
-  *Location to be determined.*
+  Join us for the May and first post-conference Stammtisch!
+
+
+  **Sinans**  
+  Mozartstraße 4  
+  80336 München  
+  [www.sinans.de](http://www.sinans.de/)  
+  U3/U6 Goetheplatz
 ---
