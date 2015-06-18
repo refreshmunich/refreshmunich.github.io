@@ -6,7 +6,7 @@ time: Thursday 25 June 2015, 19:00
 calendar_month: JUN
 calendar_date: 25
 description: |
-  Our May Stammtisch. If weather holds, we'll be in the Biergarten. Otherwise we'll be inside. Take <strong>U4/5 to Schwanthalerhöhe</strong>, walk south and the restaurant is just beyond the giant snail.
+  Our June Stammtisch. If weather holds, we'll be in the Biergarten. Otherwise we'll be inside. Take <strong>U4/5 to Schwanthalerhöhe</strong>, walk south and the restaurant is just beyond the giant snail.
 venue: |
   Wirthaus am Bavariapark  
   Theresienhöhe 15  
