@@ -4,7 +4,7 @@ placeholder: false
 title: Stammtisch
 time: Thursday 17 September 2015, 19:00
 calendar_month: SEP
-calendar_date: 30
+calendar_date: 17
 description: |
   The September Stammtisch has been moved up to we have meet before Oktoberfest. Save the date!
 venue: |
