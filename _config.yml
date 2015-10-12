@@ -10,3 +10,6 @@ future:      false
 
 repo_url:   http://github.com/refreshmunich/website
 pages_url:  http://refreshmunich.com/
+
+exclude: 
+  - vendor

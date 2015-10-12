@@ -6,9 +6,12 @@ time: Thursday 29 Jan 2015, 19:00
 calendar_month: JAN
 calendar_date: 29
 description: Join us for the first Stammtisch in 2015!
-venue: |
-  Wirtshaus im Fraunhofer  
-  Fraunhoferstr. 9  
-  80469 München  
-  [www.fraunhofertheater.de](http://www.fraunhofertheater.de)
+event:
+  start: 2015-01-29 19:00:00 +0100
+  end: 2015-01-29 22:00:00 +0100
+venue:
+  name: Wirtshaus im Fraunhofer
+  street: Fraunhoferstr. 9
+  plz: 80469 München
+  url: http://www.fraunhofertheater.de
 ---
