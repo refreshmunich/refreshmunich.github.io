@@ -2,7 +2,7 @@
 date: 2016-03-24 00:01:01
 placeholder: false
 title: Stammtisch
-time: Thursday 31 Mar 2016, 19:00
+time: Thursday 31 March 2016, 19:00
 calendar_month: MAR
 calendar_date: 31
 description: |
