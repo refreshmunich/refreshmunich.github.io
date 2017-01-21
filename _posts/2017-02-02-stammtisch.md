@@ -2,7 +2,7 @@
 date: 2017-01-21 00:01:01
 placeholder: false
 title: Stammtisch
-time: Thursday 02 February 2017, 19:00
+time: Thursday 2 February 2017, 19:00
 calendar_month: FEB
 calendar_date: 02
 description: |
