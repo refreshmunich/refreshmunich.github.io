@@ -12,10 +12,10 @@ venue: |
   **[Register for Refresh Accessibility! Meetup >](https://www.eventbrite.com/e/refresh-accessibility-tickets-32131715827)**  
   Beverages and food on us. So RSVP, thanks!
 
-  **Google Munich**
-  Erika-Mann-Straße 33
-  80636 München
+  **Google Munich**  
+  Erika-Mann-Straße 33  
+  80636 München  
 
-  S-Bahn: Donnersbergerbrücke
+  S-Bahn: Donnersbergerbrücke  
   Tram: Marsstraße / Deroystraße
 ---
