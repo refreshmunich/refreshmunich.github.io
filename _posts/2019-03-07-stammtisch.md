@@ -1,5 +1,5 @@
 ---
-date: 2019-03-07 00:01:01
+date: 2019-01-01 00:01:01
 placeholder: false
 title: Stammtisch
 time: Thursday 7th March 2019, 19:00
