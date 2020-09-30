@@ -4,7 +4,7 @@ Release: April 2013
 
 We've switched to using the [Jeykll](https://github.com/mojombo/jekyll) site generated used for github pages to better manage our events calendar.
 
-### Conventions
+### Conventions -Leads to you to explore your ideas
 
 ##### LESS/CSS
 
